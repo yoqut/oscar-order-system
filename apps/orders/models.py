@@ -92,6 +92,12 @@ class Order(models.Model):
             f"Status: {self.get_status_display()}"
         )
 
+    def get_status_display(self):
+        return self.status
+
+    def get_time_slot_display(self):
+        return self.time_slot
+
 
 class TreatmentDetails(models.Model):
     order = models.OneToOneField(

@@ -28,8 +28,8 @@ class Command(BaseCommand):
         asyncio.run(self._run(options['days_ahead']))
 
     async def _run(self, days_ahead: int):
-        from bot.loader import bot
-        from bot.utils.helpers import notify_user
+        from core.loader import bot
+        from bot_app.utils.helpers import notify_user
 
         target_date = date.today() + timedelta(days=days_ahead)
         self.stdout.write(f'Sending re-treatment reminders for {target_date}...')

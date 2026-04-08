@@ -50,7 +50,7 @@ class TelegramUser(models.Model):
 
 
 class UserState(models.Model):
-    """Persists FSM state for each Telegram user across bot interactions."""
+    """Persists FSM state for each Telegram user across bot_app interactions."""
     telegram_id = models.BigIntegerField(unique=True, db_index=True)
     state = models.CharField(max_length=100, null=True, blank=True)
     data = models.JSONField(default=dict)

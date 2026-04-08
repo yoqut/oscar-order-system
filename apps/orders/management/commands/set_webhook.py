@@ -17,7 +17,7 @@ class Command(BaseCommand):
         )
 
     def handle(self, *args, **options):  # ✅ SYNC
-        from bot.loader import bot
+        from core.loader import bot
 
         if options['delete']:
             asyncio.run(self._delete_webhook(bot))

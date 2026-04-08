@@ -1,0 +1,458 @@
+[2026-04-07 15:51:21] DEBUG bot.requests 23036 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-07 15:51:22] DEBUG bot.requests 23036 OUT uid=1230394567   454.4ms
+[2026-04-07 15:51:23] DEBUG bot.requests 23036 IN  uid=1230394567   @FRWIEN              cb='users'
+[2026-04-07 15:51:24] DEBUG bot.requests 23036 OUT uid=1230394567   445.2ms
+[2026-04-07 15:51:25] DEBUG bot.requests 23036 IN  uid=1230394567   @FRWIEN              cb='admin:add_manager'
+[2026-04-07 15:51:26] DEBUG bot.requests 23036 OUT uid=1230394567   524.3ms
+[2026-04-07 15:51:33] DEBUG bot.requests 23036 IN  uid=1230394567   @FRWIEN              text='5574861580'
+[2026-04-07 15:51:33] DEBUG bot.requests 23036 OUT uid=1230394567   357.4ms
+[2026-04-07 15:51:39] DEBUG bot.requests 23036 IN  uid=1230394567   @FRWIEN              text='Muhammadali'
+[2026-04-07 15:51:39] DEBUG bot.requests 23036 OUT uid=1230394567   527.4ms
+[2026-04-07 15:51:47] DEBUG bot.requests 23036 IN  uid=5574861580   @Bovaqulov_Muhammadali text='/start'
+[2026-04-07 15:51:47] DEBUG bot.requests 23036 OUT uid=5574861580   385.9ms
+[2026-04-07 15:51:49] DEBUG bot.requests 23036 IN  uid=5574861580   @Bovaqulov_Muhammadali text='📝 Buyurtma yaratish'
+[2026-04-07 15:51:49] DEBUG bot.requests 23036 OUT uid=5574861580   316.9ms
+[2026-04-07 15:52:53] DEBUG bot.requests 23036 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-07 15:52:53] DEBUG bot.requests 23036 OUT uid=1230394567   421.4ms
+[2026-04-07 15:52:54] DEBUG bot.requests 23036 IN  uid=1230394567   @FRWIEN              cb='users'
+[2026-04-07 15:52:55] DEBUG bot.requests 23036 OUT uid=1230394567   427.2ms
+[2026-04-07 15:52:57] DEBUG bot.requests 23036 IN  uid=1230394567   @FRWIEN              cb='admin:list_managers'
+[2026-04-07 15:52:57] DEBUG bot.requests 23036 OUT uid=1230394567   455.2ms
+[2026-04-07 15:53:00] DEBUG bot.requests 23036 IN  uid=1230394567   @FRWIEN              cb='admin:add_agronomist'
+[2026-04-07 15:53:01] DEBUG bot.requests 23036 OUT uid=1230394567   511.2ms
+[2026-04-07 15:57:10] DEBUG bot.requests 23036 IN  uid=8319606785   @javohir3160         text='/start'
+[2026-04-07 15:57:11] DEBUG bot.requests 23036 OUT uid=8319606785   466.2ms
+[2026-04-07 15:57:57] DEBUG bot.requests 23036 IN  uid=8319606785   @javohir3160         text='/start'
+[2026-04-07 15:57:57] DEBUG bot.requests 23036 OUT uid=8319606785   459.0ms
+[2026-04-07 15:58:02] DEBUG bot.requests 23036 IN  uid=1230394567   @FRWIEN              text='8319606785'
+[2026-04-07 15:58:03] DEBUG bot.requests 23036 OUT uid=1230394567   368.2ms
+[2026-04-07 15:58:10] DEBUG bot.requests 23036 IN  uid=1230394567   @FRWIEN              text='javoxir'
+[2026-04-07 15:58:10] DEBUG bot.requests 23036 OUT uid=1230394567   539.3ms
+[2026-04-07 15:58:19] DEBUG bot.requests 23036 IN  uid=8319606785   @javohir3160         text='/start'
+[2026-04-07 15:58:19] DEBUG bot.requests 23036 OUT uid=8319606785   352.0ms
+[2026-04-07 15:58:32] DEBUG bot.requests 23036 IN  uid=8319606785   @javohir3160         text='📋 Mening buyurtmalarim'
+[2026-04-07 15:58:32] DEBUG bot.requests 23036 OUT uid=8319606785   2.1ms
+[2026-04-07 15:58:36] DEBUG bot.requests 23036 IN  uid=1230394567   @FRWIEN              cb='users'
+[2026-04-07 15:58:36] DEBUG bot.requests 23036 OUT uid=1230394567   439.9ms
+[2026-04-07 15:58:38] DEBUG bot.requests 23036 IN  uid=1230394567   @FRWIEN              cb='admin:list_agronomists'
+[2026-04-07 15:58:39] DEBUG bot.requests 23036 OUT uid=1230394567   443.0ms
+[2026-04-07 15:58:41] DEBUG bot.requests 23036 IN  uid=1230394567   @FRWIEN              cb='admin:list_managers'
+[2026-04-07 15:58:41] DEBUG bot.requests 23036 OUT uid=1230394567   432.9ms
+[2026-04-07 15:58:50] DEBUG bot.requests 23036 IN  uid=5574861580   @Bovaqulov_Muhammadali text='/start'
+[2026-04-07 15:58:50] DEBUG bot.requests 23036 OUT uid=5574861580   352.5ms
+[2026-04-07 15:58:53] DEBUG bot.requests 23036 IN  uid=5574861580   @Bovaqulov_Muhammadali text='📝 Buyurtma yaratish'
+[2026-04-07 15:58:53] DEBUG bot.requests 23036 OUT uid=5574861580   347.6ms
+[2026-04-07 15:58:54] DEBUG bot.requests 23036 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='agro_select:3'
+[2026-04-07 15:58:54] ERROR bot.requests 23036 ERR uid=5574861580   37.0ms ValueError: Symbol ':' is defined as the separator and can't be used in parts' values
+[2026-04-07 15:59:28] DEBUG bot.requests 20732 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='agro_select:3'
+[2026-04-07 15:59:28] DEBUG bot.requests 20732 OUT uid=5574861580   0.4ms
+[2026-04-07 15:59:37] DEBUG bot.requests 20732 IN  uid=5574861580   @Bovaqulov_Muhammadali text='/start'
+[2026-04-07 15:59:37] DEBUG bot.requests 20732 OUT uid=5574861580   376.6ms
+[2026-04-07 15:59:39] DEBUG bot.requests 20732 IN  uid=5574861580   @Bovaqulov_Muhammadali text='📝 Buyurtma yaratish'
+[2026-04-07 15:59:39] DEBUG bot.requests 20732 OUT uid=5574861580   372.3ms
+[2026-04-07 15:59:40] DEBUG bot.requests 20732 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='agro_select:3'
+[2026-04-07 15:59:40] ERROR bot.requests 20732 ERR uid=5574861580   7.9ms ValueError: Symbol ':' is defined as the separator and can't be used in parts' values
+[2026-04-07 16:00:01] DEBUG bot.requests 12996 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='agro_select:3'
+[2026-04-07 16:00:01] DEBUG bot.requests 12996 OUT uid=5574861580   0.5ms
+[2026-04-07 16:00:04] DEBUG bot.requests 12996 IN  uid=5574861580   @Bovaqulov_Muhammadali text='/start'
+[2026-04-07 16:00:05] DEBUG bot.requests 12996 OUT uid=5574861580   370.0ms
+[2026-04-07 16:00:06] DEBUG bot.requests 12996 IN  uid=5574861580   @Bovaqulov_Muhammadali text='📋 Mening buyurtmalarim'
+[2026-04-07 16:00:06] DEBUG bot.requests 12996 OUT uid=5574861580   609.4ms
+[2026-04-07 16:00:09] DEBUG bot.requests 12996 IN  uid=5574861580   @Bovaqulov_Muhammadali text='📝 Buyurtma yaratish'
+[2026-04-07 16:00:10] DEBUG bot.requests 12996 OUT uid=5574861580   472.7ms
+[2026-04-07 16:01:20] DEBUG bot.requests 15984 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='agro_select:3'
+[2026-04-07 16:01:20] DEBUG bot.requests 15984 OUT uid=5574861580   0.4ms
+[2026-04-07 16:01:23] DEBUG bot.requests 15984 IN  uid=5574861580   @Bovaqulov_Muhammadali text='/start'
+[2026-04-07 16:01:24] DEBUG bot.requests 15984 OUT uid=5574861580   611.8ms
+[2026-04-07 16:01:25] DEBUG bot.requests 15984 IN  uid=5574861580   @Bovaqulov_Muhammadali text='📝 Buyurtma yaratish'
+[2026-04-07 16:01:25] DEBUG bot.requests 15984 OUT uid=5574861580   342.4ms
+[2026-04-07 16:01:26] DEBUG bot.requests 15984 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='agro_select:3'
+[2026-04-07 16:01:27] DEBUG bot.requests 15984 OUT uid=5574861580   527.6ms
+[2026-04-07 16:01:28] DEBUG bot.requests 15984 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='slot:0'
+[2026-04-07 16:01:29] DEBUG bot.requests 15984 OUT uid=5574861580   577.6ms
+[2026-04-07 16:01:35] DEBUG bot.requests 15984 IN  uid=5574861580   @Bovaqulov_Muhammadali text='bekzod'
+[2026-04-07 16:01:36] DEBUG bot.requests 15984 OUT uid=5574861580   332.9ms
+[2026-04-07 16:01:42] DEBUG bot.requests 15984 IN  uid=5574861580   @Bovaqulov_Muhammadali text='+99899665584'
+[2026-04-07 16:01:43] DEBUG bot.requests 15984 OUT uid=5574861580   348.4ms
+[2026-04-07 16:01:52] DEBUG bot.requests 15984 IN  uid=5574861580   @Bovaqulov_Muhammadali text='+998996663322'
+[2026-04-07 16:01:52] DEBUG bot.requests 15984 OUT uid=5574861580   324.5ms
+[2026-04-07 16:01:54] DEBUG bot.requests 15984 IN  uid=5574861580   @Bovaqulov_Muhammadali text='5'
+[2026-04-07 16:01:55] DEBUG bot.requests 15984 OUT uid=5574861580   318.4ms
+[2026-04-07 16:01:59] DEBUG bot.requests 15984 IN  uid=5574861580   @Bovaqulov_Muhammadali text='yuq'
+[2026-04-07 16:01:59] DEBUG bot.requests 15984 OUT uid=5574861580   389.6ms
+[2026-04-07 16:02:03] DEBUG bot.requests 15984 IN  uid=5574861580   @Bovaqulov_Muhammadali text='sakhsbdadasdad'
+[2026-04-07 16:02:03] DEBUG bot.requests 15984 OUT uid=5574861580   356.1ms
+[2026-04-07 16:02:08] DEBUG bot.requests 15984 IN  uid=5574861580   @Bovaqulov_Muhammadali text='toshknet'
+[2026-04-07 16:02:09] DEBUG bot.requests 15984 OUT uid=5574861580   329.5ms
+[2026-04-07 16:02:11] DEBUG bot.requests 15984 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='order_confirm:yes'
+[2026-04-07 16:02:12] DEBUG bot.requests 15984 OUT uid=5574861580   869.5ms
+[2026-04-07 16:02:20] DEBUG bot.requests 15984 IN  uid=1230394567   @FRWIEN              cb='adm_approve:1'
+[2026-04-07 16:02:21] DEBUG bot.requests 15984 OUT uid=1230394567   880.2ms
+[2026-04-07 16:33:35] DEBUG bot.requests 15984 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-07 16:33:36] DEBUG bot.requests 15984 OUT uid=1230394567   495.6ms
+[2026-04-07 16:40:28] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-07 16:40:28] DEBUG bot.requests 16024 OUT uid=1230394567   457.4ms
+[2026-04-07 16:40:37] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-07 16:40:37] DEBUG bot.requests 16024 OUT uid=1230394567   331.9ms
+[2026-04-07 16:40:45] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              cb='orders'
+[2026-04-07 16:40:45] DEBUG bot.requests 16024 OUT uid=1230394567   452.9ms
+[2026-04-07 16:40:47] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              cb='admin:orders_pending'
+[2026-04-07 16:40:47] DEBUG bot.requests 16024 OUT uid=1230394567   454.5ms
+[2026-04-07 16:40:48] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              cb='admin:orders_approved'
+[2026-04-07 16:40:49] DEBUG bot.requests 16024 OUT uid=1230394567   571.2ms
+[2026-04-07 16:40:51] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              cb='admin:orders_inprogress'
+[2026-04-07 16:40:51] DEBUG bot.requests 16024 OUT uid=1230394567   452.0ms
+[2026-04-07 16:40:53] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              cb='admin:orders_completed'
+[2026-04-07 16:40:53] DEBUG bot.requests 16024 OUT uid=1230394567   456.8ms
+[2026-04-07 16:40:54] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              cb='admin:orders_cancelled'
+[2026-04-07 16:40:55] DEBUG bot.requests 16024 OUT uid=1230394567   428.5ms
+[2026-04-07 16:40:56] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              cb='admin:orders_retreatment'
+[2026-04-07 16:40:57] DEBUG bot.requests 16024 OUT uid=1230394567   1450.6ms
+[2026-04-07 16:41:18] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-07 16:41:18] DEBUG bot.requests 16024 OUT uid=1230394567   745.2ms
+[2026-04-07 16:41:25] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              cb='notification'
+[2026-04-07 16:41:26] DEBUG bot.requests 16024 OUT uid=1230394567   575.4ms
+[2026-04-07 16:41:29] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              cb='admin:msg_user'
+[2026-04-07 16:41:30] DEBUG bot.requests 16024 OUT uid=1230394567   454.6ms
+[2026-04-07 16:41:53] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              text='5574861580'
+[2026-04-07 16:41:54] DEBUG bot.requests 16024 OUT uid=1230394567   391.9ms
+[2026-04-07 16:41:57] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              text='SAlom'
+[2026-04-07 16:41:58] DEBUG bot.requests 16024 OUT uid=1230394567   567.4ms
+[2026-04-07 16:42:02] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              cb='stats'
+[2026-04-07 16:42:02] DEBUG bot.requests 16024 OUT uid=1230394567   496.2ms
+[2026-04-07 16:42:12] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              cb='orders'
+[2026-04-07 16:42:13] DEBUG bot.requests 16024 OUT uid=1230394567   464.6ms
+[2026-04-07 16:42:14] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              cb='users'
+[2026-04-07 16:42:15] DEBUG bot.requests 16024 OUT uid=1230394567   434.5ms
+[2026-04-07 16:42:18] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              cb='admin:list_managers'
+[2026-04-07 16:42:18] DEBUG bot.requests 16024 OUT uid=1230394567   431.8ms
+[2026-04-07 16:42:20] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              cb='adm_remove:2'
+[2026-04-07 16:42:21] DEBUG bot.requests 16024 OUT uid=1230394567   1299.0ms
+[2026-04-07 16:42:26] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              cb='admin:add_manager'
+[2026-04-07 16:42:26] DEBUG bot.requests 16024 OUT uid=1230394567   430.2ms
+[2026-04-07 16:42:34] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              cb='admin:list_managers'
+[2026-04-07 16:42:34] DEBUG bot.requests 16024 OUT uid=1230394567   797.2ms
+[2026-04-07 16:42:36] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              cb='admin:list_agronomists'
+[2026-04-07 16:42:36] DEBUG bot.requests 16024 OUT uid=1230394567   446.4ms
+[2026-04-07 16:42:45] DEBUG bot.requests 16024 IN  uid=5574861580   @Bovaqulov_Muhammadali text='📝 Buyurtma yaratish'
+[2026-04-07 16:42:45] DEBUG bot.requests 16024 OUT uid=5574861580   2.5ms
+[2026-04-07 16:42:51] DEBUG bot.requests 16024 IN  uid=5574861580   @Bovaqulov_Muhammadali text='/start'
+[2026-04-07 16:42:51] DEBUG bot.requests 16024 OUT uid=5574861580   406.2ms
+[2026-04-07 16:42:55] DEBUG bot.requests 16024 IN  uid=5574861580   @Bovaqulov_Muhammadali text='📝 Buyurtma yaratish'
+[2026-04-07 16:42:55] DEBUG bot.requests 16024 OUT uid=5574861580   2.5ms
+[2026-04-07 16:42:57] DEBUG bot.requests 16024 IN  uid=5574861580   @Bovaqulov_Muhammadali text='📝 Buyurtma yaratish'
+[2026-04-07 16:42:57] DEBUG bot.requests 16024 OUT uid=5574861580   2.6ms
+[2026-04-07 16:42:58] DEBUG bot.requests 16024 IN  uid=5574861580   @Bovaqulov_Muhammadali text='📝 Buyurtma yaratish'
+[2026-04-07 16:42:58] DEBUG bot.requests 16024 OUT uid=5574861580   3.9ms
+[2026-04-07 16:42:58] DEBUG bot.requests 16024 IN  uid=5574861580   @Bovaqulov_Muhammadali text='📝 Buyurtma yaratish'
+[2026-04-07 16:42:58] DEBUG bot.requests 16024 OUT uid=5574861580   3.7ms
+[2026-04-07 16:42:58] DEBUG bot.requests 16024 IN  uid=5574861580   @Bovaqulov_Muhammadali text='📝 Buyurtma yaratish'
+[2026-04-07 16:42:58] DEBUG bot.requests 16024 OUT uid=5574861580   1.8ms
+[2026-04-07 16:42:58] DEBUG bot.requests 16024 IN  uid=5574861580   @Bovaqulov_Muhammadali text='📝 Buyurtma yaratish'
+[2026-04-07 16:42:58] DEBUG bot.requests 16024 OUT uid=5574861580   2.1ms
+[2026-04-07 16:43:01] DEBUG bot.requests 16024 IN  uid=5574861580   @Bovaqulov_Muhammadali text='📝 Buyurtma yaratish'
+[2026-04-07 16:43:01] DEBUG bot.requests 16024 OUT uid=5574861580   2.0ms
+[2026-04-07 16:49:23] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-07 16:49:23] DEBUG bot.requests 16024 OUT uid=1230394567   473.3ms
+[2026-04-07 16:49:52] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              cb='users'
+[2026-04-07 16:49:52] DEBUG bot.requests 16024 OUT uid=1230394567   428.3ms
+[2026-04-07 16:49:54] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              cb='admin:add_manager'
+[2026-04-07 16:49:54] DEBUG bot.requests 16024 OUT uid=1230394567   457.7ms
+[2026-04-07 16:49:57] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              text='⬅️ Orqaga'
+[2026-04-07 16:49:57] DEBUG bot.requests 16024 OUT uid=1230394567   339.5ms
+[2026-04-07 16:49:59] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              cb='users'
+[2026-04-07 16:49:59] DEBUG bot.requests 16024 OUT uid=1230394567   441.6ms
+[2026-04-07 16:50:42] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              cb='admin:add_manager'
+[2026-04-07 16:50:42] ERROR bot.requests 16024 ERR uid=1230394567   491.8ms ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: query is too old and response timeout expired or query ID is invalid
+[2026-04-07 16:50:43] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              cb='admin:add_manager'
+[2026-04-07 16:50:43] DEBUG bot.requests 16024 OUT uid=1230394567   660.8ms
+[2026-04-07 16:50:43] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              cb='admin:list_managers'
+[2026-04-07 16:50:44] DEBUG bot.requests 16024 OUT uid=1230394567   438.7ms
+[2026-04-07 16:50:44] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              cb='admin:list_agronomists'
+[2026-04-07 16:50:44] DEBUG bot.requests 16024 OUT uid=1230394567   423.3ms
+[2026-04-07 16:50:46] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              cb='admin:add_manager'
+[2026-04-07 16:50:47] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              text='⬅️ Orqaga'
+[2026-04-07 16:50:47] ERROR bot.requests 16024 ERR uid=1230394567   15.1ms RequestTimeout: Request timeout. Request: method=post url=sendMessage params=<aiohttp.formdata.FormData object at 0x00000220D353B7E0> files=None request_timeout=300
+[2026-04-07 16:50:47] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-07 16:50:47] ERROR bot.requests 16024 ERR uid=1230394567   10.8ms RequestTimeout: Request timeout. Request: method=post url=sendMessage params=<aiohttp.formdata.FormData object at 0x00000220D353BCB0> files=None request_timeout=300
+[2026-04-07 16:50:47] DEBUG bot.requests 16024 OUT uid=1230394567   503.1ms
+[2026-04-07 16:50:47] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-07 16:50:47] DEBUG bot.requests 16024 OUT uid=1230394567   337.5ms
+[2026-04-07 16:50:47] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-07 16:50:48] DEBUG bot.requests 16024 OUT uid=1230394567   349.3ms
+[2026-04-07 16:50:48] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              text='⬅️ Orqaga'
+[2026-04-07 16:50:48] WARNING bot.middleware.rate_limiter 16024 Rate limit hit for user_id=1230394567 (5 req/3.0s)
+[2026-04-07 16:50:51] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-07 16:50:51] DEBUG bot.requests 16024 OUT uid=1230394567   332.8ms
+[2026-04-07 16:50:52] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              cb='users'
+[2026-04-07 16:50:53] DEBUG bot.requests 16024 OUT uid=1230394567   452.3ms
+[2026-04-07 16:50:54] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              cb='admin:add_manager'
+[2026-04-07 16:50:55] DEBUG bot.requests 16024 OUT uid=1230394567   902.9ms
+[2026-04-07 16:50:57] DEBUG bot.requests 16024 IN  uid=1230394567   @FRWIEN              text='5574861580'
+[2026-04-07 16:50:58] DEBUG bot.requests 16024 OUT uid=1230394567   459.6ms
+[2026-04-07 16:51:16] DEBUG bot.requests 16024 IN  uid=5574861580   @Bovaqulov_Muhammadali text='📝 Buyurtma yaratish'
+[2026-04-07 16:51:16] DEBUG bot.requests 16024 OUT uid=5574861580   345.4ms
+[2026-04-07 16:51:18] DEBUG bot.requests 16024 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='agro_select:3'
+[2026-04-07 16:51:18] DEBUG bot.requests 16024 OUT uid=5574861580   543.0ms
+[2026-04-07 16:51:20] DEBUG bot.requests 16024 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='slot:0'
+[2026-04-07 16:51:21] DEBUG bot.requests 16024 OUT uid=5574861580   886.6ms
+[2026-04-07 16:51:23] DEBUG bot.requests 16024 IN  uid=5574861580   @Bovaqulov_Muhammadali text='❌ Bekor qilish'
+[2026-04-07 16:51:23] DEBUG bot.requests 16024 OUT uid=5574861580   345.6ms
+[2026-04-07 16:51:25] DEBUG bot.requests 16024 IN  uid=5574861580   @Bovaqulov_Muhammadali text='📝 Buyurtma yaratish'
+[2026-04-07 16:51:25] DEBUG bot.requests 16024 OUT uid=5574861580   466.0ms
+[2026-04-07 16:51:27] DEBUG bot.requests 16024 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='agro_select:3'
+[2026-04-07 16:51:27] DEBUG bot.requests 16024 OUT uid=5574861580   567.9ms
+[2026-04-07 16:52:35] DEBUG bot.requests 16024 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='slot:0'
+[2026-04-07 16:52:36] DEBUG bot.requests 16024 OUT uid=5574861580   571.3ms
+[2026-04-07 16:52:47] DEBUG bot.requests 16024 IN  uid=5574861580   @Bovaqulov_Muhammadali text='❌ Bekor qilish'
+[2026-04-07 16:52:48] DEBUG bot.requests 16024 OUT uid=5574861580   485.2ms
+[2026-04-07 16:52:50] DEBUG bot.requests 16024 IN  uid=5574861580   @Bovaqulov_Muhammadali text='📋 Mening buyurtmalarim'
+[2026-04-07 16:52:50] DEBUG bot.requests 16024 OUT uid=5574861580   329.8ms
+[2026-04-07 16:52:56] DEBUG bot.requests 16024 IN  uid=5574861580   @Bovaqulov_Muhammadali text='📋 Mening buyurtmalarim'
+[2026-04-07 16:52:56] DEBUG bot.requests 16024 OUT uid=5574861580   343.8ms
+[2026-04-07 16:52:57] DEBUG bot.requests 16024 IN  uid=5574861580   @Bovaqulov_Muhammadali text='📝 Buyurtma yaratish'
+[2026-04-07 16:52:58] DEBUG bot.requests 16024 OUT uid=5574861580   349.1ms
+[2026-04-07 17:02:14] DEBUG bot.requests 29620 IN  uid=5574861580   @Bovaqulov_Muhammadali text='/start'
+[2026-04-07 17:02:14] DEBUG bot.requests 29620 OUT uid=5574861580   431.9ms
+[2026-04-07 17:02:22] DEBUG bot.requests 29620 IN  uid=5574861580   @Bovaqulov_Muhammadali text='📝 Buyurtma yaratish'
+[2026-04-07 17:02:22] DEBUG bot.requests 29620 OUT uid=5574861580   329.6ms
+[2026-04-07 17:02:23] DEBUG bot.requests 29620 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='agro_select:3'
+[2026-04-07 17:02:24] DEBUG bot.requests 29620 OUT uid=5574861580   484.4ms
+[2026-04-07 17:08:36] DEBUG bot.requests 5104 IN  uid=5574861580   @Bovaqulov_Muhammadali text='/start'
+[2026-04-07 17:08:36] DEBUG bot.requests 5104 OUT uid=5574861580   440.2ms
+[2026-04-07 17:08:38] DEBUG bot.requests 5104 IN  uid=5574861580   @Bovaqulov_Muhammadali text='📝 Buyurtma yaratish'
+[2026-04-07 17:08:38] DEBUG bot.requests 5104 OUT uid=5574861580   338.1ms
+[2026-04-07 17:08:39] DEBUG bot.requests 5104 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='agro_select:3'
+[2026-04-07 17:08:39] ERROR bot.requests 5104 ERR uid=5574861580   45.1ms SynchronousOnlyOperation: You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-07 17:09:00] DEBUG bot.requests 23248 IN  uid=5574861580   @Bovaqulov_Muhammadali text='/start'
+[2026-04-07 17:09:00] DEBUG bot.requests 23248 OUT uid=5574861580   423.9ms
+[2026-04-07 17:09:01] DEBUG bot.requests 23248 IN  uid=5574861580   @Bovaqulov_Muhammadali text='📝 Buyurtma yaratish'
+[2026-04-07 17:09:02] DEBUG bot.requests 23248 OUT uid=5574861580   354.9ms
+[2026-04-07 17:09:03] DEBUG bot.requests 23248 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='agro_select:3'
+[2026-04-07 17:09:03] ERROR bot.requests 23248 ERR uid=5574861580   7.4ms SynchronousOnlyOperation: You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-07 17:10:16] DEBUG bot.requests 8232 IN  uid=5574861580   @Bovaqulov_Muhammadali text='/start'
+[2026-04-07 17:10:16] DEBUG bot.requests 8232 OUT uid=5574861580   439.8ms
+[2026-04-07 17:10:17] DEBUG bot.requests 8232 IN  uid=5574861580   @Bovaqulov_Muhammadali text='📝 Buyurtma yaratish'
+[2026-04-07 17:10:17] DEBUG bot.requests 8232 OUT uid=5574861580   393.4ms
+[2026-04-07 17:10:20] DEBUG bot.requests 8232 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='agro_select:3'
+[2026-04-07 17:10:20] ERROR bot.requests 8232 ERR uid=5574861580   7.6ms SynchronousOnlyOperation: You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-07 17:11:09] DEBUG bot.requests 23756 IN  uid=5574861580   @Bovaqulov_Muhammadali text='/start'
+[2026-04-07 17:11:09] DEBUG bot.requests 23756 OUT uid=5574861580   439.4ms
+[2026-04-07 17:11:10] DEBUG bot.requests 23756 IN  uid=5574861580   @Bovaqulov_Muhammadali text='📝 Buyurtma yaratish'
+[2026-04-07 17:11:10] DEBUG bot.requests 23756 OUT uid=5574861580   348.5ms
+[2026-04-07 17:11:11] DEBUG bot.requests 23756 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='agro_select:3'
+[2026-04-07 17:11:11] ERROR bot.requests 23756 ERR uid=5574861580   9.0ms SynchronousOnlyOperation: You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-07 17:11:50] DEBUG bot.requests 21452 IN  uid=5574861580   @Bovaqulov_Muhammadali text='/start'
+[2026-04-07 17:11:50] DEBUG bot.requests 21452 OUT uid=5574861580   515.1ms
+[2026-04-07 17:11:51] DEBUG bot.requests 21452 IN  uid=5574861580   @Bovaqulov_Muhammadali text='📝 Buyurtma yaratish'
+[2026-04-07 17:11:51] DEBUG bot.requests 21452 OUT uid=5574861580   326.4ms
+[2026-04-07 17:11:52] DEBUG bot.requests 21452 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='agro_select:3'
+[2026-04-07 17:11:52] ERROR bot.requests 21452 ERR uid=5574861580   9.5ms SynchronousOnlyOperation: You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-07 17:12:17] DEBUG bot.requests 15556 IN  uid=5574861580   @Bovaqulov_Muhammadali text='/start'
+[2026-04-07 17:12:19] DEBUG bot.requests 15556 OUT uid=5574861580   1456.3ms
+[2026-04-07 17:12:19] DEBUG bot.requests 15556 IN  uid=5574861580   @Bovaqulov_Muhammadali text='📝 Buyurtma yaratish'
+[2026-04-07 17:12:19] DEBUG bot.requests 15556 OUT uid=5574861580   348.4ms
+[2026-04-07 17:12:20] DEBUG bot.requests 15556 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='agro_select:3'
+[2026-04-07 17:12:20] ERROR bot.requests 15556 ERR uid=5574861580   8.2ms SynchronousOnlyOperation: You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-07 17:12:40] DEBUG bot.requests 28252 IN  uid=5574861580   @Bovaqulov_Muhammadali text='📝 Buyurtma yaratish'
+[2026-04-07 17:12:41] DEBUG bot.requests 28252 OUT uid=5574861580   416.5ms
+[2026-04-07 17:12:50] DEBUG bot.requests 28252 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='agro_select:3'
+[2026-04-07 17:12:50] ERROR bot.requests 28252 ERR uid=5574861580   8.7ms SynchronousOnlyOperation: You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-07 17:14:16] DEBUG bot.requests 32088 IN  uid=5574861580   @Bovaqulov_Muhammadali text='📝 Buyurtma yaratish'
+[2026-04-07 17:14:16] DEBUG bot.requests 32088 OUT uid=5574861580   315.9ms
+[2026-04-07 17:14:17] DEBUG bot.requests 32088 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='agro_select:3'
+[2026-04-07 17:14:17] ERROR bot.requests 32088 ERR uid=5574861580   10.9ms SynchronousOnlyOperation: You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-07 17:16:02] DEBUG bot.requests 16608 IN  uid=5574861580   @Bovaqulov_Muhammadali text='📝 Buyurtma yaratish'
+[2026-04-07 17:16:03] DEBUG bot.requests 16608 OUT uid=5574861580   358.5ms
+[2026-04-07 17:16:03] DEBUG bot.requests 16608 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='agro_select:3'
+[2026-04-07 17:16:04] DEBUG bot.requests 16608 OUT uid=5574861580   589.3ms
+[2026-04-07 17:17:50] DEBUG bot.requests 17292 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='ignore'
+[2026-04-07 17:17:50] DEBUG bot.requests 17292 OUT uid=5574861580   0.5ms
+[2026-04-07 17:17:55] DEBUG bot.requests 17292 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='slot:1'
+[2026-04-07 17:17:55] DEBUG bot.requests 17292 OUT uid=5574861580   0.3ms
+[2026-04-07 17:17:57] DEBUG bot.requests 17292 IN  uid=5574861580   @Bovaqulov_Muhammadali text='📝 Buyurtma yaratish'
+[2026-04-07 17:17:57] DEBUG bot.requests 17292 OUT uid=5574861580   455.7ms
+[2026-04-07 17:17:58] DEBUG bot.requests 17292 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='agro_select:3'
+[2026-04-07 17:17:59] DEBUG bot.requests 17292 OUT uid=5574861580   558.2ms
+[2026-04-07 17:17:59] DEBUG bot.requests 17292 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='ignore'
+[2026-04-07 17:17:59] DEBUG bot.requests 17292 OUT uid=5574861580   0.2ms
+[2026-04-07 17:18:03] DEBUG bot.requests 17292 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='slot:1'
+[2026-04-07 17:18:04] DEBUG bot.requests 17292 OUT uid=5574861580   613.5ms
+[2026-04-07 17:18:08] DEBUG bot.requests 17292 IN  uid=5574861580   @Bovaqulov_Muhammadali text='mijoz'
+[2026-04-07 17:18:08] DEBUG bot.requests 17292 OUT uid=5574861580   430.9ms
+[2026-04-07 17:18:15] DEBUG bot.requests 17292 IN  uid=5574861580   @Bovaqulov_Muhammadali text='+998990330667378'
+[2026-04-07 17:18:16] DEBUG bot.requests 17292 OUT uid=5574861580   361.4ms
+[2026-04-07 17:18:21] DEBUG bot.requests 17292 IN  uid=5574861580   @Bovaqulov_Muhammadali text='+998993692514'
+[2026-04-07 17:18:21] DEBUG bot.requests 17292 OUT uid=5574861580   326.6ms
+[2026-04-07 17:18:23] DEBUG bot.requests 17292 IN  uid=5574861580   @Bovaqulov_Muhammadali text='5'
+[2026-04-07 17:18:24] DEBUG bot.requests 17292 OUT uid=5574861580   316.1ms
+[2026-04-07 17:18:32] DEBUG bot.requests 17292 IN  uid=5574861580   @Bovaqulov_Muhammadali text='dardam dardda aka'
+[2026-04-07 17:18:32] DEBUG bot.requests 17292 OUT uid=5574861580   417.0ms
+[2026-04-07 17:18:40] DEBUG bot.requests 17292 IN  uid=5574861580   @Bovaqulov_Muhammadali text='mirobod'
+[2026-04-07 17:18:41] DEBUG bot.requests 17292 OUT uid=5574861580   358.6ms
+[2026-04-07 17:18:42] DEBUG bot.requests 17292 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='order_confirm:yes'
+[2026-04-07 17:18:43] DEBUG bot.requests 17292 OUT uid=5574861580   907.8ms
+[2026-04-07 17:18:53] DEBUG bot.requests 17292 IN  uid=1230394567   @FRWIEN              cb='adm_approve:2'
+[2026-04-07 17:18:54] DEBUG bot.requests 17292 OUT uid=1230394567   977.0ms
+[2026-04-07 17:23:15] DEBUG bot.requests 17292 IN  uid=5574861580   @Bovaqulov_Muhammadali text='+998504047378'
+[2026-04-07 17:23:15] DEBUG bot.requests 17292 OUT uid=5574861580   9.2ms
+[2026-04-08 10:57:58] DEBUG bot.requests 32216 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-08 10:57:59] DEBUG bot.requests 32216 OUT uid=1230394567   453.6ms
+[2026-04-08 10:57:59] DEBUG bot.requests 32216 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-08 10:57:59] DEBUG bot.requests 32216 OUT uid=1230394567   330.7ms
+[2026-04-08 10:58:09] DEBUG bot.requests 32216 IN  uid=1230394567   @FRWIEN              cb='users'
+[2026-04-08 10:58:10] DEBUG bot.requests 32216 OUT uid=1230394567   452.0ms
+[2026-04-08 10:58:12] DEBUG bot.requests 32216 IN  uid=1230394567   @FRWIEN              cb='stats'
+[2026-04-08 10:58:12] DEBUG bot.requests 32216 OUT uid=1230394567   440.4ms
+[2026-04-08 11:37:21] DEBUG bot.requests 4900 IN  uid=1230394567   @FRWIEN              text='⬅️ Orqaga'
+[2026-04-08 11:37:21] DEBUG bot.requests 4900 OUT uid=1230394567   334.0ms
+[2026-04-08 11:37:24] DEBUG bot.requests 4900 IN  uid=1230394567   @FRWIEN              text='⬅️ Orqaga'
+[2026-04-08 11:37:24] DEBUG bot.requests 4900 OUT uid=1230394567   326.6ms
+[2026-04-08 11:37:28] DEBUG bot.requests 4900 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-08 11:37:28] DEBUG bot.requests 4900 OUT uid=1230394567   345.1ms
+[2026-04-08 11:37:34] DEBUG bot.requests 4900 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-08 11:37:34] DEBUG bot.requests 4900 OUT uid=1230394567   356.7ms
+[2026-04-08 11:40:43] DEBUG bot.requests 4900 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-08 11:40:44] DEBUG bot.requests 4900 OUT uid=1230394567   458.7ms
+[2026-04-08 11:40:45] DEBUG bot.requests 4900 IN  uid=1230394567   @FRWIEN              cb='orders'
+[2026-04-08 11:40:45] DEBUG bot.requests 4900 OUT uid=1230394567   542.8ms
+[2026-04-08 11:40:47] DEBUG bot.requests 4900 IN  uid=1230394567   @FRWIEN              cb='admin:orders_pending'
+[2026-04-08 11:40:48] DEBUG bot.requests 4900 OUT uid=1230394567   435.7ms
+[2026-04-08 11:40:50] DEBUG bot.requests 4900 IN  uid=1230394567   @FRWIEN              cb='admin:orders_approved'
+[2026-04-08 11:40:51] DEBUG bot.requests 4900 OUT uid=1230394567   842.3ms
+[2026-04-08 11:41:46] DEBUG bot.requests 4900 IN  uid=1230394567   @FRWIEN              text='⬅️ Orqaga'
+[2026-04-08 11:41:46] DEBUG bot.requests 4900 OUT uid=1230394567   326.0ms
+[2026-04-08 11:41:47] DEBUG bot.requests 4900 IN  uid=1230394567   @FRWIEN              cb='users'
+[2026-04-08 11:41:48] DEBUG bot.requests 4900 OUT uid=1230394567   451.9ms
+[2026-04-08 11:41:49] DEBUG bot.requests 4900 IN  uid=1230394567   @FRWIEN              cb='admin:add_manager'
+[2026-04-08 11:41:50] DEBUG bot.requests 4900 OUT uid=1230394567   580.8ms
+[2026-04-08 11:48:56] DEBUG bot.requests 13956 IN  uid=8613752086   8613752086           text='/start'
+[2026-04-08 11:48:57] DEBUG bot.requests 13956 OUT uid=8613752086   447.7ms
+[2026-04-08 11:48:57] DEBUG bot.requests 13956 IN  uid=8613752086   8613752086           text='/start'
+[2026-04-08 11:48:57] DEBUG bot.requests 13956 OUT uid=8613752086   467.4ms
+[2026-04-08 11:48:57] DEBUG bot.requests 13956 IN  uid=8613752086   8613752086           text='/start'
+[2026-04-08 11:48:58] DEBUG bot.requests 13956 OUT uid=8613752086   337.7ms
+[2026-04-08 11:49:06] DEBUG bot.requests 13956 IN  uid=8613752086   8613752086           text='/order'
+[2026-04-08 11:49:06] DEBUG bot.requests 13956 OUT uid=8613752086   335.6ms
+[2026-04-08 11:49:13] DEBUG bot.requests 13956 IN  uid=8613752086   8613752086           text='/order 1'
+[2026-04-08 11:49:13] DEBUG bot.requests 13956 OUT uid=8613752086   336.2ms
+[2026-04-08 11:49:31] DEBUG bot.requests 13956 IN  uid=8613752086   8613752086           text='/start'
+[2026-04-08 11:49:31] DEBUG bot.requests 13956 OUT uid=8613752086   351.3ms
+[2026-04-08 12:10:10] DEBUG bot.requests 14868 IN  uid=8613752086   8613752086           text='/start'
+[2026-04-08 12:10:11] DEBUG bot.requests 14868 OUT uid=8613752086   415.0ms
+[2026-04-08 12:10:41] DEBUG bot.requests 14868 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-08 12:10:41] DEBUG bot.requests 14868 OUT uid=1230394567   373.5ms
+[2026-04-08 12:10:43] DEBUG bot.requests 14868 IN  uid=1230394567   @FRWIEN              cb='users'
+[2026-04-08 12:10:43] ERROR bot.requests 14868 ERR uid=1230394567   17.5ms SynchronousOnlyOperation: You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-08 12:10:46] DEBUG bot.requests 14868 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-08 12:10:47] DEBUG bot.requests 14868 OUT uid=1230394567   369.1ms
+[2026-04-08 12:20:04] DEBUG bot.requests 11216 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-08 12:20:05] DEBUG bot.requests 11216 OUT uid=1230394567   466.3ms
+[2026-04-08 12:20:05] DEBUG bot.requests 11216 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-08 12:20:06] DEBUG bot.requests 11216 OUT uid=1230394567   459.7ms
+[2026-04-08 12:20:06] DEBUG bot.requests 11216 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-08 12:20:06] DEBUG bot.requests 11216 OUT uid=1230394567   357.7ms
+[2026-04-08 12:20:06] DEBUG bot.requests 11216 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-08 12:20:07] DEBUG bot.requests 11216 OUT uid=1230394567   341.5ms
+[2026-04-08 12:20:07] DEBUG bot.requests 11216 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-08 12:20:07] DEBUG bot.requests 11216 OUT uid=1230394567   325.0ms
+[2026-04-08 12:20:15] DEBUG bot.requests 11216 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-08 12:20:16] DEBUG bot.requests 11216 OUT uid=1230394567   318.5ms
+[2026-04-08 12:20:33] DEBUG bot.requests 11216 IN  uid=5574861580   @Bovaqulov_Muhammadali text='/start'
+[2026-04-08 12:20:33] DEBUG bot.requests 11216 OUT uid=5574861580   395.2ms
+[2026-04-08 12:20:39] DEBUG bot.requests 11216 IN  uid=8613752086   8613752086           text='/start'
+[2026-04-08 12:20:40] DEBUG bot.requests 11216 OUT uid=8613752086   946.2ms
+[2026-04-08 12:27:50] DEBUG bot.requests 20776 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-08 12:27:50] DEBUG bot.requests 20776 OUT uid=1230394567   415.3ms
+[2026-04-08 12:27:51] DEBUG bot.requests 20776 IN  uid=1230394567   @FRWIEN              cb='users'
+[2026-04-08 12:27:51] ERROR bot.requests 20776 ERR uid=1230394567   4.7ms TypeError: IsAdminFilter.check() takes 2 positional arguments but 3 were given
+[2026-04-08 12:30:56] DEBUG bot.requests 14592 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-08 12:30:56] DEBUG bot.requests 14592 OUT uid=1230394567   399.5ms
+[2026-04-08 12:30:58] DEBUG bot.requests 14592 IN  uid=1230394567   @FRWIEN              cb='users'
+[2026-04-08 12:30:58] ERROR bot.requests 14592 ERR uid=1230394567   9.2ms SynchronousOnlyOperation: You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-08 12:31:40] DEBUG bot.requests 14592 IN  uid=1230394567   @FRWIEN              cb='users'
+[2026-04-08 12:31:40] ERROR bot.requests 14592 ERR uid=1230394567   2.5ms SynchronousOnlyOperation: You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-08 12:31:48] DEBUG bot.requests 11356 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-08 12:31:48] DEBUG bot.requests 11356 OUT uid=1230394567   350.5ms
+[2026-04-08 12:33:12] DEBUG bot.requests 11356 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-08 12:33:12] DEBUG bot.requests 11356 OUT uid=1230394567   424.0ms
+[2026-04-08 12:33:16] DEBUG bot.requests 1836 IN  uid=1230394567   @FRWIEN              cb='users'
+[2026-04-08 12:33:16] ERROR bot.requests 1836 ERR uid=1230394567   6.9ms SynchronousOnlyOperation: You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-08 12:33:46] DEBUG bot.requests 16968 IN  uid=1230394567   @FRWIEN              cb='users'
+[2026-04-08 12:33:46] ERROR bot.requests 16968 ERR uid=1230394567   8.9ms SynchronousOnlyOperation: You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-08 12:33:49] DEBUG bot.requests 16968 IN  uid=1230394567   @FRWIEN              cb='orders'
+[2026-04-08 12:33:50] DEBUG bot.requests 16968 OUT uid=1230394567   477.4ms
+[2026-04-08 12:33:52] DEBUG bot.requests 16968 IN  uid=1230394567   @FRWIEN              cb='stats'
+[2026-04-08 12:33:53] DEBUG bot.requests 16968 OUT uid=1230394567   482.1ms
+[2026-04-08 12:33:55] DEBUG bot.requests 16968 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-08 12:33:55] DEBUG bot.requests 16968 OUT uid=1230394567   351.1ms
+[2026-04-08 12:33:56] DEBUG bot.requests 16968 IN  uid=1230394567   @FRWIEN              cb='users'
+[2026-04-08 12:33:56] ERROR bot.requests 16968 ERR uid=1230394567   2.4ms SynchronousOnlyOperation: You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-08 12:34:48] DEBUG bot.requests 16968 IN  uid=1230394567   @FRWIEN              cb='users'
+[2026-04-08 12:34:48] ERROR bot.requests 16968 ERR uid=1230394567   2.4ms SynchronousOnlyOperation: You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-08 12:34:50] DEBUG bot.requests 21980 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-08 12:34:50] DEBUG bot.requests 21980 OUT uid=1230394567   340.0ms
+[2026-04-08 12:34:51] DEBUG bot.requests 21980 IN  uid=1230394567   @FRWIEN              cb='users'
+[2026-04-08 12:34:51] ERROR bot.requests 21980 ERR uid=1230394567   5.5ms SynchronousOnlyOperation: You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-08 12:36:06] DEBUG bot.requests 20384 IN  uid=1230394567   @FRWIEN              cb='users'
+[2026-04-08 12:36:06] ERROR bot.requests 20384 ERR uid=1230394567   6.2ms SynchronousOnlyOperation: You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-08 12:37:44] DEBUG bot.requests 20384 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-08 12:37:45] DEBUG bot.requests 20384 OUT uid=1230394567   437.6ms
+[2026-04-08 12:37:46] DEBUG bot.requests 20384 IN  uid=1230394567   @FRWIEN              cb='users'
+[2026-04-08 12:37:46] ERROR bot.requests 20384 ERR uid=1230394567   2.2ms SynchronousOnlyOperation: You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-08 13:25:28] DEBUG bot.requests 22796 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-08 13:25:29] DEBUG bot.requests 22796 OUT uid=1230394567   1015.4ms
+[2026-04-08 13:25:30] DEBUG bot.requests 22796 IN  uid=1230394567   @FRWIEN              cb='users'
+[2026-04-08 13:25:30] DEBUG bot.requests 22796 OUT uid=1230394567   0.6ms
+[2026-04-08 13:25:39] DEBUG bot.requests 22796 IN  uid=1230394567   @FRWIEN              cb='orders'
+[2026-04-08 13:25:39] DEBUG bot.requests 22796 OUT uid=1230394567   456.1ms
+[2026-04-08 13:25:43] DEBUG bot.requests 22796 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-08 13:25:43] DEBUG bot.requests 22796 OUT uid=1230394567   341.5ms
+[2026-04-08 13:25:44] DEBUG bot.requests 22796 IN  uid=1230394567   @FRWIEN              cb='users'
+[2026-04-08 13:25:44] DEBUG bot.requests 22796 OUT uid=1230394567   0.2ms
+[2026-04-08 13:27:18] DEBUG bot.requests 21696 IN  uid=1230394567   @FRWIEN              cb='users'
+[2026-04-08 13:27:18] ERROR bot.requests 21696 ERR uid=1230394567   9.3ms SynchronousOnlyOperation: You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-08 13:28:02] DEBUG bot.requests 22288 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-08 13:28:04] DEBUG bot.requests 22288 OUT uid=1230394567   2116.9ms
+[2026-04-08 13:28:04] DEBUG bot.requests 22288 IN  uid=1230394567   @FRWIEN              cb='users'
+[2026-04-08 13:28:05] DEBUG bot.requests 22288 OUT uid=1230394567   343.5ms
+[2026-04-08 13:42:22] DEBUG bot.requests 25232 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-08 13:42:23] DEBUG bot.requests 25232 OUT uid=1230394567   429.2ms
+[2026-04-08 13:42:23] DEBUG bot.requests 25232 IN  uid=1230394567   @FRWIEN              cb='users'
+[2026-04-08 13:42:24] DEBUG bot.requests 25232 OUT uid=1230394567   322.1ms
+[2026-04-08 13:47:31] DEBUG bot.requests 28104 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-08 13:47:32] DEBUG bot.requests 28104 OUT uid=1230394567   405.1ms
+[2026-04-08 13:47:33] DEBUG bot.requests 28104 IN  uid=1230394567   @FRWIEN              cb='users'
+[2026-04-08 13:47:34] DEBUG bot.requests 28104 OUT uid=1230394567   342.4ms
+[2026-04-08 13:47:35] DEBUG bot.requests 28104 IN  uid=1230394567   @FRWIEN              cb='back:main_menu'
+[2026-04-08 13:47:35] ERROR bot.requests 28104 ERR uid=1230394567   4.5ms TypeError: 'in <string>' requires string as left operand, not list
+[2026-04-08 13:48:30] DEBUG bot.requests 28484 IN  uid=1230394567   @FRWIEN              cb='back:main_menu'
+[2026-04-08 13:48:30] DEBUG bot.requests 28484 OUT uid=1230394567   0.3ms
+[2026-04-08 13:49:14] DEBUG bot.requests 17052 IN  uid=1230394567   @FRWIEN              cb='back:main_menu'
+[2026-04-08 13:49:14] ERROR bot.requests 17052 ERR uid=1230394567   4.1ms TypeError: 'in <string>' requires string as left operand, not list
+[2026-04-08 13:51:48] DEBUG bot.requests 20276 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-08 13:51:49] DEBUG bot.requests 20276 OUT uid=1230394567   524.7ms
+[2026-04-08 13:52:06] DEBUG bot.requests 20276 IN  uid=1230394567   @FRWIEN              cb='back:main_menu'
+[2026-04-08 13:52:06] ERROR bot.requests 20276 ERR uid=1230394567   3.6ms AttributeError: 'list' object has no attribute 'get'
+[2026-04-08 13:52:06] DEBUG bot.requests 20276 IN  uid=1230394567   @FRWIEN              cb='admin:add_manager'
+[2026-04-08 13:52:06] ERROR bot.requests 20276 ERR uid=1230394567   1.2ms AttributeError: 'list' object has no attribute 'get'
+[2026-04-08 13:52:06] DEBUG bot.requests 20276 IN  uid=1230394567   @FRWIEN              cb='back:main_menu'
+[2026-04-08 13:52:06] ERROR bot.requests 20276 ERR uid=1230394567   1.0ms AttributeError: 'list' object has no attribute 'get'
+[2026-04-08 13:52:06] DEBUG bot.requests 20276 IN  uid=1230394567   @FRWIEN              cb='users'
+[2026-04-08 13:52:06] ERROR bot.requests 20276 ERR uid=1230394567   1.0ms AttributeError: 'list' object has no attribute 'get'
+[2026-04-08 13:56:54] DEBUG bot.requests 21632 IN  uid=1230394567   @FRWIEN              cb='users'
+[2026-04-08 13:56:54] DEBUG bot.requests 21632 OUT uid=1230394567   0.8ms
+[2026-04-08 13:57:12] DEBUG bot.requests 30460 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-08 13:57:12] DEBUG bot.requests 30460 OUT uid=1230394567   424.9ms
+[2026-04-08 13:57:39] DEBUG bot.requests 28388 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-08 13:57:39] DEBUG bot.requests 28388 OUT uid=1230394567   431.9ms
+[2026-04-08 13:57:41] DEBUG bot.requests 28388 IN  uid=1230394567   @FRWIEN              cb='users'
+[2026-04-08 13:57:41] DEBUG bot.requests 28388 OUT uid=1230394567   331.7ms
+[2026-04-08 13:57:43] DEBUG bot.requests 28388 IN  uid=1230394567   @FRWIEN              cb='back:main_menu'
+[2026-04-08 13:57:43] DEBUG bot.requests 28388 OUT uid=1230394567   326.6ms
+[2026-04-08 13:57:45] DEBUG bot.requests 28388 IN  uid=1230394567   @FRWIEN              cb='users'
+[2026-04-08 13:57:45] DEBUG bot.requests 28388 OUT uid=1230394567   334.1ms
+[2026-04-08 13:57:47] DEBUG bot.requests 28388 IN  uid=1230394567   @FRWIEN              cb='back:main_menu'
+[2026-04-08 13:57:47] DEBUG bot.requests 28388 OUT uid=1230394567   331.1ms
+[2026-04-08 13:57:50] DEBUG bot.requests 28388 IN  uid=1230394567   @FRWIEN              cb='orders'
+[2026-04-08 13:57:50] DEBUG bot.requests 28388 OUT uid=1230394567   456.2ms

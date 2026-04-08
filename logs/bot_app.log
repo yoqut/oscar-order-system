@@ -1,0 +1,230 @@
+[2026-04-08 14:31:52] ERROR bot_app.views 35576 Webhook: error processing update_id=946185447
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bot_app\views.py", line 94, in post
+    await bot_app.process_new_updates([update])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'bot_app' has no attribute 'process_new_updates'
+[2026-04-08 14:31:52] ERROR bot_app.views 35576 Webhook: error processing update_id=946185448
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bot_app\views.py", line 94, in post
+    await bot_app.process_new_updates([update])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'bot_app' has no attribute 'process_new_updates'
+[2026-04-08 14:31:53] ERROR bot_app.views 35576 Webhook: error processing update_id=946185449
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bot_app\views.py", line 94, in post
+    await bot_app.process_new_updates([update])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'bot_app' has no attribute 'process_new_updates'
+[2026-04-08 14:31:53] ERROR bot_app.views 35576 Webhook: error processing update_id=946185450
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bot_app\views.py", line 94, in post
+    await bot_app.process_new_updates([update])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'bot_app' has no attribute 'process_new_updates'
+[2026-04-08 14:32:28] ERROR bot_app.views 35576 Webhook: error processing update_id=946185444
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bot_app\views.py", line 94, in post
+    await bot_app.process_new_updates([update])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'bot_app' has no attribute 'process_new_updates'
+[2026-04-08 14:32:29] ERROR bot_app.views 35576 Webhook: error processing update_id=946185445
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bot_app\views.py", line 94, in post
+    await bot_app.process_new_updates([update])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'bot_app' has no attribute 'process_new_updates'
+[2026-04-08 14:32:29] ERROR bot_app.views 35576 Webhook: error processing update_id=946185446
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bot_app\views.py", line 94, in post
+    await bot_app.process_new_updates([update])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'bot_app' has no attribute 'process_new_updates'
+[2026-04-08 14:32:57] DEBUG bot_app.requests 32496 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-08 14:32:57] DEBUG bot_app.requests 32496 OUT uid=1230394567   437.3ms
+[2026-04-08 14:32:59] DEBUG bot_app.requests 32496 IN  uid=1230394567   @FRWIEN              cb='users'
+[2026-04-08 14:32:59] DEBUG bot_app.requests 32496 OUT uid=1230394567   335.5ms
+[2026-04-08 14:33:01] DEBUG bot_app.requests 32496 IN  uid=1230394567   @FRWIEN              cb='back:main_menu'
+[2026-04-08 14:33:01] DEBUG bot_app.requests 32496 OUT uid=1230394567   0.1ms
+[2026-04-08 14:33:22] DEBUG bot_app.requests 32496 IN  uid=5574861580   @Bovaqulov_Muhammadali text='/start'
+[2026-04-08 14:33:22] ERROR bot_app.requests 32496 ERR uid=5574861580   13.3ms SynchronousOnlyOperation: You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-08 14:33:30] DEBUG bot_app.requests 32496 IN  uid=8613752086   8613752086           text='/start'
+[2026-04-08 14:33:30] ERROR bot_app.requests 32496 ERR uid=8613752086   8.5ms SynchronousOnlyOperation: You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-08 14:34:55] DEBUG bot_app.requests 32496 IN  uid=8613752086   8613752086           text='/start'
+[2026-04-08 14:34:55] ERROR bot_app.requests 32496 ERR uid=8613752086   11.1ms SynchronousOnlyOperation: You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-08 14:35:16] DEBUG bot_app.requests 35516 IN  uid=5574861580   @Bovaqulov_Muhammadali text='/start'
+[2026-04-08 14:35:16] DEBUG bot_app.requests 35516 OUT uid=5574861580   3.1ms
+[2026-04-08 14:35:21] DEBUG bot_app.requests 35516 IN  uid=8613752086   8613752086           text='/start'
+[2026-04-08 14:35:22] DEBUG bot_app.requests 35516 OUT uid=8613752086   419.4ms
+[2026-04-08 14:35:23] DEBUG bot_app.requests 35516 IN  uid=8613752086   8613752086           text='/start'
+[2026-04-08 14:35:24] DEBUG bot_app.requests 35516 OUT uid=8613752086   425.3ms
+[2026-04-08 14:35:32] DEBUG bot_app.requests 35516 IN  uid=8613752086   8613752086           text='/start'
+[2026-04-08 14:35:32] DEBUG bot_app.requests 35516 OUT uid=8613752086   332.7ms
+[2026-04-08 14:35:33] DEBUG bot_app.requests 35516 IN  uid=8613752086   8613752086           text='/start'
+[2026-04-08 14:35:33] DEBUG bot_app.requests 35516 OUT uid=8613752086   331.1ms
+[2026-04-08 14:35:35] DEBUG bot_app.requests 35516 IN  uid=8613752086   8613752086           text='/start'
+[2026-04-08 14:35:36] DEBUG bot_app.requests 35516 OUT uid=8613752086   456.9ms
+[2026-04-08 14:35:46] DEBUG bot_app.requests 35516 IN  uid=8613752086   8613752086           text='/start'
+[2026-04-08 14:35:46] DEBUG bot_app.requests 35516 OUT uid=8613752086   563.5ms
+[2026-04-08 14:35:46] DEBUG bot_app.requests 35516 IN  uid=8613752086   8613752086           text='/start'
+[2026-04-08 14:35:47] DEBUG bot_app.requests 35516 OUT uid=8613752086   334.2ms
+[2026-04-08 14:35:47] DEBUG bot_app.requests 35516 IN  uid=8613752086   8613752086           text='/start\n\nv'
+[2026-04-08 14:35:48] DEBUG bot_app.requests 35516 OUT uid=8613752086   359.4ms
+[2026-04-08 14:35:48] DEBUG bot_app.requests 35516 IN  uid=8613752086   8613752086           text='/start'
+[2026-04-08 14:35:48] DEBUG bot_app.requests 35516 OUT uid=8613752086   351.9ms
+[2026-04-08 14:35:48] DEBUG bot_app.requests 35516 IN  uid=8613752086   8613752086           text='/start'
+[2026-04-08 14:35:49] DEBUG bot_app.requests 35516 OUT uid=8613752086   332.1ms
+[2026-04-08 14:35:56] DEBUG bot_app.requests 35516 IN  uid=8613752086   8613752086           text='/start'
+[2026-04-08 14:35:57] DEBUG bot_app.requests 35516 OUT uid=8613752086   345.0ms
+[2026-04-08 14:35:57] DEBUG bot_app.requests 35516 IN  uid=8613752086   8613752086           text='/start'
+[2026-04-08 14:35:57] DEBUG bot_app.requests 35516 OUT uid=8613752086   336.7ms
+[2026-04-08 14:35:57] DEBUG bot_app.requests 35516 IN  uid=8613752086   8613752086           text='/start'
+[2026-04-08 14:35:57] DEBUG bot_app.requests 35516 OUT uid=8613752086   338.6ms
+[2026-04-08 14:35:58] DEBUG bot_app.requests 35516 IN  uid=8613752086   8613752086           text='/start'
+[2026-04-08 14:35:58] DEBUG bot_app.requests 35516 OUT uid=8613752086   352.7ms
+[2026-04-08 14:35:58] DEBUG bot_app.requests 35516 IN  uid=8613752086   8613752086           text='/start'
+[2026-04-08 14:35:58] DEBUG bot_app.requests 35516 OUT uid=8613752086   357.1ms
+[2026-04-08 14:42:06] DEBUG bot_app.requests 31704 IN  uid=5574861580   @Bovaqulov_Muhammadali text='/start'
+[2026-04-08 14:42:06] DEBUG bot_app.requests 31704 OUT uid=5574861580   3.0ms
+[2026-04-08 14:43:31] DEBUG bot_app.requests 31704 IN  uid=5574861580   @Bovaqulov_Muhammadali text='/start'
+[2026-04-08 14:43:31] DEBUG bot_app.requests 31704 OUT uid=5574861580   2.4ms
+[2026-04-08 14:43:52] DEBUG bot_app.requests 38376 IN  uid=5574861580   @Bovaqulov_Muhammadali text='/start'
+[2026-04-08 14:43:53] DEBUG bot_app.requests 38376 OUT uid=5574861580   426.1ms
+[2026-04-08 14:43:54] DEBUG bot_app.requests 38376 IN  uid=5574861580   @Bovaqulov_Muhammadali text='/start'
+[2026-04-08 14:43:55] DEBUG bot_app.requests 38376 OUT uid=5574861580   338.5ms
+[2026-04-08 14:43:55] DEBUG bot_app.requests 38376 IN  uid=5574861580   @Bovaqulov_Muhammadali text='/start'
+[2026-04-08 14:43:56] DEBUG bot_app.requests 38376 OUT uid=5574861580   344.6ms
+[2026-04-08 14:43:56] DEBUG bot_app.requests 38376 IN  uid=5574861580   @Bovaqulov_Muhammadali text='/start'
+[2026-04-08 14:43:57] DEBUG bot_app.requests 38376 OUT uid=5574861580   349.9ms
+[2026-04-08 14:43:57] DEBUG bot_app.requests 38376 IN  uid=5574861580   @Bovaqulov_Muhammadali text='/start'
+[2026-04-08 14:43:58] DEBUG bot_app.requests 38376 OUT uid=5574861580   717.2ms
+[2026-04-08 14:44:03] DEBUG bot_app.requests 38376 IN  uid=5574861580   @Bovaqulov_Muhammadali text='📝 Buyurtma yaratish'
+[2026-04-08 14:44:03] DEBUG bot_app.requests 38376 OUT uid=5574861580   0.2ms
+[2026-04-08 14:47:00] DEBUG bot_app.requests 38376 IN  uid=5574861580   @Bovaqulov_Muhammadali text='📝 Buyurtma yaratish'
+[2026-04-08 14:47:00] DEBUG bot_app.requests 38376 OUT uid=5574861580   0.2ms
+[2026-04-08 14:48:28] DEBUG bot_app.requests 38376 IN  uid=5574861580   @Bovaqulov_Muhammadali text='/start'
+[2026-04-08 14:48:28] DEBUG bot_app.requests 38376 OUT uid=5574861580   402.7ms
+[2026-04-08 14:48:38] DEBUG bot_app.requests 37404 IN  uid=5574861580   @Bovaqulov_Muhammadali text='/start'
+[2026-04-08 14:48:38] DEBUG bot_app.requests 37404 OUT uid=5574861580   345.5ms
+[2026-04-08 14:48:41] DEBUG bot_app.requests 37404 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='create_order'
+[2026-04-08 14:48:41] DEBUG bot_app.requests 37404 OUT uid=5574861580   0.2ms
+[2026-04-08 14:52:00] DEBUG bot_app.requests 35392 IN  uid=5574861580   @Bovaqulov_Muhammadali text='/start'
+[2026-04-08 14:52:01] DEBUG bot_app.requests 35392 OUT uid=5574861580   347.5ms
+[2026-04-08 14:52:02] DEBUG bot_app.requests 35392 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='create_order'
+[2026-04-08 14:52:02] ERROR bot_app.requests 35392 ERR uid=5574861580   7.2ms AttributeError: 'CallbackQuery' object has no attribute 'chat'
+[2026-04-08 15:11:19] DEBUG bot_app.requests 17780 IN  uid=5574861580   @Bovaqulov_Muhammadali text='/start'
+[2026-04-08 15:11:20] DEBUG bot_app.requests 17780 OUT uid=5574861580   444.0ms
+[2026-04-08 15:11:21] DEBUG bot_app.requests 17780 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='create_order'
+[2026-04-08 15:11:21] ERROR bot_app.requests 17780 ERR uid=5574861580   7.2ms AttributeError: 'CallbackQuery' object has no attribute 'chat'
+[2026-04-08 15:12:07] DEBUG bot_app.requests 17780 IN  uid=5574861580   @Bovaqulov_Muhammadali text='/start'
+[2026-04-08 15:12:08] DEBUG bot_app.requests 17780 OUT uid=5574861580   341.7ms
+[2026-04-08 15:12:11] DEBUG bot_app.requests 33712 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='create_order'
+[2026-04-08 15:12:12] DEBUG bot_app.requests 33712 OUT uid=5574861580   933.0ms
+[2026-04-08 15:12:52] DEBUG bot_app.requests 33712 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='create_order'
+[2026-04-08 15:12:53] DEBUG bot_app.requests 33712 OUT uid=5574861580   406.0ms
+[2026-04-08 15:12:57] DEBUG bot_app.requests 40252 IN  uid=5574861580   @Bovaqulov_Muhammadali text='/start'
+[2026-04-08 15:12:57] DEBUG bot_app.requests 40252 OUT uid=5574861580   343.7ms
+[2026-04-08 15:12:59] DEBUG bot_app.requests 40252 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='create_order'
+[2026-04-08 15:13:00] DEBUG bot_app.requests 40252 OUT uid=5574861580   521.5ms
+[2026-04-08 15:13:01] DEBUG bot_app.requests 40252 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='agro_select:3'
+[2026-04-08 15:13:01] DEBUG bot_app.requests 40252 OUT uid=5574861580   0.2ms
+[2026-04-08 15:53:39] DEBUG bot_app.requests 42528 IN  uid=5574861580   @Bovaqulov_Muhammadali text='/start'
+[2026-04-08 15:53:40] DEBUG bot_app.requests 42528 OUT uid=5574861580   510.2ms
+[2026-04-08 15:53:40] DEBUG bot_app.requests 42528 IN  uid=5574861580   @Bovaqulov_Muhammadali text='/start'
+[2026-04-08 15:53:40] DEBUG bot_app.requests 42528 OUT uid=5574861580   341.2ms
+[2026-04-08 15:53:43] DEBUG bot_app.requests 42528 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='create_order'
+[2026-04-08 15:53:43] DEBUG bot_app.requests 42528 OUT uid=5574861580   339.3ms
+[2026-04-08 15:53:44] DEBUG bot_app.requests 42528 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='agro_select:3'
+[2026-04-08 15:53:45] DEBUG bot_app.requests 42528 OUT uid=5574861580   439.3ms
+[2026-04-08 15:53:46] DEBUG bot_app.requests 42528 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='slot:2'
+[2026-04-08 15:53:46] DEBUG bot_app.requests 42528 OUT uid=5574861580   0.2ms
+[2026-04-08 15:53:55] DEBUG bot_app.requests 42528 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='ignore'
+[2026-04-08 15:53:55] DEBUG bot_app.requests 42528 OUT uid=5574861580   0.2ms
+[2026-04-08 15:53:56] DEBUG bot_app.requests 42528 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='ignore'
+[2026-04-08 15:53:56] DEBUG bot_app.requests 42528 OUT uid=5574861580   0.2ms
+[2026-04-08 15:53:58] DEBUG bot_app.requests 42528 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='slot:3'
+[2026-04-08 15:53:58] DEBUG bot_app.requests 42528 OUT uid=5574861580   0.2ms
+[2026-04-08 15:53:58] DEBUG bot_app.requests 42528 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='slot:4'
+[2026-04-08 15:53:58] DEBUG bot_app.requests 42528 OUT uid=5574861580   0.2ms
+[2026-04-08 15:53:59] DEBUG bot_app.requests 42528 IN  uid=5574861580   @Bovaqulov_Muhammadali text='/start'
+[2026-04-08 15:54:00] DEBUG bot_app.requests 42528 OUT uid=5574861580   401.4ms
+[2026-04-08 15:54:01] DEBUG bot_app.requests 42528 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='create_order'
+[2026-04-08 15:54:01] DEBUG bot_app.requests 42528 OUT uid=5574861580   337.6ms
+[2026-04-08 15:54:26] DEBUG bot_app.requests 42528 IN  uid=5574861580   @Bovaqulov_Muhammadali cb='agro_select:3'
+[2026-04-08 15:54:27] DEBUG bot_app.requests 42528 OUT uid=5574861580   434.4ms
+[2026-04-08 16:07:17] DEBUG bot_app.requests 42528 IN  uid=8613752086   8613752086           text='/start'
+[2026-04-08 16:07:18] DEBUG bot_app.requests 42528 OUT uid=8613752086   439.9ms
+[2026-04-08 16:07:19] DEBUG bot_app.requests 42528 IN  uid=8613752086   8613752086           cb='create_order'
+[2026-04-08 16:07:19] DEBUG bot_app.requests 42528 OUT uid=8613752086   3.1ms
+[2026-04-08 16:07:57] DEBUG bot_app.requests 42528 IN  uid=8613752086   8613752086           text='/start'
+[2026-04-08 16:07:58] DEBUG bot_app.requests 42528 OUT uid=8613752086   409.7ms
+[2026-04-08 16:08:50] DEBUG bot_app.requests 45412 IN  uid=8613752086   8613752086           text='/start'
+[2026-04-08 16:08:50] DEBUG bot_app.requests 45412 OUT uid=8613752086   408.7ms
+[2026-04-08 16:08:52] DEBUG bot_app.requests 45412 IN  uid=8613752086   8613752086           text='/start'
+[2026-04-08 16:08:52] DEBUG bot_app.requests 45412 OUT uid=8613752086   346.4ms
+[2026-04-08 16:09:00] DEBUG bot_app.requests 45412 IN  uid=8613752086   8613752086           text='/start'
+[2026-04-08 16:09:01] DEBUG bot_app.requests 45412 OUT uid=8613752086   350.5ms
+[2026-04-08 16:12:31] DEBUG bot_app.requests 44788 IN  uid=8613752086   8613752086           text='/start'
+[2026-04-08 16:12:31] ERROR bot_app.requests 44788 ERR uid=8613752086   14.6ms NameError: name 'client_mm_inl' is not defined
+[2026-04-08 16:12:57] DEBUG bot_app.requests 46184 IN  uid=8613752086   8613752086           text='/start'
+[2026-04-08 16:12:58] DEBUG bot_app.requests 46184 OUT uid=8613752086   446.7ms
+[2026-04-08 16:13:00] DEBUG bot_app.requests 46184 IN  uid=8613752086   8613752086           cb='confirm_order'
+[2026-04-08 16:13:00] DEBUG bot_app.requests 46184 OUT uid=8613752086   0.2ms
+[2026-04-08 16:19:32] DEBUG bot_app.requests 46184 IN  uid=8613752086   8613752086           cb='confirm_order'
+[2026-04-08 16:19:32] DEBUG bot_app.requests 46184 OUT uid=8613752086   0.2ms
+[2026-04-08 16:19:38] DEBUG bot_app.requests 46184 IN  uid=8613752086   8613752086           text='/start'
+[2026-04-08 16:19:39] DEBUG bot_app.requests 46184 OUT uid=8613752086   409.4ms
+[2026-04-08 16:19:40] DEBUG bot_app.requests 46184 IN  uid=8613752086   8613752086           cb='confirm_order'
+[2026-04-08 16:19:40] DEBUG bot_app.requests 46184 OUT uid=8613752086   0.2ms
+[2026-04-08 16:23:09] DEBUG bot_app.requests 48532 IN  uid=8613752086   8613752086           text='/start'
+[2026-04-08 16:23:10] DEBUG bot_app.requests 48532 OUT uid=8613752086   404.1ms
+[2026-04-08 16:23:10] DEBUG bot_app.requests 48532 IN  uid=8613752086   8613752086           text='/start'
+[2026-04-08 16:23:10] DEBUG bot_app.requests 48532 OUT uid=8613752086   345.2ms
+[2026-04-08 16:23:10] DEBUG bot_app.requests 48532 IN  uid=8613752086   8613752086           text='/start'
+[2026-04-08 16:23:11] DEBUG bot_app.requests 48532 OUT uid=8613752086   354.2ms
+[2026-04-08 16:23:11] DEBUG bot_app.requests 48532 IN  uid=8613752086   8613752086           text='/start'
+[2026-04-08 16:23:11] DEBUG bot_app.requests 48532 OUT uid=8613752086   331.9ms
+[2026-04-08 16:23:11] DEBUG bot_app.requests 48532 IN  uid=8613752086   8613752086           text='/start'
+[2026-04-08 16:23:12] DEBUG bot_app.requests 48532 OUT uid=8613752086   344.4ms
+[2026-04-08 16:23:12] DEBUG bot_app.requests 48532 IN  uid=8613752086   8613752086           text='/start'
+[2026-04-08 16:23:12] WARNING bot_app.middleware.rate_limiter 48532 Rate limit hit for user_id=8613752086 (5 req/3.0s)
+[2026-04-08 16:23:18] DEBUG bot_app.requests 48532 IN  uid=8613752086   8613752086           cb='confirm_order'
+[2026-04-08 16:23:18] DEBUG bot_app.requests 48532 OUT uid=8613752086   317.5ms
+[2026-04-08 16:23:23] DEBUG bot_app.requests 48532 IN  uid=8613752086   8613752086           text='123'
+[2026-04-08 16:23:23] DEBUG bot_app.requests 48532 OUT uid=8613752086   0.1ms
+[2026-04-08 16:28:29] DEBUG bot_app.requests 48440 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-08 16:28:29] DEBUG bot_app.requests 48440 OUT uid=1230394567   3.0ms
+[2026-04-08 16:29:00] DEBUG bot_app.requests 46712 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-08 16:29:01] DEBUG bot_app.requests 46712 OUT uid=1230394567   477.4ms
+[2026-04-08 16:29:06] DEBUG bot_app.requests 46712 IN  uid=1230394567   @FRWIEN              cb='users'
+[2026-04-08 16:29:06] DEBUG bot_app.requests 46712 OUT uid=1230394567   351.9ms
+[2026-04-08 16:29:08] DEBUG bot_app.requests 46712 IN  uid=1230394567   @FRWIEN              cb='back:main_menu'
+[2026-04-08 16:29:08] DEBUG bot_app.requests 46712 OUT uid=1230394567   0.2ms
+[2026-04-08 16:31:38] DEBUG bot_app.requests 46712 IN  uid=1230394567   @FRWIEN              cb='back:main_menu'
+[2026-04-08 16:31:38] DEBUG bot_app.requests 46712 OUT uid=1230394567   0.2ms
+[2026-04-08 16:31:41] DEBUG bot_app.requests 49320 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-08 16:31:41] DEBUG bot_app.requests 49320 OUT uid=1230394567   339.5ms
+[2026-04-08 16:31:42] DEBUG bot_app.requests 49320 IN  uid=1230394567   @FRWIEN              cb='orders'
+[2026-04-08 16:31:43] DEBUG bot_app.requests 49320 OUT uid=1230394567   459.4ms
+[2026-04-08 16:31:45] DEBUG bot_app.requests 49320 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-08 16:31:45] DEBUG bot_app.requests 49320 OUT uid=1230394567   339.6ms
+[2026-04-08 16:31:46] DEBUG bot_app.requests 49320 IN  uid=1230394567   @FRWIEN              cb='stats'
+[2026-04-08 16:31:47] DEBUG bot_app.requests 49320 OUT uid=1230394567   449.9ms
+[2026-04-08 16:31:49] DEBUG bot_app.requests 49320 IN  uid=1230394567   @FRWIEN              cb='notification'
+[2026-04-08 16:31:49] DEBUG bot_app.requests 49320 OUT uid=1230394567   428.2ms
+[2026-04-08 16:31:51] DEBUG bot_app.requests 49320 IN  uid=1230394567   @FRWIEN              cb='admin:broadcast'
+[2026-04-08 16:31:51] DEBUG bot_app.requests 49320 OUT uid=1230394567   0.2ms
+[2026-04-08 16:52:20] DEBUG bot_app.requests 49320 IN  uid=1230394567   @FRWIEN              text='/start'
+[2026-04-08 16:52:21] DEBUG bot_app.requests 49320 OUT uid=1230394567   562.0ms
+[2026-04-08 16:53:59] DEBUG bot_app.requests 49320 IN  uid=1230394567   @FRWIEN              cb='users'
+[2026-04-08 16:54:00] DEBUG bot_app.requests 49320 OUT uid=1230394567   398.4ms
+[2026-04-08 16:54:03] DEBUG bot_app.requests 49320 IN  uid=1230394567   @FRWIEN              cb='admin:list_agronomists'
+[2026-04-08 16:54:03] DEBUG bot_app.requests 49320 OUT uid=1230394567   0.4ms
+[2026-04-08 16:54:06] DEBUG bot_app.requests 49320 IN  uid=1230394567   @FRWIEN              cb='admin:list_managers'
+[2026-04-08 16:54:06] DEBUG bot_app.requests 49320 OUT uid=1230394567   0.3ms
+[2026-04-08 16:54:06] DEBUG bot_app.requests 49320 IN  uid=1230394567   @FRWIEN              cb='admin:add_agronomist'
+[2026-04-08 16:54:06] DEBUG bot_app.requests 49320 OUT uid=1230394567   0.3ms
+[2026-04-08 16:54:07] DEBUG bot_app.requests 49320 IN  uid=1230394567   @FRWIEN              cb='admin:add_manager'
+[2026-04-08 16:54:07] DEBUG bot_app.requests 49320 OUT uid=1230394567   0.2ms
+[2026-04-08 16:54:08] DEBUG bot_app.requests 49320 IN  uid=1230394567   @FRWIEN              cb='back:main_menu'
+[2026-04-08 16:54:08] DEBUG bot_app.requests 49320 OUT uid=1230394567   0.4ms

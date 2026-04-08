@@ -18,7 +18,7 @@ INSTALLED_APPS = [
     'apps.accounts',
     'apps.orders',
     'apps.notifications',
-    'bot'
+    'bot_app'
 ]
 
 MIDDLEWARE = [
@@ -82,6 +82,9 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
+BOT_RATE_LIMIT_WINDOW: float = config('BOT_RATE_LIMIT_WINDOW', default=3.0, cast=float)
+BOT_RATE_LIMIT_BURST: int = config('BOT_RATE_LIMIT_BURST', default=5, cast=int)
+
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'Asia/Tashkent'
 USE_I18N = True
@@ -101,34 +104,80 @@ BOT_TOKEN = config('BOT_TOKEN', default='')
 WEBHOOK_BASE_URL = config('WEBHOOK_BASE_URL', default='')
 SUPER_ADMIN_IDS = config('SUPER_ADMIN_IDS', default='', cast=Csv(cast=int))
 
-# Logging
+_LOG_DIR = os.path.join(BASE_DIR, 'logs')
+os.makedirs(_LOG_DIR, exist_ok=True)
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
+
     'formatters': {
         'verbose': {
-            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+            'format': '[{asctime}] {levelname} {name} {process:d} {message}',
+            'style': '{',
+            'datefmt': '%Y-%m-%d %H:%M:%S',
+        },
+        'simple': {
+            'format': '{levelname} {message}',
             'style': '{',
         },
     },
+
     'handlers': {
         'console': {
             'class': 'logging.StreamHandler',
             'formatter': 'verbose',
         },
+        'django_file': {
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(_LOG_DIR, 'django.log'),
+            'maxBytes': 10 * 1024 * 1024,  # 10 MB
+            'backupCount': 5,
+            'formatter': 'verbose',
+            'encoding': 'utf-8',
+        },
+        'bot_file': {
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(_LOG_DIR, 'bot_app.log'),
+            'maxBytes': 10 * 1024 * 1024,
+            'backupCount': 5,
+            'formatter': 'verbose',
+            'encoding': 'utf-8',
+        },
+        'error_file': {
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(_LOG_DIR, 'errors.log'),
+            'maxBytes': 10 * 1024 * 1024,
+            'backupCount': 10,
+            'level': 'ERROR',
+            'formatter': 'verbose',
+            'encoding': 'utf-8',
+        },
     },
+
     'root': {
-        'handlers': ['console'],
-        'level': 'INFO',
+        'handlers': ['console', 'error_file'],
+        'level': 'WARNING',
     },
+
     'loggers': {
         'django': {
-            'handlers': ['console'],
+            'handlers': ['console', 'django_file', 'error_file'],
             'level': 'INFO',
             'propagate': False,
         },
-        'bot': {
+        'django.db.backends': {
             'handlers': ['console'],
+            'level': 'WARNING',  # set to DEBUG to log all SQL
+            'propagate': False,
+        },
+        'bot_app': {
+            'handlers': ['console', 'bot_file', 'error_file'],
+            'level': 'DEBUG' if DEBUG else 'INFO',
+            'propagate': False,
+        },
+        'bot_app.requests': {
+            'handlers': ['bot_file'],
             'level': 'DEBUG' if DEBUG else 'INFO',
             'propagate': False,
         },

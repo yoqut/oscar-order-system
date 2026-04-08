@@ -1,0 +1,411 @@
+[2026-04-07 15:58:54] ERROR TeleBot 23036 Symbol ':' is defined as the separator and can't be used in parts' values
+[2026-04-07 15:59:05] ERROR asyncio 23036 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001E674AE3620>
+[2026-04-07 15:59:05] ERROR asyncio 23036 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000001E674DC0950>, 458235.0681625)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000001E6725F3750>
+[2026-04-07 15:59:40] ERROR TeleBot 20732 Symbol ':' is defined as the separator and can't be used in parts' values
+[2026-04-07 15:59:45] ERROR asyncio 20732 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001E9A2A39E80>
+[2026-04-07 15:59:45] ERROR asyncio 20732 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000001E9A2A695E0>, 458281.1197693)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000001E9A2A75D10>
+[2026-04-07 16:00:53] ERROR asyncio 12996 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000014BDCB75160>
+[2026-04-07 16:00:53] ERROR asyncio 12996 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x0000014BDCBA1750>, 458312.0710044)])']
+connector: <aiohttp.connector.TCPConnector object at 0x0000014BDCBB5D10>
+[2026-04-07 16:37:33] ERROR asyncio 15984 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000028F7AEBBA10>
+[2026-04-07 16:37:33] ERROR asyncio 15984 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x0000028F7B1A0A70>, 460317.9846854)])']
+connector: <aiohttp.connector.TCPConnector object at 0x0000028F7AB79BD0>
+[2026-04-07 16:50:42] ERROR TeleBot 16024 A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: query is too old and response timeout expired or query ID is invalid
+[2026-04-07 16:50:47] ERROR TeleBot 16024 Unknown error: RuntimeError
+[2026-04-07 16:50:47] ERROR TeleBot 16024 Request timeout. Request: method=post url=sendMessage params=<aiohttp.formdata.FormData object at 0x00000220D353B7E0> files=None request_timeout=300
+[2026-04-07 16:50:47] ERROR TeleBot 16024 Unknown error: RuntimeError
+[2026-04-07 16:50:47] ERROR TeleBot 16024 Request timeout. Request: method=post url=sendMessage params=<aiohttp.formdata.FormData object at 0x00000220D353BCB0> files=None request_timeout=300
+[2026-04-07 17:01:09] ERROR asyncio 16024 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x00000220D2146CF0>
+[2026-04-07 17:01:09] ERROR asyncio 16024 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x00000220D208B2F0>, 461479.7219787)])']
+connector: <aiohttp.connector.TCPConnector object at 0x00000220D1E43610>
+[2026-04-07 17:04:26] ERROR asyncio 29620 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001D8675A6F90>
+[2026-04-07 17:04:26] ERROR asyncio 29620 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000001D8675E95E0>, 462045.992551)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000001D8675E3610>
+[2026-04-07 17:08:39] ERROR TeleBot 5104 You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-07 17:08:57] ERROR asyncio 5104 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001B61D287380>
+[2026-04-07 17:08:57] ERROR asyncio 5104 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000001B61D2B88F0>, 462420.2502248)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000001B61D2C79D0>
+[2026-04-07 17:09:03] ERROR TeleBot 23248 You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-07 17:10:11] ERROR asyncio 23248 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001C8E8267380>
+[2026-04-07 17:10:11] ERROR asyncio 23248 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000001C8E82A08F0>, 462443.7962284)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000001C8E82A74D0>
+[2026-04-07 17:10:20] ERROR TeleBot 8232 You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-07 17:11:06] ERROR asyncio 8232 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001C952767380>
+[2026-04-07 17:11:06] ERROR asyncio 8232 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000001C9527A08F0>, 462519.3748241)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000001C9527AB4D0>
+[2026-04-07 17:11:11] ERROR TeleBot 23756 You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-07 17:11:45] ERROR asyncio 23756 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000027570587380>
+[2026-04-07 17:11:45] ERROR asyncio 23756 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x00000275705C08F0>, 462572.4941766)])']
+connector: <aiohttp.connector.TCPConnector object at 0x00000275705C74D0>
+[2026-04-07 17:11:52] ERROR TeleBot 21452 You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-07 17:12:14] ERROR asyncio 21452 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000025650FE7380>
+[2026-04-07 17:12:14] ERROR asyncio 21452 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x00000256510208F0>, 462613.246786)])']
+connector: <aiohttp.connector.TCPConnector object at 0x00000256510274D0>
+[2026-04-07 17:12:20] ERROR TeleBot 15556 You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-07 17:12:33] ERROR asyncio 15556 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000022EF5057770>
+[2026-04-07 17:12:33] ERROR asyncio 15556 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x0000022EF50888F0>, 462641.1819598)])']
+connector: <aiohttp.connector.TCPConnector object at 0x0000022EF50974D0>
+[2026-04-07 17:12:50] ERROR TeleBot 28252 You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-07 17:13:03] ERROR asyncio 28252 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000019311107380>
+[2026-04-07 17:13:03] ERROR asyncio 28252 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x00000193110A5850>, 462662.7343696)])']
+connector: <aiohttp.connector.TCPConnector object at 0x0000019311106F90>
+[2026-04-07 17:14:17] ERROR TeleBot 32088 You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-07 17:15:15] ERROR asyncio 32088 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000002432E797380>
+[2026-04-07 17:15:15] ERROR asyncio 32088 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000002432E7299D0>, 462757.9765144)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000002432E796F90>
+[2026-04-07 17:17:22] ERROR asyncio 16608 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000019CFA756F90>
+[2026-04-07 17:17:22] ERROR asyncio 16608 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x0000019CFA790D40>, 462866.1124181)])']
+connector: <aiohttp.connector.TCPConnector object at 0x0000019CFA79BC50>
+[2026-04-08 10:56:35] ERROR asyncio 11720 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001D2B969D6A0>
+[2026-04-08 10:56:35] ERROR asyncio 11720 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000001D2B94B34D0>, 526498.1443866)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000001D2B969D2B0>
+[2026-04-08 10:57:27] ERROR django.security.DisallowedHost 14136 Invalid HTTP_HOST header: 'interests-nation-gap-bonds.trycloudflare.com'. You may need to add 'interests-nation-gap-bonds.trycloudflare.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\http\request.py", line 205, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'interests-nation-gap-bonds.trycloudflare.com'. You may need to add 'interests-nation-gap-bonds.trycloudflare.com' to ALLOWED_HOSTS.
+[2026-04-08 10:57:27] ERROR django.security.DisallowedHost 14136 Invalid HTTP_HOST header: 'interests-nation-gap-bonds.trycloudflare.com'. You may need to add 'interests-nation-gap-bonds.trycloudflare.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\http\request.py", line 205, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'interests-nation-gap-bonds.trycloudflare.com'. You may need to add 'interests-nation-gap-bonds.trycloudflare.com' to ALLOWED_HOSTS.
+[2026-04-08 10:57:30] ERROR django.security.DisallowedHost 14136 Invalid HTTP_HOST header: 'interests-nation-gap-bonds.trycloudflare.com'. You may need to add 'interests-nation-gap-bonds.trycloudflare.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\http\request.py", line 205, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'interests-nation-gap-bonds.trycloudflare.com'. You may need to add 'interests-nation-gap-bonds.trycloudflare.com' to ALLOWED_HOSTS.
+[2026-04-08 10:57:34] ERROR django.security.DisallowedHost 14136 Invalid HTTP_HOST header: 'interests-nation-gap-bonds.trycloudflare.com'. You may need to add 'interests-nation-gap-bonds.trycloudflare.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\http\request.py", line 205, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'interests-nation-gap-bonds.trycloudflare.com'. You may need to add 'interests-nation-gap-bonds.trycloudflare.com' to ALLOWED_HOSTS.
+[2026-04-08 10:57:42] ERROR django.security.DisallowedHost 14136 Invalid HTTP_HOST header: 'interests-nation-gap-bonds.trycloudflare.com'. You may need to add 'interests-nation-gap-bonds.trycloudflare.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\http\request.py", line 205, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'interests-nation-gap-bonds.trycloudflare.com'. You may need to add 'interests-nation-gap-bonds.trycloudflare.com' to ALLOWED_HOSTS.
+[2026-04-08 11:36:28] ERROR asyncio 1556 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000022C9BD8D6A0>
+[2026-04-08 11:36:28] ERROR asyncio 1556 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x0000022C9B87B4D0>, 1454.4437412)])']
+connector: <aiohttp.connector.TCPConnector object at 0x0000022C9BD8D2B0>
+[2026-04-08 11:43:10] ERROR asyncio 4900 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001BDD65067B0>
+[2026-04-08 11:43:10] ERROR asyncio 4900 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000001BDD653B770>, 1775.926062)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000001BDD3CF3750>
+[2026-04-08 11:58:51] ERROR asyncio 13956 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001CF38C5AF90>
+[2026-04-08 11:58:51] ERROR asyncio 13956 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000001CF38C5B0E0>, 2237.4734427)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000001CF38C9F750>
+[2026-04-08 12:10:43] ERROR TeleBot 14868 You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-08 12:11:35] ERROR asyncio 14868 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000002618A5F92B0>
+[2026-04-08 12:11:35] ERROR asyncio 14868 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000002618A629470>, 3512.990395)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000002618A61F9D0>
+[2026-04-08 12:27:36] ERROR asyncio 11216 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000025B87C834D0>
+[2026-04-08 12:27:36] ERROR asyncio 11216 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x0000025B87CA7890>, 4106.6300306)])']
+connector: <aiohttp.connector.TCPConnector object at 0x0000025B87CA79D0>
+[2026-04-08 12:27:51] ERROR TeleBot 20776 IsAdminFilter.check() takes 2 positional arguments but 3 were given
+[2026-04-08 12:28:43] ERROR asyncio 20776 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000026A0F473B60>
+[2026-04-08 12:28:43] ERROR asyncio 20776 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x0000026A0F4056D0>, 4536.3549097)])']
+connector: <aiohttp.connector.TCPConnector object at 0x0000026A0F473770>
+[2026-04-08 12:30:58] ERROR TeleBot 14592 You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-08 12:31:40] ERROR TeleBot 14592 You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-08 12:31:40] ERROR asyncio 14592 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000002B78F88BCB0>
+[2026-04-08 12:31:40] ERROR asyncio 14592 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000002B78F8016D0>, 4722.4172475)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000002B78F88B8C0>
+[2026-04-08 12:33:12] ERROR asyncio 11356 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x00000243D558F8C0>
+[2026-04-08 12:33:12] ERROR asyncio 11356 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x00000243D55C08F0>, 4858.5947819)])']
+connector: <aiohttp.connector.TCPConnector object at 0x00000243D55BB9D0>
+[2026-04-08 12:33:16] ERROR TeleBot 1836 You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-08 12:33:46] ERROR TeleBot 16968 You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-08 12:33:56] ERROR TeleBot 16968 You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-08 12:34:48] ERROR TeleBot 16968 You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-08 12:34:48] ERROR asyncio 16968 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000002686CC11FD0>
+[2026-04-08 12:34:48] ERROR asyncio 16968 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000002686CBB4BD0>, 4901.7362837)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000002686CC3F610>
+[2026-04-08 12:34:51] ERROR TeleBot 21980 You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-08 12:36:03] ERROR asyncio 21980 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000021804683CB0>
+[2026-04-08 12:36:03] ERROR asyncio 21980 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x00000218046016D0>, 4956.8686014)])']
+connector: <aiohttp.connector.TCPConnector object at 0x00000218046838C0>
+[2026-04-08 12:36:06] ERROR TeleBot 20384 You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-08 12:37:46] ERROR TeleBot 20384 You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-08 12:42:09] ERROR asyncio 20384 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000019ED3D61FD0>
+[2026-04-08 12:42:09] ERROR asyncio 20384 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x0000019ED3CE1B50>, 5130.939793)])']
+connector: <aiohttp.connector.TCPConnector object at 0x0000019ED3D63770>
+[2026-04-08 13:26:46] ERROR asyncio 22796 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000020E759D3B60>
+[2026-04-08 13:26:46] ERROR asyncio 22796 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x0000020E75978A60>, 8009.4213734)])']
+connector: <aiohttp.connector.TCPConnector object at 0x0000020E759FBD90>
+[2026-04-08 13:27:18] ERROR TeleBot 21696 You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-08 13:28:33] ERROR asyncio 22288 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001D70207FA10>
+[2026-04-08 13:28:33] ERROR asyncio 22288 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000001D702024A60>, 8151.1609067)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000001D7020AF9D0>
+[2026-04-08 13:47:29] ERROR asyncio 25232 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000019E1197F8C0>
+[2026-04-08 13:47:29] ERROR asyncio 25232 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x0000019E119B48F0>, 9010.1679223)])']
+connector: <aiohttp.connector.TCPConnector object at 0x0000019E119ABB10>
+[2026-04-08 13:47:35] ERROR TeleBot 28104 'in <string>' requires string as left operand, not list
+[2026-04-08 13:48:27] ERROR asyncio 28104 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001933345BA10>
+[2026-04-08 13:48:27] ERROR asyncio 28104 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x0000019333491190>, 9319.9762301)])']
+connector: <aiohttp.connector.TCPConnector object at 0x0000019333487C50>
+[2026-04-08 13:49:14] ERROR TeleBot 17052 'in <string>' requires string as left operand, not list
+[2026-04-08 13:52:06] ERROR TeleBot 20276 'list' object has no attribute 'get'
+[2026-04-08 13:52:06] ERROR TeleBot 20276 'list' object has no attribute 'get'
+[2026-04-08 13:52:06] ERROR TeleBot 20276 'list' object has no attribute 'get'
+[2026-04-08 13:52:06] ERROR TeleBot 20276 'list' object has no attribute 'get'
+[2026-04-08 13:54:08] ERROR asyncio 20276 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000027315E80050>
+[2026-04-08 13:54:08] ERROR asyncio 20276 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x0000027315B316D0>, 9575.2039723)])']
+connector: <aiohttp.connector.TCPConnector object at 0x0000027315BABB60>
+[2026-04-08 13:57:36] ERROR asyncio 30460 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000016E865EBCB0>
+[2026-04-08 13:57:36] ERROR asyncio 30460 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x0000016E8657D6D0>, 9898.8887731)])']
+connector: <aiohttp.connector.TCPConnector object at 0x0000016E865EB8C0>
+[2026-04-08 14:01:32] ERROR asyncio 28388 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000002443B3B5160>
+[2026-04-08 14:01:32] ERROR asyncio 28388 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000002443B3B7B60>, 9936.7761444)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000002443B3EB9D0>
+[2026-04-08 14:31:52] ERROR bot_app.views 35576 Webhook: error processing update_id=946185447
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bot_app\views.py", line 94, in post
+    await bot_app.process_new_updates([update])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'bot_app' has no attribute 'process_new_updates'
+[2026-04-08 14:31:52] ERROR bot_app.views 35576 Webhook: error processing update_id=946185448
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bot_app\views.py", line 94, in post
+    await bot_app.process_new_updates([update])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'bot_app' has no attribute 'process_new_updates'
+[2026-04-08 14:31:53] ERROR bot_app.views 35576 Webhook: error processing update_id=946185449
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bot_app\views.py", line 94, in post
+    await bot_app.process_new_updates([update])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'bot_app' has no attribute 'process_new_updates'
+[2026-04-08 14:31:53] ERROR bot_app.views 35576 Webhook: error processing update_id=946185450
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bot_app\views.py", line 94, in post
+    await bot_app.process_new_updates([update])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'bot_app' has no attribute 'process_new_updates'
+[2026-04-08 14:32:28] ERROR bot_app.views 35576 Webhook: error processing update_id=946185444
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bot_app\views.py", line 94, in post
+    await bot_app.process_new_updates([update])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'bot_app' has no attribute 'process_new_updates'
+[2026-04-08 14:32:29] ERROR bot_app.views 35576 Webhook: error processing update_id=946185445
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bot_app\views.py", line 94, in post
+    await bot_app.process_new_updates([update])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'bot_app' has no attribute 'process_new_updates'
+[2026-04-08 14:32:29] ERROR bot_app.views 35576 Webhook: error processing update_id=946185446
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bot_app\views.py", line 94, in post
+    await bot_app.process_new_updates([update])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'bot_app' has no attribute 'process_new_updates'
+[2026-04-08 14:33:22] ERROR TeleBot 32496 You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-08 14:33:30] ERROR TeleBot 32496 You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-08 14:34:55] ERROR TeleBot 32496 You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-08 14:34:55] ERROR asyncio 32496 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001C9087C6A50>
+[2026-04-08 14:34:55] ERROR asyncio 32496 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000001C908920BD0>, 12045.3677107)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000001C9087EEFD0>
+[2026-04-08 14:38:12] ERROR asyncio 35516 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001A79DF15400>
+[2026-04-08 14:38:12] ERROR asyncio 35516 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000001A79E069130>, 12224.7813485)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000001A79DF3CE10>
+[2026-04-08 14:48:29] ERROR asyncio 38376 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001E946CA2900>
+[2026-04-08 14:48:29] ERROR asyncio 38376 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000001E946D4E7B0>, 12974.6990338)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000001E944543250>
+[2026-04-08 14:51:58] ERROR asyncio 37404 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001FE568DEE40>
+[2026-04-08 14:51:58] ERROR asyncio 37404 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000001FE56868F50>, 12984.6130756)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000001FE568DEA50>
+[2026-04-08 14:52:02] ERROR TeleBot 35392 'CallbackQuery' object has no attribute 'chat'
+[2026-04-08 15:07:24] ERROR asyncio 35392 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000002CC2E7E70E0>
+[2026-04-08 15:07:24] ERROR asyncio 35392 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000002CC2E76CF50>, 13187.1255439)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000002CC2E7E6CF0>
+[2026-04-08 15:11:21] ERROR TeleBot 17780 'CallbackQuery' object has no attribute 'chat'
+[2026-04-08 15:12:08] ERROR asyncio 17780 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000021B63A46CF0>
+[2026-04-08 15:12:08] ERROR asyncio 17780 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x0000021B63CC04A0>, 14394.059483)])']
+connector: <aiohttp.connector.TCPConnector object at 0x0000021B63DA47D0>
+[2026-04-08 15:12:53] ERROR asyncio 33712 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x00000261FC616BA0>
+[2026-04-08 15:12:53] ERROR asyncio 33712 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x00000261FC8ACD40>, 14439.2699237)])']
+connector: <aiohttp.connector.TCPConnector object at 0x00000261FC643250>
+[2026-04-08 15:47:58] ERROR asyncio 40252 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001BDDE946F90>
+[2026-04-08 15:47:58] ERROR asyncio 40252 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000001BDDEBB0330>, 14446.0672754)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000001BDDE973110>
+[2026-04-08 16:07:58] ERROR asyncio 42528 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000002789D2B2A50>
+[2026-04-08 16:07:58] ERROR asyncio 42528 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000002789D626C40>, 17742.3389043)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000002789AB63250>
+[2026-04-08 16:11:46] ERROR asyncio 45412 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000002660D932E40>
+[2026-04-08 16:11:46] ERROR asyncio 45412 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000002660DBDD020>, 17805.0277175)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000002660D962FD0>
+[2026-04-08 16:12:31] ERROR TeleBot 44788 name 'client_mm_inl' is not defined
+[2026-04-08 16:19:57] ERROR asyncio 46184 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000002ADFF2BEA50>
+[2026-04-08 16:19:57] ERROR asyncio 46184 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000002ADFF600330>, 18443.0716845)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000002ADFCB63250>
+[2026-04-08 16:27:09] ERROR asyncio 48532 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001EFC2ED9940>
+[2026-04-08 16:27:09] ERROR asyncio 48532 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000001EFC2ED8D70>, 18662.7994364)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000001EFC2F03250>
+[2026-04-08 16:31:39] ERROR asyncio 46712 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x00000163AC2DECF0>
+[2026-04-08 16:31:39] ERROR asyncio 46712 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x00000163AC584330>, 19010.941767)])']
+connector: <aiohttp.connector.TCPConnector object at 0x00000163AC303250>
+[2026-04-08 16:56:17] ERROR asyncio 49320 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x00000200B38E97F0>
+[2026-04-08 16:56:17] ERROR asyncio 49320 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x00000200B3912E90>, 20504.1232014)])']
+connector: <aiohttp.connector.TCPConnector object at 0x00000200B1103250>
+[2026-04-08 17:15:23] ERROR asyncio 53476 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000016B8CD21940>
+[2026-04-08 17:15:23] ERROR asyncio 53476 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x0000016B8CCC2830>, 21499.1503459)])']
+connector: <aiohttp.connector.TCPConnector object at 0x0000016B8CD634D0>
+[2026-04-08 17:33:45] ERROR asyncio 55452 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000002DBE3E23770>
+[2026-04-08 17:33:45] ERROR asyncio 55452 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000002DBE3D999D0>, 22863.8668439)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000002DBE3E23380>
+[2026-04-08 17:34:15] ERROR asyncio 50260 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001B14A5F7770>
+[2026-04-08 17:34:15] ERROR asyncio 50260 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000001B14A5799D0>, 22892.5914765)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000001B14A5F7380>
+[2026-04-08 17:34:33] ERROR asyncio 55596 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000020912917380>
+[2026-04-08 17:34:33] ERROR asyncio 55596 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x0000020912954780>, 22923.0290482)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000002091294F890>
+[2026-04-08 17:34:45] ERROR asyncio 55344 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000017A68437CB0>
+[2026-04-08 17:34:45] ERROR asyncio 55344 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x0000017A683B9CD0>, 22940.1395793)])']
+connector: <aiohttp.connector.TCPConnector object at 0x0000017A684378C0>
+[2026-04-08 17:35:51] ERROR asyncio 54232 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000022E1DEB78C0>
+[2026-04-08 17:35:51] ERROR asyncio 54232 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x0000022E1DE399D0>, 22952.3637608)])']
+connector: <aiohttp.connector.TCPConnector object at 0x0000022E1DEB74D0>
+[2026-04-08 17:47:56] ERROR asyncio 55220 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000023BC1A27770>
+[2026-04-08 17:47:56] ERROR asyncio 55220 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x0000023BC19A99D0>, 23017.1368665)])']
+connector: <aiohttp.connector.TCPConnector object at 0x0000023BC1A27380>
