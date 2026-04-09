@@ -61,9 +61,9 @@ class Sender:
 
     # ── Raw text send ─────────────────────────────────────────────────────────
 
-    async def text(self, text: str, markup: ReplyMarkup = None, parse_mode: str = 'HTML', **kwargs) -> Message:
+    async def text(self, slug: str, markup: ReplyMarkup = None, translate=True, parse_mode: str = 'HTML', **kwargs) -> Message:
         """Send raw text message."""
-        content = text.format(**kwargs) if kwargs else text
+        content = self.tr(slug, **kwargs) if translate else slug.format(**kwargs)
         return await self.bot.send_message(
             self.chat_id,
             text=content,

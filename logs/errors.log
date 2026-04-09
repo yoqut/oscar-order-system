@@ -1114,3 +1114,5 @@ Traceback (most recent call last):
 NotImplementedError
 [2026-04-09 15:27:33] ERROR asyncio 62148 Unclosed client session
 client_session: <aiohttp.client.ClientSession object at 0x000002476F139A90>
+[2026-04-09 16:22:35] ERROR asyncio 11540 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000011F4DEB9400>

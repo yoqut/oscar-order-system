@@ -12,5 +12,7 @@ wheels/
 .env
 .python-version
 .idea
+logs
+
 db.sqlite3
 npm-cache
