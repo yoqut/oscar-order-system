@@ -409,3 +409,708 @@ client_session: <aiohttp.client.ClientSession object at 0x0000023BC1A27770>
 [2026-04-08 17:47:56] ERROR asyncio 55220 Unclosed connector
 connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x0000023BC19A99D0>, 23017.1368665)])']
 connector: <aiohttp.connector.TCPConnector object at 0x0000023BC1A27380>
+[2026-04-09 13:35:26] ERROR asyncio 61464 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000023035C8D6A0>
+[2026-04-09 13:35:26] ERROR asyncio 61464 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000002303576B7D0>, 94990.9149694)])']
+connector: <aiohttp.connector.TCPConnector object at 0x0000023035C8D2B0>
+[2026-04-09 13:37:50] ERROR asyncio 11112 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001BCAB99CAD0>
+[2026-04-09 13:37:50] ERROR asyncio 11112 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000001BCAB93EAF0>, 95001.0484619)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000001BCAB9D39D0>
+[2026-04-09 14:54:48] ERROR asyncio 15452 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000027124C4CD70>
+[2026-04-09 14:54:48] ERROR asyncio 15452 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x00000271246EE2D0>, 99753.3791429)])']
+connector: <aiohttp.connector.TCPConnector object at 0x0000027124C4C980>
+[2026-04-09 14:55:07] ERROR django.request 61524 Internal Server Error: /bots/main/webhook/7840815117:AAEEteVzhfOcazUbKxyGVnLnByEhMx56xOg/
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 371, in connect_check_health
+    await self._connect()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 895, in _connect
+    reader, writer = await asyncio.open_connection(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **self._connection_arguments()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\streams.py", line 48, in open_connection
+    transport, _ = await loop.create_connection(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        lambda: protocol, host, port, **kwds)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 1173, in create_connection
+    raise exceptions[0]
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 1143, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+        exceptions, addrinfo, laddr_infos)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 1042, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 728, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\windows_events.py", line 804, in _poll
+    value = callback(transferred, key, ov)
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\windows_events.py", line 600, in finish_connect
+    ov.getresult()
+    ~~~~~~~~~~~~^^
+ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\asgiref\sync.py", line 325, in __call__
+    return call_result.result()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\concurrent\futures\_base.py", line 443, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\concurrent\futures\_base.py", line 395, in __get_result
+    raise self._exception
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\asgiref\sync.py", line 365, in main_wrap
+    result = await awaitable
+             ^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 60, in _view_wrapper
+    return await view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\bots\views.py", line 61, in dispatch
+    return await super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\bots\views.py", line 66, in post
+    return await _process_webhook(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+        request, token, settings.MAIN_BOT_TOKEN, bot, 'main_bot'
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\projects\oscar-agro\bots\views.py", line 44, in _process_webhook
+    if not await try_lock(lock_key, ttl=60):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\core\locks.py", line 31, in try_lock
+    result = await redis.set(f"lock:{key}", '1', ex=ttl, nx=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\client.py", line 764, in execute_command
+    conn = self.connection or await pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\utils.py", line 227, in async_wrapper
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1448, in get_connection
+    await self.ensure_connection(connection)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1489, in ensure_connection
+    await connection.connect()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 340, in connect
+    await self.retry.call_with_retry(
+    ...<7 lines>...
+    )
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\retry.py", line 81, in call_with_retry
+    raise error
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\retry.py", line 69, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 397, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 22 connecting to localhost:6379. Удаленный компьютер отклонил это сетевое подключение.
+[2026-04-09 14:55:07] ERROR django.server 61524 "POST /bots/main/webhook/7840815117:AAEEteVzhfOcazUbKxyGVnLnByEhMx56xOg/ HTTP/1.1" 500 193912
+[2026-04-09 14:55:20] ERROR django.request 61524 Internal Server Error: /bots/main/webhook/7840815117:AAEEteVzhfOcazUbKxyGVnLnByEhMx56xOg/
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 371, in connect_check_health
+    await self._connect()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 895, in _connect
+    reader, writer = await asyncio.open_connection(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **self._connection_arguments()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\streams.py", line 48, in open_connection
+    transport, _ = await loop.create_connection(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        lambda: protocol, host, port, **kwds)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 1173, in create_connection
+    raise exceptions[0]
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 1143, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+        exceptions, addrinfo, laddr_infos)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 1042, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 728, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\windows_events.py", line 804, in _poll
+    value = callback(transferred, key, ov)
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\windows_events.py", line 600, in finish_connect
+    ov.getresult()
+    ~~~~~~~~~~~~^^
+ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\asgiref\sync.py", line 325, in __call__
+    return call_result.result()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\concurrent\futures\_base.py", line 443, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\concurrent\futures\_base.py", line 395, in __get_result
+    raise self._exception
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\asgiref\sync.py", line 365, in main_wrap
+    result = await awaitable
+             ^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 60, in _view_wrapper
+    return await view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\bots\views.py", line 61, in dispatch
+    return await super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\bots\views.py", line 66, in post
+    return await _process_webhook(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+        request, token, settings.MAIN_BOT_TOKEN, bot, 'main_bot'
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\projects\oscar-agro\bots\views.py", line 44, in _process_webhook
+    if not await try_lock(lock_key, ttl=60):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\core\locks.py", line 31, in try_lock
+    result = await redis.set(f"lock:{key}", '1', ex=ttl, nx=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\client.py", line 764, in execute_command
+    conn = self.connection or await pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\utils.py", line 227, in async_wrapper
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1448, in get_connection
+    await self.ensure_connection(connection)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1489, in ensure_connection
+    await connection.connect()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 340, in connect
+    await self.retry.call_with_retry(
+    ...<7 lines>...
+    )
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\retry.py", line 81, in call_with_retry
+    raise error
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\retry.py", line 69, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 397, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 22 connecting to localhost:6379. Удаленный компьютер отклонил это сетевое подключение.
+[2026-04-09 14:55:20] ERROR django.server 61524 "POST /bots/main/webhook/7840815117:AAEEteVzhfOcazUbKxyGVnLnByEhMx56xOg/ HTTP/1.1" 500 193913
+[2026-04-09 14:56:12] ERROR asyncio 61528 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001D2D54D4D70>
+[2026-04-09 14:56:12] ERROR asyncio 61528 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000001D2D4F822D0>, 99836.4400899)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000001D2D54D4980>
+[2026-04-09 14:56:15] ERROR django.request 59968 Internal Server Error: /bots/main/webhook/7840815117:AAEEteVzhfOcazUbKxyGVnLnByEhMx56xOg/
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 371, in connect_check_health
+    await self._connect()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 895, in _connect
+    reader, writer = await asyncio.open_connection(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **self._connection_arguments()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\streams.py", line 48, in open_connection
+    transport, _ = await loop.create_connection(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        lambda: protocol, host, port, **kwds)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 1173, in create_connection
+    raise exceptions[0]
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 1143, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+        exceptions, addrinfo, laddr_infos)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 1042, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 728, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\windows_events.py", line 804, in _poll
+    value = callback(transferred, key, ov)
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\windows_events.py", line 600, in finish_connect
+    ov.getresult()
+    ~~~~~~~~~~~~^^
+ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\asgiref\sync.py", line 325, in __call__
+    return call_result.result()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\concurrent\futures\_base.py", line 443, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\concurrent\futures\_base.py", line 395, in __get_result
+    raise self._exception
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\asgiref\sync.py", line 365, in main_wrap
+    result = await awaitable
+             ^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 60, in _view_wrapper
+    return await view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\bots\views.py", line 61, in dispatch
+    return await super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\bots\views.py", line 66, in post
+    return await _process_webhook(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+        request, token, settings.MAIN_BOT_TOKEN, bot, 'main_bot'
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\projects\oscar-agro\bots\views.py", line 44, in _process_webhook
+    if not await try_lock(lock_key, ttl=60):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\core\locks.py", line 31, in try_lock
+    result = await redis.set(f"lock:{key}", '1', ex=ttl, nx=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\client.py", line 764, in execute_command
+    conn = self.connection or await pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\utils.py", line 227, in async_wrapper
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1448, in get_connection
+    await self.ensure_connection(connection)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1489, in ensure_connection
+    await connection.connect()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 340, in connect
+    await self.retry.call_with_retry(
+    ...<7 lines>...
+    )
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\retry.py", line 81, in call_with_retry
+    raise error
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\retry.py", line 69, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 397, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 22 connecting to localhost:6379. Удаленный компьютер отклонил это сетевое подключение.
+[2026-04-09 14:56:47] ERROR asyncio 13880 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000002BB2B0A4D70>
+[2026-04-09 14:56:47] ERROR asyncio 13880 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000002BB2AB522D0>, 99872.3721245)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000002BB2B0A4980>
+[2026-04-09 15:05:09] ERROR asyncio 61668 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000027D79108D70>
+[2026-04-09 15:05:09] ERROR asyncio 61668 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x0000027D78B822D0>, 100373.8390358)])']
+connector: <aiohttp.connector.TCPConnector object at 0x0000027D79108980>
+[2026-04-09 15:05:32] ERROR bots.base.decorator 12896 [client_bot] Unhandled error in handler client_enter_name
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bots\base\decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "D:\projects\oscar-agro\bots\client_bot\handlers\start.py", line 84, in client_enter_name
+    async with state.data() as data:
+               ~~~~~~~~~~^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\states\sync\context.py", line 118, in data
+    return self.bot.retrieve_data(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        chat_id=chat_id,
+        ^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        message_thread_id=message_thread_id
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\async_telebot.py", line 9623, in retrieve_data
+    return self.current_states.get_interactive_data(chat_id, user_id,
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+        bot_id=bot_id, business_connection_id=business_connection_id, message_thread_id=message_thread_id)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\asyncio_storage\base_storage.py", line 75, in get_interactive_data
+    raise NotImplementedError
+NotImplementedError
+[2026-04-09 15:07:04] ERROR bots.base.decorator 12896 [client_bot] Unhandled error in handler client_enter_name
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bots\base\decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "D:\projects\oscar-agro\bots\client_bot\handlers\start.py", line 84, in client_enter_name
+    async with state.data() as data:
+               ~~~~~~~~~~^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\states\sync\context.py", line 118, in data
+    return self.bot.retrieve_data(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        chat_id=chat_id,
+        ^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        message_thread_id=message_thread_id
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\async_telebot.py", line 9623, in retrieve_data
+    return self.current_states.get_interactive_data(chat_id, user_id,
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+        bot_id=bot_id, business_connection_id=business_connection_id, message_thread_id=message_thread_id)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\asyncio_storage\base_storage.py", line 75, in get_interactive_data
+    raise NotImplementedError
+NotImplementedError
+[2026-04-09 15:10:41] ERROR bots.base.decorator 12896 [client_bot] Unhandled error in handler client_enter_name
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bots\base\decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "D:\projects\oscar-agro\bots\client_bot\handlers\start.py", line 84, in client_enter_name
+    async with state.data() as data:
+               ~~~~~~~~~~^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\states\sync\context.py", line 118, in data
+    return self.bot.retrieve_data(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        chat_id=chat_id,
+        ^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        message_thread_id=message_thread_id
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\async_telebot.py", line 9623, in retrieve_data
+    return self.current_states.get_interactive_data(chat_id, user_id,
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+        bot_id=bot_id, business_connection_id=business_connection_id, message_thread_id=message_thread_id)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\asyncio_storage\base_storage.py", line 75, in get_interactive_data
+    raise NotImplementedError
+NotImplementedError
+[2026-04-09 15:13:14] ERROR asyncio 12896 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000018D0CF45A90>
+[2026-04-09 15:13:14] ERROR asyncio 12896 Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x0000018D0C74E6D0>, 100856.6626447)])']
+connector: <aiohttp.connector.TCPConnector object at 0x0000018D0CF456A0>
+[2026-04-09 15:13:36] ERROR bots.base.decorator 62860 [client_bot] Unhandled error in handler client_start
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bots\base\decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "D:\projects\oscar-agro\bots\client_bot\handlers\start.py", line 26, in client_start
+    await state.delete()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\async_telebot.py", line 9592, in delete_state
+    return await self.current_states.delete_state(chat_id, user_id,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        bot_id=bot_id, business_connection_id=business_connection_id, message_thread_id=message_thread_id)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\asyncio_storage\redis_storage.py", line 169, in delete_state
+    result = await self.redis.delete(_key)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\client.py", line 764, in execute_command
+    conn = self.connection or await pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\utils.py", line 227, in async_wrapper
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1448, in get_connection
+    await self.ensure_connection(connection)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1489, in ensure_connection
+    await connection.connect()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 340, in connect
+    await self.retry.call_with_retry(
+    ...<7 lines>...
+    )
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\retry.py", line 81, in call_with_retry
+    raise error
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\retry.py", line 69, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 404, in connect_check_health
+    await self.on_connect_check_health(check_health=check_health)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 493, in on_connect_check_health
+    auth_response = await self.read_response()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 734, in read_response
+    response = await self._parser.read_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        disable_decoding=disable_decoding
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\_parsers\resp2.py", line 82, in read_response
+    response = await self._read_response(disable_decoding=disable_decoding)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\_parsers\resp2.py", line 102, in _read_response
+    raise error
+redis.exceptions.AuthenticationError: AUTH <password> called without any password configured for the default user. Are you sure your configuration is correct?
+[2026-04-09 15:13:40] ERROR bots.base.decorator 62860 [client_bot] Unhandled error in handler client_start
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bots\base\decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "D:\projects\oscar-agro\bots\client_bot\handlers\start.py", line 26, in client_start
+    await state.delete()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\async_telebot.py", line 9592, in delete_state
+    return await self.current_states.delete_state(chat_id, user_id,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        bot_id=bot_id, business_connection_id=business_connection_id, message_thread_id=message_thread_id)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\asyncio_storage\redis_storage.py", line 169, in delete_state
+    result = await self.redis.delete(_key)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\client.py", line 764, in execute_command
+    conn = self.connection or await pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\utils.py", line 227, in async_wrapper
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1448, in get_connection
+    await self.ensure_connection(connection)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1489, in ensure_connection
+    await connection.connect()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 340, in connect
+    await self.retry.call_with_retry(
+    ...<7 lines>...
+    )
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\retry.py", line 81, in call_with_retry
+    raise error
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\retry.py", line 69, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 404, in connect_check_health
+    await self.on_connect_check_health(check_health=check_health)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 493, in on_connect_check_health
+    auth_response = await self.read_response()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 734, in read_response
+    response = await self._parser.read_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        disable_decoding=disable_decoding
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\_parsers\resp2.py", line 82, in read_response
+    response = await self._read_response(disable_decoding=disable_decoding)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\_parsers\resp2.py", line 102, in _read_response
+    raise error
+redis.exceptions.AuthenticationError: AUTH <password> called without any password configured for the default user. Are you sure your configuration is correct?
+[2026-04-09 15:13:45] ERROR asyncio 62860 CancelledError exception in shielded future
+future: <Future finished exception=CancelledError()>
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\retry.py", line 69, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 404, in connect_check_health
+    await self.on_connect_check_health(check_health=check_health)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 493, in on_connect_check_health
+    auth_response = await self.read_response()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 734, in read_response
+    response = await self._parser.read_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        disable_decoding=disable_decoding
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\_parsers\resp2.py", line 82, in read_response
+    response = await self._read_response(disable_decoding=disable_decoding)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\_parsers\resp2.py", line 102, in _read_response
+    raise error
+redis.exceptions.AuthenticationError: AUTH <password> called without any password configured for the default user. Are you sure your configuration is correct?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\concurrent\futures\thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\concurrent\futures\thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\asgiref\sync.py", line 561, in thread_handler
+    return func(*args, **kwargs)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\utils\deprecation.py", line 309, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\whitenoise\middleware.py", line 123, in __call__
+    return self.get_response(request)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\asgiref\sync.py", line 325, in __call__
+    return call_result.result()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\concurrent\futures\_base.py", line 443, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\concurrent\futures\_base.py", line 395, in __get_result
+    raise self._exception
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\asgiref\sync.py", line 365, in main_wrap
+    result = await awaitable
+             ^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\utils\deprecation.py", line 325, in __acall__
+    response = response or await self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\utils\deprecation.py", line 325, in __acall__
+    response = response or await self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\utils\deprecation.py", line 325, in __acall__
+    response = response or await self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\utils\deprecation.py", line 325, in __acall__
+    response = response or await self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\utils\deprecation.py", line 325, in __acall__
+    response = response or await self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\core\handlers\base.py", line 254, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 60, in _view_wrapper
+    return await view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\bots\views.py", line 80, in dispatch
+    return await super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\bots\views.py", line 85, in post
+    return await _process_webhook(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+        request, token, settings.CLIENT_BOT_TOKEN, bot, 'client_bot'
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\projects\oscar-agro\bots\views.py", line 50, in _process_webhook
+    await bot.process_new_updates([update])
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\async_telebot.py", line 730, in process_new_updates
+    await self.process_new_callback_query(new_callback_queries)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\async_telebot.py", line 815, in process_new_callback_query
+    await self._process_updates(self.callback_query_handlers, new_callback_queries, 'callback_query')
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\async_telebot.py", line 524, in _process_updates
+    await asyncio.gather(*tasks)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\async_telebot.py", line 560, in _run_middlewares_and_handlers
+    process_update = await self._test_message_handler(handler, message)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\async_telebot.py", line 928, in _test_message_handler
+    if not await self._test_filter(message_filter, filter_value, message):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\async_telebot.py", line 1002, in _test_filter
+    return await self._check_filter(message_filter,filter_value,message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\async_telebot.py", line 1021, in _check_filter
+    return await filter_check.check(message, filter_value)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\asyncio_filters.py", line 415, in check
+    user_state = await self.bot.current_states.get_state(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\asyncio_storage\redis_storage.py", line 149, in get_state
+    state_bytes = await self.redis.hget(_key, "state")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\client.py", line 764, in execute_command
+    conn = self.connection or await pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\utils.py", line 227, in async_wrapper
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1448, in get_connection
+    await self.ensure_connection(connection)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1489, in ensure_connection
+    await connection.connect()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 340, in connect
+    await self.retry.call_with_retry(
+    ...<7 lines>...
+    )
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\retry.py", line 84, in call_with_retry
+    await sleep(backoff)
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\tasks.py", line 702, in sleep
+    return await future
+           ^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+[2026-04-09 15:14:05] ERROR TeleBot 62644 'bool' object is not iterable
+[2026-04-09 15:14:08] ERROR TeleBot 62644 'bool' object is not iterable
+[2026-04-09 15:14:10] ERROR TeleBot 62644 'bool' object is not iterable
+[2026-04-09 15:14:12] ERROR TeleBot 62644 'bool' object is not iterable
+[2026-04-09 15:14:12] ERROR TeleBot 62644 'bool' object is not iterable
+[2026-04-09 15:14:38] ERROR TeleBot 62644 'bool' object is not iterable
+[2026-04-09 15:15:03] ERROR TeleBot 62644 'bool' object is not iterable
+[2026-04-09 15:15:03] ERROR TeleBot 62644 'bool' object is not iterable
+[2026-04-09 15:15:04] ERROR TeleBot 62644 'bool' object is not iterable
+[2026-04-09 15:19:48] ERROR asyncio 62644 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000002425DF09BE0>
+[2026-04-09 15:19:54] ERROR TeleBot 12512 'bool' object is not iterable
+[2026-04-09 15:20:23] ERROR TeleBot 57216 'bool' object is not iterable
+[2026-04-09 15:20:25] ERROR TeleBot 57216 'bool' object is not iterable
+[2026-04-09 15:21:28] ERROR TeleBot 3376 'bool' object is not iterable
+[2026-04-09 15:21:43] ERROR TeleBot 3376 'bool' object is not iterable
+[2026-04-09 15:21:48] ERROR TeleBot 3376 'bool' object is not iterable
+[2026-04-09 15:21:49] ERROR TeleBot 3376 'bool' object is not iterable
+[2026-04-09 15:21:50] ERROR TeleBot 3376 'bool' object is not iterable
+[2026-04-09 15:21:51] ERROR TeleBot 3376 'bool' object is not iterable
+[2026-04-09 15:21:51] ERROR TeleBot 3376 'bool' object is not iterable
+[2026-04-09 15:21:52] ERROR TeleBot 3376 'bool' object is not iterable
+[2026-04-09 15:21:53] ERROR TeleBot 3376 'bool' object is not iterable
+[2026-04-09 15:21:53] ERROR TeleBot 3376 'bool' object is not iterable
+[2026-04-09 15:22:32] ERROR TeleBot 55860 'bool' object is not iterable
+[2026-04-09 15:27:09] ERROR bots.base.decorator 62148 [main_bot] Unhandled error in handler admin_broadcast_confirm
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bots\base\decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "D:\projects\oscar-agro\bots\main_bot\handlers\admin.py", line 331, in admin_broadcast_confirm
+    async with state.data() as data:
+               ~~~~~~~~~~^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\states\sync\context.py", line 118, in data
+    return self.bot.retrieve_data(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        chat_id=chat_id,
+        ^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        message_thread_id=message_thread_id
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\async_telebot.py", line 9623, in retrieve_data
+    return self.current_states.get_interactive_data(chat_id, user_id,
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+        bot_id=bot_id, business_connection_id=business_connection_id, message_thread_id=message_thread_id)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\asyncio_storage\base_storage.py", line 75, in get_interactive_data
+    raise NotImplementedError
+NotImplementedError
+[2026-04-09 15:27:33] ERROR asyncio 62148 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000002476F139A90>

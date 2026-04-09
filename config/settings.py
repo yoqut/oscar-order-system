@@ -14,11 +14,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_celery_beat',
     # Project apps
     'apps.accounts',
     'apps.orders',
     'apps.notifications',
-    'bot_app'
+    'bots.apps.BotsConfig',
 ]
 
 MIDDLEWARE = [
@@ -52,10 +53,9 @@ TEMPLATES = [
 WSGI_APPLICATION = 'config.wsgi.application'
 ASGI_APPLICATION = 'config.asgi.application'
 
-# Database
+# ── Database ──────────────────────────────────────────────────────────────────
 _DB_NAME = config('DB_NAME', default='')
 if _DB_NAME:
-
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
@@ -82,9 +82,6 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
-BOT_RATE_LIMIT_WINDOW: float = config('BOT_RATE_LIMIT_WINDOW', default=3.0, cast=float)
-BOT_RATE_LIMIT_BURST: int = config('BOT_RATE_LIMIT_BURST', default=5, cast=int)
-
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'Asia/Tashkent'
 USE_I18N = True
@@ -99,30 +96,38 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Telegram Bot
-BOT_TOKEN = config('BOT_TOKEN', default='')
+# ── Telegram Bots ─────────────────────────────────────────────────────────────
+MAIN_BOT_TOKEN = config('MAIN_BOT_TOKEN', default='')
+CLIENT_BOT_TOKEN = config('CLIENT_BOT_TOKEN', default='')
 WEBHOOK_BASE_URL = config('WEBHOOK_BASE_URL', default='')
 SUPER_ADMIN_IDS = config('SUPER_ADMIN_IDS', default='', cast=Csv(cast=int))
 
+# ── Redis ─────────────────────────────────────────────────────────────────────
+REDIS_URL = config('REDIS_URL', default='redis://localhost:6379/0')
+
+# ── Celery ────────────────────────────────────────────────────────────────────
+CELERY_BROKER_URL = REDIS_URL
+CELERY_RESULT_BACKEND = REDIS_URL
+CELERY_TIMEZONE = TIME_ZONE
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_ACCEPT_CONTENT = ['json']
+
+# ── Logging ───────────────────────────────────────────────────────────────────
 _LOG_DIR = os.path.join(BASE_DIR, 'logs')
 os.makedirs(_LOG_DIR, exist_ok=True)
 
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
-
     'formatters': {
         'verbose': {
             'format': '[{asctime}] {levelname} {name} {process:d} {message}',
             'style': '{',
             'datefmt': '%Y-%m-%d %H:%M:%S',
         },
-        'simple': {
-            'format': '{levelname} {message}',
-            'style': '{',
-        },
     },
-
     'handlers': {
         'console': {
             'class': 'logging.StreamHandler',
@@ -131,14 +136,14 @@ LOGGING = {
         'django_file': {
             'class': 'logging.handlers.RotatingFileHandler',
             'filename': os.path.join(_LOG_DIR, 'django.log'),
-            'maxBytes': 10 * 1024 * 1024,  # 10 MB
+            'maxBytes': 10 * 1024 * 1024,
             'backupCount': 5,
             'formatter': 'verbose',
             'encoding': 'utf-8',
         },
-        'bot_file': {
+        'bots_file': {
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(_LOG_DIR, 'bot_app.log'),
+            'filename': os.path.join(_LOG_DIR, 'bots.log'),
             'maxBytes': 10 * 1024 * 1024,
             'backupCount': 5,
             'formatter': 'verbose',
@@ -154,12 +159,10 @@ LOGGING = {
             'encoding': 'utf-8',
         },
     },
-
     'root': {
         'handlers': ['console', 'error_file'],
         'level': 'WARNING',
     },
-
     'loggers': {
         'django': {
             'handlers': ['console', 'django_file', 'error_file'],
@@ -168,17 +171,17 @@ LOGGING = {
         },
         'django.db.backends': {
             'handlers': ['console'],
-            'level': 'WARNING',  # set to DEBUG to log all SQL
+            'level': 'WARNING',
             'propagate': False,
         },
-        'bot_app': {
-            'handlers': ['console', 'bot_file', 'error_file'],
+        'bots': {
+            'handlers': ['console', 'bots_file', 'error_file'],
             'level': 'DEBUG' if DEBUG else 'INFO',
             'propagate': False,
         },
-        'bot_app.requests': {
-            'handlers': ['bot_file'],
-            'level': 'DEBUG' if DEBUG else 'INFO',
+        'tasks': {
+            'handlers': ['console', 'bots_file', 'error_file'],
+            'level': 'INFO',
             'propagate': False,
         },
     },

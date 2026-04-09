@@ -1,0 +1,203 @@
+[2026-04-09 15:05:32] ERROR bots.base.decorator 12896 [client_bot] Unhandled error in handler client_enter_name
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bots\base\decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "D:\projects\oscar-agro\bots\client_bot\handlers\start.py", line 84, in client_enter_name
+    async with state.data() as data:
+               ~~~~~~~~~~^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\states\sync\context.py", line 118, in data
+    return self.bot.retrieve_data(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        chat_id=chat_id,
+        ^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        message_thread_id=message_thread_id
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\async_telebot.py", line 9623, in retrieve_data
+    return self.current_states.get_interactive_data(chat_id, user_id,
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+        bot_id=bot_id, business_connection_id=business_connection_id, message_thread_id=message_thread_id)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\asyncio_storage\base_storage.py", line 75, in get_interactive_data
+    raise NotImplementedError
+NotImplementedError
+[2026-04-09 15:07:04] ERROR bots.base.decorator 12896 [client_bot] Unhandled error in handler client_enter_name
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bots\base\decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "D:\projects\oscar-agro\bots\client_bot\handlers\start.py", line 84, in client_enter_name
+    async with state.data() as data:
+               ~~~~~~~~~~^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\states\sync\context.py", line 118, in data
+    return self.bot.retrieve_data(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        chat_id=chat_id,
+        ^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        message_thread_id=message_thread_id
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\async_telebot.py", line 9623, in retrieve_data
+    return self.current_states.get_interactive_data(chat_id, user_id,
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+        bot_id=bot_id, business_connection_id=business_connection_id, message_thread_id=message_thread_id)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\asyncio_storage\base_storage.py", line 75, in get_interactive_data
+    raise NotImplementedError
+NotImplementedError
+[2026-04-09 15:10:41] ERROR bots.base.decorator 12896 [client_bot] Unhandled error in handler client_enter_name
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bots\base\decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "D:\projects\oscar-agro\bots\client_bot\handlers\start.py", line 84, in client_enter_name
+    async with state.data() as data:
+               ~~~~~~~~~~^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\states\sync\context.py", line 118, in data
+    return self.bot.retrieve_data(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        chat_id=chat_id,
+        ^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        message_thread_id=message_thread_id
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\async_telebot.py", line 9623, in retrieve_data
+    return self.current_states.get_interactive_data(chat_id, user_id,
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+        bot_id=bot_id, business_connection_id=business_connection_id, message_thread_id=message_thread_id)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\asyncio_storage\base_storage.py", line 75, in get_interactive_data
+    raise NotImplementedError
+NotImplementedError
+[2026-04-09 15:13:36] ERROR bots.base.decorator 62860 [client_bot] Unhandled error in handler client_start
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bots\base\decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "D:\projects\oscar-agro\bots\client_bot\handlers\start.py", line 26, in client_start
+    await state.delete()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\async_telebot.py", line 9592, in delete_state
+    return await self.current_states.delete_state(chat_id, user_id,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        bot_id=bot_id, business_connection_id=business_connection_id, message_thread_id=message_thread_id)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\asyncio_storage\redis_storage.py", line 169, in delete_state
+    result = await self.redis.delete(_key)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\client.py", line 764, in execute_command
+    conn = self.connection or await pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\utils.py", line 227, in async_wrapper
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1448, in get_connection
+    await self.ensure_connection(connection)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1489, in ensure_connection
+    await connection.connect()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 340, in connect
+    await self.retry.call_with_retry(
+    ...<7 lines>...
+    )
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\retry.py", line 81, in call_with_retry
+    raise error
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\retry.py", line 69, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 404, in connect_check_health
+    await self.on_connect_check_health(check_health=check_health)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 493, in on_connect_check_health
+    auth_response = await self.read_response()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 734, in read_response
+    response = await self._parser.read_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        disable_decoding=disable_decoding
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\_parsers\resp2.py", line 82, in read_response
+    response = await self._read_response(disable_decoding=disable_decoding)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\_parsers\resp2.py", line 102, in _read_response
+    raise error
+redis.exceptions.AuthenticationError: AUTH <password> called without any password configured for the default user. Are you sure your configuration is correct?
+[2026-04-09 15:13:40] ERROR bots.base.decorator 62860 [client_bot] Unhandled error in handler client_start
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bots\base\decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "D:\projects\oscar-agro\bots\client_bot\handlers\start.py", line 26, in client_start
+    await state.delete()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\async_telebot.py", line 9592, in delete_state
+    return await self.current_states.delete_state(chat_id, user_id,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        bot_id=bot_id, business_connection_id=business_connection_id, message_thread_id=message_thread_id)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\asyncio_storage\redis_storage.py", line 169, in delete_state
+    result = await self.redis.delete(_key)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\client.py", line 764, in execute_command
+    conn = self.connection or await pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\utils.py", line 227, in async_wrapper
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1448, in get_connection
+    await self.ensure_connection(connection)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1489, in ensure_connection
+    await connection.connect()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 340, in connect
+    await self.retry.call_with_retry(
+    ...<7 lines>...
+    )
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\retry.py", line 81, in call_with_retry
+    raise error
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\retry.py", line 69, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 404, in connect_check_health
+    await self.on_connect_check_health(check_health=check_health)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 493, in on_connect_check_health
+    auth_response = await self.read_response()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 734, in read_response
+    response = await self._parser.read_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        disable_decoding=disable_decoding
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\_parsers\resp2.py", line 82, in read_response
+    response = await self._read_response(disable_decoding=disable_decoding)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\_parsers\resp2.py", line 102, in _read_response
+    raise error
+redis.exceptions.AuthenticationError: AUTH <password> called without any password configured for the default user. Are you sure your configuration is correct?
+[2026-04-09 15:13:46] INFO bots.views 62644 [client_bot] Duplicate update_id=840104123, skipping
+[2026-04-09 15:27:09] ERROR bots.base.decorator 62148 [main_bot] Unhandled error in handler admin_broadcast_confirm
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bots\base\decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "D:\projects\oscar-agro\bots\main_bot\handlers\admin.py", line 331, in admin_broadcast_confirm
+    async with state.data() as data:
+               ~~~~~~~~~~^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\states\sync\context.py", line 118, in data
+    return self.bot.retrieve_data(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        chat_id=chat_id,
+        ^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        message_thread_id=message_thread_id
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\async_telebot.py", line 9623, in retrieve_data
+    return self.current_states.get_interactive_data(chat_id, user_id,
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+        bot_id=bot_id, business_connection_id=business_connection_id, message_thread_id=message_thread_id)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\asyncio_storage\base_storage.py", line 75, in get_interactive_data
+    raise NotImplementedError
+NotImplementedError
