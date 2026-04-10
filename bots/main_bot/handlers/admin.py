@@ -174,6 +174,7 @@ async def _show_orders_by_status(sender: Sender, status: str, title: str):
     await sender.answer()
 
 
+
 @handler(callback=True, call='admin:orders_awaiting_sales', is_admin=True)
 async def admin_orders_awaiting_sales(sender: Sender, state: StateContext):
     await _show_orders_by_status(sender, OrderStatus.AWAITING_SALES, "🆕 <b>Client so'rovlari</b>")

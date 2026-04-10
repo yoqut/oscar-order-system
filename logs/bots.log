@@ -201,3 +201,843 @@ Traceback (most recent call last):
   File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\asyncio_storage\base_storage.py", line 75, in get_interactive_data
     raise NotImplementedError
 NotImplementedError
+[2026-04-10 16:09:49] ERROR bots.base.decorator 54968 [client_bot] Unhandled error in handler client_start
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 669, in send_packed_command
+    self._writer.writelines(command)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\streams.py", line 343, in writelines
+    self._transport.writelines(data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\transports.py", line 123, in writelines
+    self.write(data)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 366, in write
+    self._loop_writing(data=bytes(data))
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 402, in _loop_writing
+    self._write_fut = self._loop._proactor.send(self._sock, data)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'send'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bots\base\decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "D:\projects\oscar-agro\bots\client_bot\handlers\start.py", line 26, in client_start
+    await state.delete()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\async_telebot.py", line 9592, in delete_state
+    return await self.current_states.delete_state(chat_id, user_id,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        bot_id=bot_id, business_connection_id=business_connection_id, message_thread_id=message_thread_id)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\asyncio_storage\redis_storage.py", line 169, in delete_state
+    result = await self.redis.delete(_key)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\client.py", line 781, in execute_command
+    result = await conn.retry.call_with_retry(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\retry.py", line 69, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\client.py", line 721, in _send_command_parse_response
+    await conn.send_command(*args)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 694, in send_command
+    await self.send_packed_command(
+        self.pack_command(*args), check_health=kwargs.get("check_health", True)
+    )
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 689, in send_packed_command
+    await self.disconnect(nowait=True)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 585, in disconnect
+    self._writer.close()  # type: ignore[union-attr]
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\streams.py", line 352, in close
+    return self._transport.close()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 109, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 827, in call_soon
+    self._check_closed()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 550, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+[2026-04-10 16:09:54] ERROR bots.base.decorator 54968 [client_bot] Unhandled error in handler client_start
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 669, in send_packed_command
+    self._writer.writelines(command)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\streams.py", line 343, in writelines
+    self._transport.writelines(data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\transports.py", line 123, in writelines
+    self.write(data)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 366, in write
+    self._loop_writing(data=bytes(data))
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 402, in _loop_writing
+    self._write_fut = self._loop._proactor.send(self._sock, data)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'send'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bots\base\decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "D:\projects\oscar-agro\bots\client_bot\handlers\start.py", line 26, in client_start
+    await state.delete()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\async_telebot.py", line 9592, in delete_state
+    return await self.current_states.delete_state(chat_id, user_id,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        bot_id=bot_id, business_connection_id=business_connection_id, message_thread_id=message_thread_id)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\asyncio_storage\redis_storage.py", line 169, in delete_state
+    result = await self.redis.delete(_key)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\client.py", line 781, in execute_command
+    result = await conn.retry.call_with_retry(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\retry.py", line 69, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\client.py", line 721, in _send_command_parse_response
+    await conn.send_command(*args)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 694, in send_command
+    await self.send_packed_command(
+        self.pack_command(*args), check_health=kwargs.get("check_health", True)
+    )
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 689, in send_packed_command
+    await self.disconnect(nowait=True)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 585, in disconnect
+    self._writer.close()  # type: ignore[union-attr]
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\streams.py", line 352, in close
+    return self._transport.close()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 109, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 827, in call_soon
+    self._check_closed()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 550, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+[2026-04-10 16:30:35] ERROR bots.base.decorator 61992 [client_bot] Unhandled error in handler client_orders_menu
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 669, in send_packed_command
+    self._writer.writelines(command)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\streams.py", line 343, in writelines
+    self._transport.writelines(data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\transports.py", line 123, in writelines
+    self.write(data)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 366, in write
+    self._loop_writing(data=bytes(data))
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 402, in _loop_writing
+    self._write_fut = self._loop._proactor.send(self._sock, data)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'send'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bots\base\decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "D:\projects\oscar-agro\bots\client_bot\handlers\orders.py", line 43, in client_orders_menu
+    await state.delete()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\async_telebot.py", line 9592, in delete_state
+    return await self.current_states.delete_state(chat_id, user_id,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        bot_id=bot_id, business_connection_id=business_connection_id, message_thread_id=message_thread_id)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\asyncio_storage\redis_storage.py", line 169, in delete_state
+    result = await self.redis.delete(_key)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\client.py", line 781, in execute_command
+    result = await conn.retry.call_with_retry(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\retry.py", line 69, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\client.py", line 721, in _send_command_parse_response
+    await conn.send_command(*args)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 694, in send_command
+    await self.send_packed_command(
+        self.pack_command(*args), check_health=kwargs.get("check_health", True)
+    )
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 689, in send_packed_command
+    await self.disconnect(nowait=True)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 585, in disconnect
+    self._writer.close()  # type: ignore[union-attr]
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\streams.py", line 352, in close
+    return self._transport.close()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 109, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 827, in call_soon
+    self._check_closed()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 550, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+[2026-04-10 16:30:38] ERROR bots.base.decorator 61992 [client_bot] Unhandled error in handler client_profile
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bots\base\decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "D:\projects\oscar-agro\bots\client_bot\handlers\profile.py", line 44, in client_profile
+    t('profile_view', lang,
+    ~^^^^^^^^^^^^^^^^^^^^^^
+      name=client.full_name,
+      ^^^^^^^^^^^^^^^^^^^^^^
+      phone=client.phone or '—',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+      lang=lang_name,
+      ^^^^^^^^^^^^^^^
+      date=date_str),
+      ^^^^^^^^^^^^^^
+TypeError: t() got multiple values for argument 'lang'
+[2026-04-10 16:30:44] ERROR bots.base.decorator 61992 [client_bot] Unhandled error in handler client_orders_menu
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 669, in send_packed_command
+    self._writer.writelines(command)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\streams.py", line 343, in writelines
+    self._transport.writelines(data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\transports.py", line 123, in writelines
+    self.write(data)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 366, in write
+    self._loop_writing(data=bytes(data))
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 402, in _loop_writing
+    self._write_fut = self._loop._proactor.send(self._sock, data)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'send'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bots\base\decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "D:\projects\oscar-agro\bots\client_bot\handlers\orders.py", line 43, in client_orders_menu
+    await state.delete()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\async_telebot.py", line 9592, in delete_state
+    return await self.current_states.delete_state(chat_id, user_id,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        bot_id=bot_id, business_connection_id=business_connection_id, message_thread_id=message_thread_id)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\asyncio_storage\redis_storage.py", line 169, in delete_state
+    result = await self.redis.delete(_key)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\client.py", line 781, in execute_command
+    result = await conn.retry.call_with_retry(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\retry.py", line 69, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\client.py", line 721, in _send_command_parse_response
+    await conn.send_command(*args)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 694, in send_command
+    await self.send_packed_command(
+        self.pack_command(*args), check_health=kwargs.get("check_health", True)
+    )
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 689, in send_packed_command
+    await self.disconnect(nowait=True)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 585, in disconnect
+    self._writer.close()  # type: ignore[union-attr]
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\streams.py", line 352, in close
+    return self._transport.close()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 109, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 827, in call_soon
+    self._check_closed()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 550, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+[2026-04-10 16:30:48] ERROR bots.base.decorator 61992 [client_bot] Unhandled error in handler client_profile
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bots\base\decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "D:\projects\oscar-agro\bots\client_bot\handlers\profile.py", line 44, in client_profile
+    t('profile_view', lang,
+    ~^^^^^^^^^^^^^^^^^^^^^^
+      name=client.full_name,
+      ^^^^^^^^^^^^^^^^^^^^^^
+      phone=client.phone or '—',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+      lang=lang_name,
+      ^^^^^^^^^^^^^^^
+      date=date_str),
+      ^^^^^^^^^^^^^^
+TypeError: t() got multiple values for argument 'lang'
+[2026-04-10 16:30:57] ERROR bots.base.decorator 61992 [client_bot] Unhandled error in handler client_profile
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 669, in send_packed_command
+    self._writer.writelines(command)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\streams.py", line 343, in writelines
+    self._transport.writelines(data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\transports.py", line 123, in writelines
+    self.write(data)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 366, in write
+    self._loop_writing(data=bytes(data))
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 402, in _loop_writing
+    self._write_fut = self._loop._proactor.send(self._sock, data)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'send'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bots\base\decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "D:\projects\oscar-agro\bots\client_bot\handlers\profile.py", line 34, in client_profile
+    await state.delete()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\async_telebot.py", line 9592, in delete_state
+    return await self.current_states.delete_state(chat_id, user_id,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        bot_id=bot_id, business_connection_id=business_connection_id, message_thread_id=message_thread_id)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\asyncio_storage\redis_storage.py", line 169, in delete_state
+    result = await self.redis.delete(_key)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\client.py", line 781, in execute_command
+    result = await conn.retry.call_with_retry(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\retry.py", line 69, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\client.py", line 721, in _send_command_parse_response
+    await conn.send_command(*args)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 694, in send_command
+    await self.send_packed_command(
+        self.pack_command(*args), check_health=kwargs.get("check_health", True)
+    )
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 689, in send_packed_command
+    await self.disconnect(nowait=True)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 585, in disconnect
+    self._writer.close()  # type: ignore[union-attr]
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\streams.py", line 352, in close
+    return self._transport.close()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 109, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 827, in call_soon
+    self._check_closed()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 550, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+[2026-04-10 16:31:09] ERROR bots.base.decorator 61992 [client_bot] Unhandled error in handler client_orders_menu
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 669, in send_packed_command
+    self._writer.writelines(command)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\streams.py", line 343, in writelines
+    self._transport.writelines(data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\transports.py", line 123, in writelines
+    self.write(data)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 366, in write
+    self._loop_writing(data=bytes(data))
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 402, in _loop_writing
+    self._write_fut = self._loop._proactor.send(self._sock, data)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'send'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bots\base\decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "D:\projects\oscar-agro\bots\client_bot\handlers\orders.py", line 43, in client_orders_menu
+    await state.delete()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\async_telebot.py", line 9592, in delete_state
+    return await self.current_states.delete_state(chat_id, user_id,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        bot_id=bot_id, business_connection_id=business_connection_id, message_thread_id=message_thread_id)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\asyncio_storage\redis_storage.py", line 169, in delete_state
+    result = await self.redis.delete(_key)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\client.py", line 781, in execute_command
+    result = await conn.retry.call_with_retry(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\retry.py", line 69, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\client.py", line 721, in _send_command_parse_response
+    await conn.send_command(*args)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 694, in send_command
+    await self.send_packed_command(
+        self.pack_command(*args), check_health=kwargs.get("check_health", True)
+    )
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 689, in send_packed_command
+    await self.disconnect(nowait=True)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 585, in disconnect
+    self._writer.close()  # type: ignore[union-attr]
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\streams.py", line 352, in close
+    return self._transport.close()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 109, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 827, in call_soon
+    self._check_closed()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 550, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+[2026-04-10 16:31:12] ERROR bots.base.decorator 61992 [client_bot] Unhandled error in handler client_profile
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bots\base\decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "D:\projects\oscar-agro\bots\client_bot\handlers\profile.py", line 44, in client_profile
+    t('profile_view', lang,
+    ~^^^^^^^^^^^^^^^^^^^^^^
+      name=client.full_name,
+      ^^^^^^^^^^^^^^^^^^^^^^
+      phone=client.phone or '—',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+      lang=lang_name,
+      ^^^^^^^^^^^^^^^
+      date=date_str),
+      ^^^^^^^^^^^^^^
+TypeError: t() got multiple values for argument 'lang'
+[2026-04-10 16:31:27] ERROR bots.base.decorator 61992 [client_bot] Unhandled error in handler client_orders_menu
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 669, in send_packed_command
+    self._writer.writelines(command)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\streams.py", line 343, in writelines
+    self._transport.writelines(data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\transports.py", line 123, in writelines
+    self.write(data)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 366, in write
+    self._loop_writing(data=bytes(data))
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 402, in _loop_writing
+    self._write_fut = self._loop._proactor.send(self._sock, data)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'send'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bots\base\decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "D:\projects\oscar-agro\bots\client_bot\handlers\orders.py", line 43, in client_orders_menu
+    await state.delete()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\async_telebot.py", line 9592, in delete_state
+    return await self.current_states.delete_state(chat_id, user_id,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        bot_id=bot_id, business_connection_id=business_connection_id, message_thread_id=message_thread_id)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\asyncio_storage\redis_storage.py", line 169, in delete_state
+    result = await self.redis.delete(_key)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\client.py", line 781, in execute_command
+    result = await conn.retry.call_with_retry(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\retry.py", line 69, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\client.py", line 721, in _send_command_parse_response
+    await conn.send_command(*args)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 694, in send_command
+    await self.send_packed_command(
+        self.pack_command(*args), check_health=kwargs.get("check_health", True)
+    )
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 689, in send_packed_command
+    await self.disconnect(nowait=True)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 585, in disconnect
+    self._writer.close()  # type: ignore[union-attr]
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\streams.py", line 352, in close
+    return self._transport.close()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 109, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 827, in call_soon
+    self._check_closed()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 550, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+[2026-04-10 16:31:40] ERROR bots.base.decorator 61992 [client_bot] Unhandled error in handler client_orders_menu
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 669, in send_packed_command
+    self._writer.writelines(command)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\streams.py", line 343, in writelines
+    self._transport.writelines(data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\transports.py", line 123, in writelines
+    self.write(data)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 366, in write
+    self._loop_writing(data=bytes(data))
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 402, in _loop_writing
+    self._write_fut = self._loop._proactor.send(self._sock, data)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'send'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bots\base\decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "D:\projects\oscar-agro\bots\client_bot\handlers\orders.py", line 43, in client_orders_menu
+    await state.delete()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\async_telebot.py", line 9592, in delete_state
+    return await self.current_states.delete_state(chat_id, user_id,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        bot_id=bot_id, business_connection_id=business_connection_id, message_thread_id=message_thread_id)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\asyncio_storage\redis_storage.py", line 169, in delete_state
+    result = await self.redis.delete(_key)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\client.py", line 781, in execute_command
+    result = await conn.retry.call_with_retry(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\retry.py", line 69, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\client.py", line 721, in _send_command_parse_response
+    await conn.send_command(*args)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 694, in send_command
+    await self.send_packed_command(
+        self.pack_command(*args), check_health=kwargs.get("check_health", True)
+    )
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 689, in send_packed_command
+    await self.disconnect(nowait=True)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 585, in disconnect
+    self._writer.close()  # type: ignore[union-attr]
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\streams.py", line 352, in close
+    return self._transport.close()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 109, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 827, in call_soon
+    self._check_closed()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 550, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+[2026-04-10 16:33:49] ERROR bots.base.decorator 61992 [client_bot] Unhandled error in handler client_start
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 669, in send_packed_command
+    self._writer.writelines(command)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\streams.py", line 343, in writelines
+    self._transport.writelines(data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\transports.py", line 123, in writelines
+    self.write(data)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 366, in write
+    self._loop_writing(data=bytes(data))
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 402, in _loop_writing
+    self._write_fut = self._loop._proactor.send(self._sock, data)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'send'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bots\base\decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "D:\projects\oscar-agro\bots\client_bot\handlers\start.py", line 27, in client_start
+    await state.delete()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\async_telebot.py", line 9592, in delete_state
+    return await self.current_states.delete_state(chat_id, user_id,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        bot_id=bot_id, business_connection_id=business_connection_id, message_thread_id=message_thread_id)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\asyncio_storage\redis_storage.py", line 169, in delete_state
+    result = await self.redis.delete(_key)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\client.py", line 781, in execute_command
+    result = await conn.retry.call_with_retry(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\retry.py", line 69, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\client.py", line 721, in _send_command_parse_response
+    await conn.send_command(*args)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 694, in send_command
+    await self.send_packed_command(
+        self.pack_command(*args), check_health=kwargs.get("check_health", True)
+    )
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 689, in send_packed_command
+    await self.disconnect(nowait=True)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 585, in disconnect
+    self._writer.close()  # type: ignore[union-attr]
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\streams.py", line 352, in close
+    return self._transport.close()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 109, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 827, in call_soon
+    self._check_closed()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 550, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+[2026-04-10 16:34:30] ERROR bots.base.decorator 61992 [main_bot] Unhandled error in handler admin_users_menu
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 669, in send_packed_command
+    self._writer.writelines(command)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\streams.py", line 343, in writelines
+    self._transport.writelines(data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\transports.py", line 123, in writelines
+    self.write(data)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 366, in write
+    self._loop_writing(data=bytes(data))
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 402, in _loop_writing
+    self._write_fut = self._loop._proactor.send(self._sock, data)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'send'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bots\base\decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "D:\projects\oscar-agro\bots\main_bot\handlers\admin.py", line 48, in admin_users_menu
+    await state.delete()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\async_telebot.py", line 9592, in delete_state
+    return await self.current_states.delete_state(chat_id, user_id,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        bot_id=bot_id, business_connection_id=business_connection_id, message_thread_id=message_thread_id)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\asyncio_storage\redis_storage.py", line 169, in delete_state
+    result = await self.redis.delete(_key)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\client.py", line 781, in execute_command
+    result = await conn.retry.call_with_retry(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\retry.py", line 69, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\client.py", line 721, in _send_command_parse_response
+    await conn.send_command(*args)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 694, in send_command
+    await self.send_packed_command(
+        self.pack_command(*args), check_health=kwargs.get("check_health", True)
+    )
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 689, in send_packed_command
+    await self.disconnect(nowait=True)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 585, in disconnect
+    self._writer.close()  # type: ignore[union-attr]
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\streams.py", line 352, in close
+    return self._transport.close()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 109, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 827, in call_soon
+    self._check_closed()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 550, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+[2026-04-10 16:36:44] ERROR bots.base.decorator 61992 [main_bot] Unhandled error in handler admin_start
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 669, in send_packed_command
+    self._writer.writelines(command)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\streams.py", line 343, in writelines
+    self._transport.writelines(data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\transports.py", line 123, in writelines
+    self.write(data)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 366, in write
+    self._loop_writing(data=bytes(data))
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 402, in _loop_writing
+    self._write_fut = self._loop._proactor.send(self._sock, data)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'send'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bots\base\decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "D:\projects\oscar-agro\bots\main_bot\handlers\admin.py", line 36, in admin_start
+    await state.delete()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\async_telebot.py", line 9592, in delete_state
+    return await self.current_states.delete_state(chat_id, user_id,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        bot_id=bot_id, business_connection_id=business_connection_id, message_thread_id=message_thread_id)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\asyncio_storage\redis_storage.py", line 169, in delete_state
+    result = await self.redis.delete(_key)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\client.py", line 781, in execute_command
+    result = await conn.retry.call_with_retry(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\retry.py", line 69, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\client.py", line 721, in _send_command_parse_response
+    await conn.send_command(*args)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 694, in send_command
+    await self.send_packed_command(
+        self.pack_command(*args), check_health=kwargs.get("check_health", True)
+    )
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 689, in send_packed_command
+    await self.disconnect(nowait=True)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 585, in disconnect
+    self._writer.close()  # type: ignore[union-attr]
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\streams.py", line 352, in close
+    return self._transport.close()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 109, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 827, in call_soon
+    self._check_closed()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 550, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+[2026-04-10 16:39:26] ERROR bots.base.decorator 58880 [main_bot] Unhandled error in handler admin_users_menu
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 669, in send_packed_command
+    self._writer.writelines(command)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\streams.py", line 343, in writelines
+    self._transport.writelines(data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\transports.py", line 123, in writelines
+    self.write(data)
+    ~~~~~~~~~~^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 366, in write
+    self._loop_writing(data=bytes(data))
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 402, in _loop_writing
+    self._write_fut = self._loop._proactor.send(self._sock, data)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'send'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\bots\base\decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "D:\projects\oscar-agro\bots\main_bot\handlers\admin.py", line 48, in admin_users_menu
+    await state.delete()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\async_telebot.py", line 9592, in delete_state
+    return await self.current_states.delete_state(chat_id, user_id,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        bot_id=bot_id, business_connection_id=business_connection_id, message_thread_id=message_thread_id)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\telebot\asyncio_storage\redis_storage.py", line 169, in delete_state
+    result = await self.redis.delete(_key)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\client.py", line 781, in execute_command
+    result = await conn.retry.call_with_retry(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\retry.py", line 69, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\client.py", line 721, in _send_command_parse_response
+    await conn.send_command(*args)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 694, in send_command
+    await self.send_packed_command(
+        self.pack_command(*args), check_health=kwargs.get("check_health", True)
+    )
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 689, in send_packed_command
+    await self.disconnect(nowait=True)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\redis\asyncio\connection.py", line 585, in disconnect
+    self._writer.close()  # type: ignore[union-attr]
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\streams.py", line 352, in close
+    return self._transport.close()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 109, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 827, in call_soon
+    self._check_closed()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 550, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed

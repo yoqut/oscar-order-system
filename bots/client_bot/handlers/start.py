@@ -1,10 +1,11 @@
 """
 Client bot registration flow:
-  /start → language select → name → phone → registered
+  /start → language select → name → phone → registered (inline main menu)
 """
 import logging
 import re
 from telebot.states.asyncio.context import StateContext
+from telebot.types import ReplyKeyboardRemove
 
 from bots.client_bot.loader import bot, handler
 from bots.client_bot.states import RegistrationStates
@@ -12,7 +13,7 @@ from bots.client_bot.keyboards.client import (
     language_keyboard, share_phone_keyboard, main_menu_keyboard,
 )
 from bots.base.sender import Sender
-from core.i18n import t, set_user_lang, get_user_lang, LANG_NAMES
+from core.i18n import t, set_user_lang
 from apps.accounts.models import TelegramUser, UserRole, RegisteredVia
 
 logger = logging.getLogger(__name__)
@@ -25,7 +26,6 @@ PHONE_RE = re.compile(r'^\+?[0-9]{9,15}$')
 async def client_start(sender: Sender, state: StateContext):
     await state.delete()
 
-    # Check if already registered
     try:
         user = await TelegramUser.objects.aget(
             telegram_id=sender.user_id,
@@ -41,7 +41,6 @@ async def client_start(sender: Sender, state: StateContext):
     except TelegramUser.DoesNotExist:
         pass
 
-    # New user — start registration
     await state.set(RegistrationStates.SELECT_LANGUAGE)
     await sender.text(t('select_lang', 'uz'), markup=language_keyboard())
 
@@ -88,7 +87,7 @@ async def client_enter_name(sender: Sender, state: StateContext):
         await sender.text(t('invalid_name', lang))
         return
 
-    await state.add_data(**{"reg_name":name})
+    await state.add_data(reg_name=name)
     await state.set(RegistrationStates.ENTER_PHONE)
     await sender.text(t('ask_phone', lang), markup=share_phone_keyboard(lang))
 
@@ -103,7 +102,6 @@ async def client_enter_phone(sender: Sender, state: StateContext):
         lang = data.get('selected_lang', 'uz')
         name = data.get('reg_name', '')
 
-    # Extract phone from contact or text
     phone = None
     if msg.contact and msg.contact.user_id == sender.user_id:
         phone = msg.contact.phone_number
@@ -118,7 +116,6 @@ async def client_enter_phone(sender: Sender, state: StateContext):
         await sender.text(t('invalid_phone', lang))
         return
 
-    # Create user
     tg = msg.from_user
     full_name = name or f"{tg.first_name or ''} {tg.last_name or ''}".strip()
 
@@ -138,12 +135,13 @@ async def client_enter_phone(sender: Sender, state: StateContext):
     await set_user_lang(sender.user_id, lang)
     await state.delete()
 
+    # Remove reply keyboard, then send inline main menu
     await sender.text(
         t('registered', lang, name=full_name),
-        markup=main_menu_keyboard(lang),
+        markup=ReplyKeyboardRemove(),
     )
+    await sender.text(t('main_menu', lang), markup=main_menu_keyboard(lang))
 
-    # Notify sales managers about new client
     if created:
         try:
             from bots.main_bot.loader import bot as main_bot

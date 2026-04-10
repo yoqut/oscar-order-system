@@ -1,9 +1,10 @@
 """
 Client bot FAQ + Contact + Prices handlers.
+All navigation via inline callbacks (menu:faq, menu:contact, menu:prices).
 """
 from telebot.states.asyncio.context import StateContext
 
-from bots.client_bot.loader import bot, handler
+from bots.client_bot.loader import handler
 from bots.client_bot.keyboards.client import (
     main_menu_keyboard, faq_keyboard, faq_back_keyboard,
 )
@@ -15,9 +16,7 @@ from apps.accounts.models import FAQItem, CompanyInfo
 
 # ── FAQ ───────────────────────────────────────────────────────────────────────
 
-@handler(func=lambda m: m.text and m.text in [
-    t('btn_profile', l) for l in ['uz', 'ru', 'uz_kr', 'en']
-])
+@handler(callback=True, call='menu:faq')
 async def client_faq(sender: Sender, state: StateContext):
     lang = sender.lang
     items = []
@@ -25,10 +24,12 @@ async def client_faq(sender: Sender, state: StateContext):
         items.append(item)
 
     if not items:
-        await sender.text(t('faq_empty', lang), markup=main_menu_keyboard(lang))
+        await sender.edit_text(t('faq_empty', lang), markup=main_menu_keyboard(lang))
+        await sender.answer()
         return
 
-    await sender.text(t('faq_title', lang), markup=faq_keyboard(items, lang))
+    await sender.edit_text(t('faq_title', lang), markup=faq_keyboard(items, lang))
+    await sender.answer()
 
 
 @handler(callback=True, config=faq_factory.filter())
@@ -60,40 +61,46 @@ async def client_faq_back(sender: Sender, state: StateContext):
     await sender.answer()
 
 
+@handler(callback=True, call='faq:back_menu')
+async def client_faq_back_menu(sender: Sender, state: StateContext):
+    lang = sender.lang
+    await sender.edit_text(t('main_menu', lang), markup=main_menu_keyboard(lang))
+    await sender.answer()
+
+
 # ── Contact ───────────────────────────────────────────────────────────────────
 
-@handler(func=lambda m: m.text and any(
-    m.text in [t('btn_contact', l) for l in ['uz', 'ru', 'uz_kr', 'en']]
-))
+@handler(callback=True, call='menu:contact')
 async def client_contact(sender: Sender, state: StateContext):
     lang = sender.lang
     info = await CompanyInfo.objects.filter(pk=1).afirst()
     if not info:
-        await sender.text(t('error_generic', lang))
+        await sender.answer(t('error_generic', lang), show_alert=True)
         return
 
     website_line = f"🌐 {info.website}" if info.website else ""
-    await sender.text(
+    await sender.edit_text(
         t('contact_info', lang,
           phone=info.phone,
           address=info.get_address(lang),
           website_line=website_line),
         markup=main_menu_keyboard(lang),
     )
+    await sender.answer()
 
 
 # ── Prices ────────────────────────────────────────────────────────────────────
 
-@handler(func=lambda m: m.text and any(
-    m.text in [t('btn_prices', l) for l in ['uz', 'ru', 'uz_kr', 'en']]
-))
+@handler(callback=True, call='menu:prices')
 async def client_prices(sender: Sender, state: StateContext):
     lang = sender.lang
     info = await CompanyInfo.objects.filter(pk=1).afirst()
     prices = info.get_prices(lang) if info else ''
 
     if not prices:
-        await sender.text(t('prices_not_set', lang), markup=main_menu_keyboard(lang))
+        await sender.edit_text(t('prices_not_set', lang), markup=main_menu_keyboard(lang))
+        await sender.answer()
         return
 
-    await sender.text(t('prices_info', lang, prices=prices), markup=main_menu_keyboard(lang))
+    await sender.edit_text(t('prices_info', lang, prices=prices), markup=main_menu_keyboard(lang))
+    await sender.answer()

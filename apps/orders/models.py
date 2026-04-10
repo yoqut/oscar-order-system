@@ -69,6 +69,7 @@ class Order(models.Model):
     tree_count = models.PositiveIntegerField(default=0)
     problem = models.TextField()
     address = models.TextField()
+    visit_date = models.DateField(null=True, blank=True)
     time_slot = models.CharField(max_length=20, choices=TimeSlot.choices, blank=True)
     status = models.CharField(
         max_length=20,
@@ -98,14 +99,16 @@ class Order(models.Model):
         slot = dict(TimeSlot.choices).get(self.time_slot, self.time_slot) if self.time_slot else '—'
         phone2 = f" / {self.phone2}" if self.phone2 else ""
         agro = self.agronomist.full_name if self.agronomist else '—'
+        date_str = self.visit_date.strftime('%d.%m.%Y') if self.visit_date else '—'
         return (
             f"📋 <b>Buyurtma #{self.pk}</b>\n"
             f"👤 Mijoz: {self.client_name}\n"
             f"📞 Tel: {self.phone1}{phone2}\n"
             f"🌳 Daraxt: {self.tree_count}\n"
-            f"⏰ Vaqt: {slot}\n"
             f"🔴 Muammo: {self.problem}\n"
             f"📍 Manzil: {self.address}\n"
+            f"📅 Sana: {date_str}\n"
+            f"⏰ Vaqt: {slot}\n"
             f"🌱 Agronom: {agro}\n"
             f"📊 Holat: {self.status}"
         )

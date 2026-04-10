@@ -2,15 +2,16 @@ from telebot.states import State, StatesGroup
 
 
 class SalesStates(StatesGroup):
-    # Creating order (sales-initiated flow)
-    SELECT_AGRONOMIST = State()
-    SELECT_TIME_SLOT = State()
+    # Creating order — new flow: name → phone1 → phone2 → trees → problem → address → date → slot → agronomist → confirm
     ENTER_CLIENT_NAME = State()
     ENTER_PHONE1 = State()
     ENTER_PHONE2 = State()
     ENTER_TREE_COUNT = State()
     ENTER_PROBLEM = State()
     ENTER_ADDRESS = State()
+    SELECT_DATE = State()
+    SELECT_TIME_SLOT = State()
+    SELECT_AGRONOMIST = State()
     CONFIRM_ORDER = State()
     # Accepting a client-created order
     ACCEPT_CLIENT_ORDER_SELECT_AGRO = State()

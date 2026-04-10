@@ -1,14 +1,8 @@
 """
-Client bot order handlers:
-- Create order (client-initiated)
-- View active orders
-- View order history
-- Accept/reject sales-created orders
-- Confirm/reject completed service
-- Rate & comment
+Client bot order handlers — all navigation via inline callbacks.
+Text input only for: problem, address, tree count, cancel reason, reject reason, comment.
 """
 import logging
-import re
 from telebot.states.asyncio.context import StateContext
 
 from bots.client_bot.loader import bot, handler
@@ -35,52 +29,61 @@ logger = logging.getLogger(__name__)
 
 async def _get_client(telegram_id: int) -> TelegramUser | None:
     try:
-        return await TelegramUser.objects.aget(telegram_id=telegram_id, role=UserRole.CLIENT, is_active=True)
+        return await TelegramUser.objects.aget(
+            telegram_id=telegram_id, role=UserRole.CLIENT, is_active=True
+        )
     except TelegramUser.DoesNotExist:
         return None
 
 
 # ── Orders menu ───────────────────────────────────────────────────────────────
 
-@handler(func=lambda m: m.text and m.text in [
-    t('btn_profile', l) for l in ['uz', 'ru', 'uz_kr', 'en']
-])
+@handler(callback=True, call='menu:orders')
 async def client_orders_menu(sender: Sender, state: StateContext):
     await state.delete()
     lang = sender.lang
-    await sender.text(t('orders_menu', lang), markup=orders_menu_keyboard(lang))
+    await sender.edit_text(t('orders_menu', lang), markup=orders_menu_keyboard(lang))
+    await sender.answer()
+
+
+@handler(callback=True, call='orders:back')
+async def client_orders_back(sender: Sender, state: StateContext):
+    lang = sender.lang
+    await sender.edit_text(t('main_menu', lang), markup=main_menu_keyboard(lang))
+    await sender.answer()
 
 
 # ── Create order ──────────────────────────────────────────────────────────────
 
-@handler(func=lambda m: m.text and [m.text in [t('btn_create_order', l) for l in ['uz', 'ru', 'uz_kr', 'en']]
-])
+@handler(callback=True, call='orders:create')
 async def client_create_order_start(sender: Sender, state: StateContext):
     lang = sender.lang
     client = await _get_client(sender.user_id)
     if not client:
-        await sender.text(t('error_not_registered', lang))
+        await sender.answer(t('error_not_registered', lang), show_alert=True)
         return
-
     if not client.phone:
-        await sender.text(t('invalid_phone', lang) + "\n\n/start ni bosing va raqamingizni kiriting.")
+        await sender.answer(t('invalid_phone', lang), show_alert=True)
         return
 
     await state.set(OrderStates.ENTER_PROBLEM)
     await state.add_data(client_lang=lang)
-    await sender.text(t('ask_problem', lang), markup=cancel_keyboard(lang))
+    await sender.edit_text(t('ask_problem', lang), markup=cancel_keyboard(lang))
+    await sender.answer()
 
 
-@handler(func=lambda m: m.text and any(
-    m.text in [t('btn_cancel', l) for l in ['uz', 'ru', 'uz_kr', 'en']]
-), state=[
+@handler(callback=True, call='client:cancel', state=[
     OrderStates.ENTER_PROBLEM, OrderStates.ENTER_ADDRESS,
     OrderStates.ENTER_TREE_COUNT, OrderStates.CONFIRM_ORDER,
+    OrderStates.ENTER_CANCEL_REASON, OrderStates.ENTER_REJECT_REASON,
 ])
-async def client_cancel_order_creation(sender: Sender, state: StateContext):
-    lang = sender.lang
+async def client_cancel_flow(sender: Sender, state: StateContext):
+    async with state.data() as data:
+        lang = data.get('client_lang', sender.lang)
     await state.delete()
-    await sender.text(t('order_cancelled_msg', lang), markup=main_menu_keyboard(lang))
+    await sender.edit_text(t('order_cancelled_msg', lang))
+    await sender.text(t('main_menu', lang), markup=main_menu_keyboard(lang))
+    await sender.answer()
 
 
 @handler(state=OrderStates.ENTER_PROBLEM)
@@ -89,7 +92,7 @@ async def client_enter_problem(sender: Sender, state: StateContext):
         lang = data.get('client_lang', sender.lang)
     text = sender.msg.text.strip() if sender.msg.text else ''
     if len(text) < 5:
-        await sender.text(t('problem_too_short', lang))
+        await sender.text(t('problem_too_short', lang), markup=cancel_keyboard(lang))
         return
     await state.add_data(problem=text)
     await state.set(OrderStates.ENTER_ADDRESS)
@@ -102,7 +105,7 @@ async def client_enter_address(sender: Sender, state: StateContext):
         lang = data.get('client_lang', sender.lang)
     text = sender.msg.text.strip() if sender.msg.text else ''
     if len(text) < 5:
-        await sender.text(t('address_too_short', lang))
+        await sender.text(t('address_too_short', lang), markup=cancel_keyboard(lang))
         return
     await state.add_data(address=text)
     await state.set(OrderStates.ENTER_TREE_COUNT)
@@ -115,7 +118,7 @@ async def client_enter_tree_count(sender: Sender, state: StateContext):
         lang = data.get('client_lang', sender.lang)
     count = int(sender.msg.text.strip())
     if count < 1:
-        await sender.text(t('invalid_tree_count', lang))
+        await sender.text(t('invalid_tree_count', lang), markup=cancel_keyboard(lang))
         return
     await state.add_data(tree_count=count)
     await state.set(OrderStates.CONFIRM_ORDER)
@@ -135,7 +138,7 @@ async def client_enter_tree_count(sender: Sender, state: StateContext):
 async def client_tree_count_invalid(sender: Sender, state: StateContext):
     async with state.data() as data:
         lang = data.get('client_lang', sender.lang)
-    await sender.text(t('invalid_tree_count', lang))
+    await sender.text(t('invalid_tree_count', lang), markup=cancel_keyboard(lang))
 
 
 @handler(callback=True, call='order:confirm', state=OrderStates.CONFIRM_ORDER)
@@ -173,30 +176,7 @@ async def client_confirm_new_order(sender: Sender, state: StateContext):
     await sender.text(t('main_menu', lang), markup=main_menu_keyboard(lang))
     await sender.answer()
 
-    # Notify all sales managers
     await _notify_sales_new_client_order(order)
-
-
-async def _notify_sales_new_client_order(order: Order):
-    from bots.main_bot.loader import bot as main_bot
-    from bots.main_bot.keyboards.sales import client_order_accept_keyboard
-    from core.helpers import notify_sales_managers
-
-    card = (
-        f"🆕 <b>Client buyurtmasi #{order.pk}</b>\n\n"
-        f"👤 {order.client_name}\n"
-        f"📞 {order.phone1}\n"
-        f"🔴 {order.problem}\n"
-        f"📍 {order.address}\n"
-        f"🌳 {order.tree_count} daraxt"
-    )
-    try:
-        await notify_sales_managers(
-            main_bot, card,
-            reply_markup=client_order_accept_keyboard(order.pk),
-        )
-    except Exception as exc:
-        logger.error("Failed to notify sales about client order: %s", exc)
 
 
 @handler(callback=True, call='order:cancel', state=OrderStates.CONFIRM_ORDER)
@@ -209,6 +189,25 @@ async def client_cancel_confirm(sender: Sender, state: StateContext):
     await sender.answer()
 
 
+async def _notify_sales_new_client_order(order: Order):
+    from bots.main_bot.loader import bot as main_bot
+    from bots.main_bot.keyboards.sales import client_order_accept_keyboard
+    from core.helpers import notify_sales_managers
+    card = (
+        f"🆕 <b>Client buyurtmasi #{order.pk}</b>\n\n"
+        f"👤 {order.client_name}\n"
+        f"📞 {order.phone1}\n"
+        f"🌳 {order.tree_count} daraxt\n"
+        f"🔴 {order.problem}\n"
+        f"📍 {order.address}"
+    )
+    try:
+        await notify_sales_managers(main_bot, card,
+                                    reply_markup=client_order_accept_keyboard(order.pk))
+    except Exception as exc:
+        logger.error("Failed to notify sales: %s", exc)
+
+
 # ── View active orders ────────────────────────────────────────────────────────
 
 ACTIVE_STATUSES = [
@@ -217,31 +216,31 @@ ACTIVE_STATUSES = [
 ]
 
 
-@handler(func=lambda m: m.text and any(
-    m.text in [t('btn_active_orders', l) for l in ['uz', 'ru', 'uz_kr', 'en']]
-))
+@handler(callback=True, call='orders:active')
 async def client_active_orders(sender: Sender, state: StateContext):
     lang = sender.lang
     client = await _get_client(sender.user_id)
     if not client:
-        await sender.text(t('error_not_registered', lang))
+        await sender.answer(t('error_not_registered', lang), show_alert=True)
         return
 
     orders = []
     async for o in Order.objects.filter(
-        client=client,
-        status__in=ACTIVE_STATUSES,
+        client=client, status__in=ACTIVE_STATUSES,
     ).aiterator():
         orders.append(o)
 
+    await sender.answer()
     if not orders:
-        await sender.text(t('no_active_orders', lang), markup=orders_menu_keyboard(lang))
+        await sender.edit_text(t('no_active_orders', lang), markup=orders_menu_keyboard(lang))
         return
 
+    await sender.edit_text(f"📦 {t('btn_active_orders', lang)}:")
     for order in orders:
         await bot.send_message(
             sender.chat_id,
             format_order_card_lang(order, lang),
+            parse_mode='HTML',
         )
 
 
@@ -253,35 +252,35 @@ HISTORY_STATUSES = [
 ]
 
 
-@handler(func=lambda m: m.text and any(
-    m.text in [t('btn_order_history', l) for l in ['uz', 'ru', 'uz_kr', 'en']]
-))
+@handler(callback=True, call='orders:history')
 async def client_order_history(sender: Sender, state: StateContext):
     lang = sender.lang
     client = await _get_client(sender.user_id)
     if not client:
-        await sender.text(t('error_not_registered', lang))
+        await sender.answer(t('error_not_registered', lang), show_alert=True)
         return
 
     orders = []
     async for o in Order.objects.filter(
-        client=client,
-        status__in=HISTORY_STATUSES,
+        client=client, status__in=HISTORY_STATUSES,
     ).aiterator():
         orders.append(o)
 
+    await sender.answer()
     if not orders:
-        await sender.text(t('no_order_history', lang), markup=orders_menu_keyboard(lang))
+        await sender.edit_text(t('no_order_history', lang), markup=orders_menu_keyboard(lang))
         return
 
+    await sender.edit_text(f"📋 {t('btn_order_history', lang)}:")
     for order in orders[:10]:
         await bot.send_message(
             sender.chat_id,
             format_order_card_lang(order, lang),
+            parse_mode='HTML',
         )
 
 
-# ── Accept/reject order notification (sales-created) ─────────────────────────
+# ── Accept/reject sales-created order ────────────────────────────────────────
 
 @handler(callback=True, config=client_accept_factory.filter())
 async def client_accept_order(sender: Sender, state: StateContext):
@@ -304,17 +303,13 @@ async def client_accept_order(sender: Sender, state: StateContext):
         return
 
     client = await _get_client(sender.user_id)
-    await Order.objects.filter(pk=order_id).aupdate(
-        client=client,
-        status=OrderStatus.PENDING,
-    )
+    await Order.objects.filter(pk=order_id).aupdate(client=client, status=OrderStatus.PENDING)
     await release_lock(lock_key)
 
     await sender.edit_markup()
     await sender.text(t('order_accepted_msg', lang))
     await sender.answer(t('order_accepted_msg', lang))
 
-    # Notify staff
     from bots.main_bot.loader import bot as main_bot
     from bots.main_bot.keyboards.admin import approve_order_keyboard
     order = await Order.objects.select_related('agronomist', 'sales_manager').aget(pk=order_id)
@@ -340,7 +335,6 @@ async def client_reject_order(sender: Sender, state: StateContext):
 
     await state.set(OrderStates.ENTER_CANCEL_REASON)
     await state.add_data(rejecting_order_id=order_id, client_lang=lang)
-
     await sender.edit_markup()
     await sender.text(t('ask_cancel_reason', lang), markup=cancel_keyboard(lang))
     await sender.answer()
@@ -372,18 +366,16 @@ async def client_confirm_service(sender: Sender, state: StateContext):
     await release_lock(lock_key)
 
     await sender.edit_markup()
-    await sender.text(
-        t('service_confirmed_msg', lang),
-        markup=rating_keyboard(order_id),
-    )
+    await sender.text(t('service_confirmed_msg', lang), markup=rating_keyboard(order_id))
     await sender.answer()
 
-    # Notify staff
     from bots.main_bot.loader import bot as main_bot
     if order.agronomist_id:
-        await notify_user(main_bot, order.agronomist.telegram_id, f"✅ Mijoz buyurtma #{order_id}ni tasdiqladi! Rahmat!")
+        await notify_user(main_bot, order.agronomist.telegram_id,
+                          f"✅ Mijoz buyurtma #{order_id}ni tasdiqladi! Rahmat!")
     if order.sales_manager_id:
-        await notify_user(main_bot, order.sales_manager.telegram_id, f"✅ Buyurtma #{order_id} mijoz tomonidan tasdiqlandi.")
+        await notify_user(main_bot, order.sales_manager.telegram_id,
+                          f"✅ Buyurtma #{order_id} mijoz tomonidan tasdiqlandi.")
     from core.helpers import notify_admins
     await notify_admins(main_bot, f"✅ Buyurtma #{order_id} mijoz tomonidan tasdiqlandi.")
 
@@ -412,12 +404,8 @@ async def client_rate(sender: Sender, state: StateContext):
 
     await state.set(RatingStates.ENTER_COMMENT)
     await state.add_data(rating_order_id=order_id, rating=rating, client_lang=lang)
-
     await sender.edit_markup()
-    await sender.text(
-        t('ask_comment', lang),
-        markup=skip_comment_keyboard(lang),
-    )
+    await sender.text(t('ask_comment', lang), markup=skip_comment_keyboard(lang))
     await sender.answer()
 
 
@@ -429,7 +417,6 @@ async def client_skip_comment(sender: Sender, state: StateContext):
         lang = data.get('client_lang', sender.lang)
 
     await state.delete()
-
     if order_id:
         client = await _get_client(sender.user_id)
         await _save_feedback(order_id, client, rating, None)
@@ -444,11 +431,7 @@ async def _save_feedback(order_id: int, client, rating: int, comment: str | None
     try:
         await Feedback.objects.aupdate_or_create(
             order_id=order_id,
-            defaults={
-                'client': client,
-                'rating': rating,
-                'comment': comment,
-            },
+            defaults={'client': client, 'rating': rating, 'comment': comment},
         )
     except Exception as exc:
         logger.error("Feedback save failed: %s", exc)

@@ -34,6 +34,7 @@ async def notify_user(
                 telegram_message_id=msg.message_id,
                 status=NotificationStatus.SENT,
             )
+            
         except TelegramUser.DoesNotExist:
             pass
         return True
@@ -100,25 +101,28 @@ def format_order_card(order: Order) -> str:
     phone2 = f" / {order.phone2}" if order.phone2 else ""
     agro_name = order.agronomist.full_name if order.agronomist_id else '—'
     sales_name = order.sales_manager.full_name if order.sales_manager_id else '—'
+    date_str = order.visit_date.strftime('%d.%m.%Y') if order.visit_date else '—'
     return (
         f"📋 <b>Buyurtma #{order.pk}</b>\n"
         f"👤 Mijoz: {order.client_name}\n"
         f"📞 Tel: {order.phone1}{phone2}\n"
         f"🌳 Daraxt: {order.tree_count}\n"
-        f"⏰ Vaqt: {slot}\n"
         f"🔴 Muammo: {order.problem}\n"
         f"📍 Manzil: {order.address}\n"
+        f"📅 Sana: {date_str}\n"
+        f"⏰ Vaqt: {slot}\n"
         f"🌱 Agronom: {agro_name}\n"
         f"🛒 Sotuvchi: {sales_name}\n"
-        f"📊 Holat: {order.status}"
+        f"📊 Holat: {order.get_status_display()}"
     )
 
 
 def format_order_card_lang(order: Order, lang: str) -> str:
     """Format order card in user's language (for client bot)."""
-    from core.i18n import t, TRANSLATIONS
+    from core.i18n import t
     slot = dict(TimeSlot.choices).get(order.time_slot, order.time_slot) if order.time_slot else '—'
     phone2 = f" / {order.phone2}" if order.phone2 else ""
+    date_str = order.visit_date.strftime('%d.%m.%Y') if order.visit_date else '—'
     status_key = f"status_{order.status}"
     status_text = t(status_key, lang)
     return (
@@ -127,6 +131,7 @@ def format_order_card_lang(order: Order, lang: str) -> str:
         f"📍 {order.address}\n"
         f"🌳 {order.tree_count}\n"
         f"📞 {order.phone1}{phone2}\n"
+        f"📅 {date_str}\n"
         f"⏰ {slot}\n"
         f"📊 {status_text}"
     )

@@ -8,7 +8,7 @@ Usage:
     python manage.py set_webhook --bot client # Only client bot
 """
 import asyncio
-from django.conf import settings
+from core.environ import settings
 from django.core.management.base import BaseCommand
 from telebot.async_telebot import AsyncTeleBot
 
@@ -67,19 +67,27 @@ class Command(BaseCommand):
 
             bot = AsyncTeleBot(token)
 
-            if delete:
-                await bot.delete_webhook()
-                self.stdout.write(self.style.SUCCESS(f"✅ {label}: webhook deleted."))
-            else:
-                url = f"{base_url}/{config['path']}/{token}/"
-                await bot.set_webhook(
-                    url=url,
-                    max_connections=40,
-                    drop_pending_updates=True,
-                )
-                info = await bot.get_webhook_info()
-                self.stdout.write(self.style.SUCCESS(
-                    f"✅ {label}: webhook set\n"
-                    f"   URL: {url}\n"
-                    f"   Pending updates: {info.pending_update_count}"
-                ))
+            try:
+                if delete:
+                    await bot.delete_webhook()
+                    self.stdout.write(self.style.SUCCESS(f"✅ {label}: webhook deleted."))
+                else:
+                    url = f"{base_url}/{config['path']}/{token}/"
+
+                    await bot.set_webhook(
+                        url=url,
+                        max_connections=40,
+                        drop_pending_updates=True,
+                    )
+
+                    info = await bot.get_webhook_info()
+
+                    self.stdout.write(self.style.SUCCESS(
+                        f"✅ {label}: webhook set\n"
+                        f"   URL: {url}\n"
+                        f"   Pending updates: {info.pending_update_count}"
+                    ))
+
+            finally:
+                # 🔥 MUHIM FIX
+                await bot.close_session()

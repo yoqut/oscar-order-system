@@ -39,7 +39,7 @@ logger = logging.getLogger(__name__)
 _DEFAULT_CB_FILTER: Callable[[CallbackQuery], bool] = lambda _: True
 
 
-def make_handler(bot: AsyncTeleBot, bot_name: str = 'bot'):
+def make_handler(bot: AsyncTeleBot, bot_name: str = 'bot') -> Callable[..., Callable[[Callable], Callable[..., Awaitable[None]]]]:
     """
     Returns a @handler decorator factory bound to *bot*.
 

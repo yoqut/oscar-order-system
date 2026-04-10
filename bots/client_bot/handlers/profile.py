@@ -1,5 +1,6 @@
 """
 Client profile — view, edit name/phone, change language.
+All navigation via inline callbacks.
 """
 import re
 from telebot.states.asyncio.context import StateContext
@@ -8,7 +9,7 @@ from bots.client_bot.loader import handler
 from bots.client_bot.states import ProfileStates
 from bots.client_bot.keyboards.client import (
     main_menu_keyboard, profile_keyboard, language_keyboard,
-    share_phone_keyboard
+    share_phone_keyboard, cancel_keyboard,
 )
 from bots.base.sender import Sender
 from core.i18n import t, set_user_lang, LANG_NAMES
@@ -19,28 +20,27 @@ PHONE_RE = re.compile(r'^\+?[0-9]{9,15}$')
 
 async def _get_client(telegram_id: int) -> TelegramUser | None:
     try:
-        return await TelegramUser.objects.aget(telegram_id=telegram_id, role=UserRole.CLIENT, is_active=True)
+        return await TelegramUser.objects.aget(
+            telegram_id=telegram_id, role=UserRole.CLIENT, is_active=True
+        )
     except TelegramUser.DoesNotExist:
         return None
 
 
 # ── View profile ──────────────────────────────────────────────────────────────
 
-@handler(func=lambda m: m.text and m.text in [
-    t('btn_profile', l) for l in ['uz', 'ru', 'uz_kr', 'en']
-])
+@handler(callback=True, call='menu:profile')
 async def client_profile(sender: Sender, state: StateContext):
     await state.delete()
     lang = sender.lang
     client = await _get_client(sender.user_id)
     if not client:
-        await sender.text(t('error_not_registered', lang))
+        await sender.answer(t('error_not_registered', lang), show_alert=True)
         return
 
     lang_name = LANG_NAMES.get(client.language, client.language)
     date_str = client.created_at.strftime('%d.%m.%Y') if client.created_at else '—'
-
-    await sender.text(
+    await sender.edit_text(
         t('profile_view', lang,
           name=client.full_name,
           phone=client.phone or '—',
@@ -48,6 +48,14 @@ async def client_profile(sender: Sender, state: StateContext):
           date=date_str),
         markup=profile_keyboard(lang),
     )
+    await sender.answer()
+
+
+@handler(callback=True, call='profile:back')
+async def profile_back(sender: Sender, state: StateContext):
+    lang = sender.lang
+    await sender.edit_text(t('main_menu', lang), markup=main_menu_keyboard(lang))
+    await sender.answer()
 
 
 # ── Edit name ─────────────────────────────────────────────────────────────────
@@ -57,7 +65,16 @@ async def profile_edit_name_start(sender: Sender, state: StateContext):
     lang = sender.lang
     await state.set(ProfileStates.EDIT_NAME)
     await state.add_data(profile_lang=lang)
-    await sender.edit_text(t('ask_new_name', lang))
+    await sender.edit_text(t('ask_new_name', lang), markup=cancel_keyboard(lang))
+    await sender.answer()
+
+
+@handler(callback=True, call='client:cancel', state=ProfileStates.EDIT_NAME)
+async def profile_edit_name_cancel(sender: Sender, state: StateContext):
+    async with state.data() as data:
+        lang = data.get('profile_lang', sender.lang)
+    await state.delete()
+    await sender.edit_text(t('main_menu', lang), markup=main_menu_keyboard(lang))
     await sender.answer()
 
 
@@ -67,7 +84,7 @@ async def profile_enter_new_name(sender: Sender, state: StateContext):
         lang = data.get('profile_lang', sender.lang)
     name = sender.msg.text.strip() if sender.msg.text else ''
     if len(name) < 2:
-        await sender.text(t('invalid_name', lang))
+        await sender.text(t('invalid_name', lang), markup=cancel_keyboard(lang))
         return
 
     await TelegramUser.objects.filter(telegram_id=sender.user_id).aupdate(full_name=name)
@@ -83,6 +100,17 @@ async def profile_edit_phone_start(sender: Sender, state: StateContext):
     await state.set(ProfileStates.EDIT_PHONE)
     await state.add_data(profile_lang=lang)
     await sender.edit_text(t('ask_new_phone', lang))
+    # Send reply keyboard for contact sharing
+    await sender.text(t('ask_new_phone', lang), markup=share_phone_keyboard(lang))
+    await sender.answer()
+
+
+@handler(callback=True, call='client:cancel', state=ProfileStates.EDIT_PHONE)
+async def profile_edit_phone_cancel(sender: Sender, state: StateContext):
+    async with state.data() as data:
+        lang = data.get('profile_lang', sender.lang)
+    await state.delete()
+    await sender.edit_text(t('main_menu', lang), markup=main_menu_keyboard(lang))
     await sender.answer()
 
 
@@ -107,7 +135,6 @@ async def profile_enter_new_phone(sender: Sender, state: StateContext):
         return
 
     await TelegramUser.objects.filter(telegram_id=sender.user_id).aupdate(phone=phone)
-    # Invalidate lang cache since we might refresh user data
     await state.delete()
     await sender.text(t('phone_updated', lang, phone=phone), markup=main_menu_keyboard(lang))
 
@@ -143,7 +170,6 @@ async def profile_lang_en(sender: Sender, state: StateContext):
 
 async def _apply_lang_change(sender: Sender, state: StateContext, lang: str):
     current_state = await state.get()
-    # Only change lang if NOT in registration flow
     if current_state and 'SELECT_LANGUAGE' in str(current_state):
         return  # handled by start.py
 

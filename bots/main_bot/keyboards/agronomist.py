@@ -1,7 +1,4 @@
-from telebot.types import (
-    ReplyKeyboardMarkup, KeyboardButton,
-    InlineKeyboardMarkup, InlineKeyboardButton,
-)
+from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 from core.callbacks import (
     agro_view_factory, agro_cancel_factory, agro_complete_factory,
     agro_page_factory, root_factory, payment_factory, retreatment_factory,
@@ -10,15 +7,15 @@ from core.callbacks import (
 PAGE_SIZE = 5
 
 
-def agronomist_main_menu() -> ReplyKeyboardMarkup:
-    kb = ReplyKeyboardMarkup(resize_keyboard=True)
-    kb.add(KeyboardButton("📋 Mening buyurtmalarim"))
+def agronomist_main_menu() -> InlineKeyboardMarkup:
+    kb = InlineKeyboardMarkup(row_width=1)
+    kb.add(InlineKeyboardButton("📋 Mening buyurtmalarim", callback_data="agro:my_orders"))
     return kb
 
 
-def cancel_keyboard() -> ReplyKeyboardMarkup:
-    kb = ReplyKeyboardMarkup(resize_keyboard=True)
-    kb.add(KeyboardButton("❌ Bekor qilish"))
+def cancel_keyboard() -> InlineKeyboardMarkup:
+    kb = InlineKeyboardMarkup()
+    kb.add(InlineKeyboardButton("❌ Bekor qilish", callback_data="agro:cancel"))
     return kb
 
 
@@ -28,8 +25,9 @@ def orders_list_keyboard(orders, page: int = 0) -> InlineKeyboardMarkup:
     page_orders = orders[start:start + PAGE_SIZE]
 
     for order in page_orders:
+        date_str = order.visit_date.strftime('%d.%m') if order.visit_date else '—'
         kb.add(InlineKeyboardButton(
-            f"#{order.pk} — {order.client_name}",
+            f"#{order.pk} — {order.client_name} | {date_str}",
             callback_data=agro_view_factory.new(order_id=order.pk),
         ))
 

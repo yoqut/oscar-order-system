@@ -1,5 +1,6 @@
 """
 Agronomist flow — view assigned orders, cancel, complete with treatment details.
+All navigation via inline callbacks; text input only for actual data entry.
 """
 import logging
 from datetime import datetime
@@ -39,7 +40,7 @@ async def agro_start(sender: Sender, state: StateContext):
 
 # ── View my orders ────────────────────────────────────────────────────────────
 
-@handler(text=["📋 Mening buyurtmalarim"], is_agronomist=True)
+@handler(callback=True, call='agro:my_orders', is_agronomist=True)
 async def agro_my_orders(sender: Sender, state: StateContext):
     await state.delete()
     user = await TelegramUser.objects.aget(telegram_id=sender.user_id)
@@ -51,13 +52,15 @@ async def agro_my_orders(sender: Sender, state: StateContext):
         orders.append(o)
 
     if not orders:
-        await sender.text("📭 Hozircha buyurtmalar yo'q.", markup=agronomist_main_menu())
+        await sender.edit_text("📭 Hozircha buyurtmalar yo'q.", markup=agronomist_main_menu())
+        await sender.answer()
         return
 
-    await sender.text(
+    await sender.edit_text(
         f"📋 <b>Sizning buyurtmalaringiz ({len(orders)} ta):</b>",
         markup=orders_list_keyboard(orders, page=0),
     )
+    await sender.answer()
 
 
 @handler(callback=True, config=agro_page_factory.filter(), is_agronomist=True)
@@ -83,17 +86,12 @@ async def agro_view_order(sender: Sender, state: StateContext):
     cb = agro_view_factory.parse(sender.msg.data)
     order_id = int(cb['order_id'])
     try:
-        order = await Order.objects.select_related(
-            'client', 'sales_manager'
-        ).aget(pk=order_id)
+        order = await Order.objects.select_related('client', 'sales_manager').aget(pk=order_id)
     except Order.DoesNotExist:
         await sender.answer("❌ Buyurtma topilmadi", show_alert=True)
         return
 
-    await sender.edit_text(
-        format_order_card(order),
-        markup=order_actions_keyboard(order_id),
-    )
+    await sender.edit_text(format_order_card(order), markup=order_actions_keyboard(order_id))
     await sender.answer()
 
 
@@ -105,14 +103,25 @@ async def agro_cancel_start(sender: Sender, state: StateContext):
     order_id = int(cb['order_id'])
     await state.set(AgronomistStates.ENTER_CANCEL_REASON)
     await state.add_data(order_id=order_id)
-    await sender.edit_text("❌ Bekor qilish sababini yozing:")
+    await sender.edit_text(
+        "❌ Bekor qilish sababini yozing:",
+        markup=cancel_keyboard(),
+    )
     await sender.answer()
 
 
-@handler(text=["❌ Bekor qilish"], is_agronomist=True, state=AgronomistStates.ENTER_CANCEL_REASON)
+@handler(callback=True, call='agro:cancel', is_agronomist=True, state=[
+    AgronomistStates.ENTER_CANCEL_REASON,
+    AgronomistStates.ENTER_TREATMENT_COUNT,
+    AgronomistStates.ENTER_FINAL_PRICE,
+    AgronomistStates.ENTER_RETREATMENT_DATE,
+    AgronomistStates.UPLOAD_PROOF,
+])
 async def agro_cancel_abort(sender: Sender, state: StateContext):
     await state.delete()
-    await sender.text("↩️ Bekor qilish bekor qilindi.", markup=agronomist_main_menu())
+    await sender.edit_text("↩️ Bekor qilindi.")
+    await sender.text("Agronom paneli:", markup=agronomist_main_menu())
+    await sender.answer()
 
 
 # ── Complete order — step 1: treatment count ──────────────────────────────────
@@ -148,20 +157,11 @@ async def agro_complete_start(sender: Sender, state: StateContext):
     await sender.answer()
 
 
-@handler(text=["❌ Bekor qilish"], is_agronomist=True, state=[
-    AgronomistStates.ENTER_TREATMENT_COUNT, AgronomistStates.ENTER_FINAL_PRICE,
-    AgronomistStates.ENTER_RETREATMENT_DATE, AgronomistStates.UPLOAD_PROOF,
-])
-async def agro_complete_abort(sender: Sender, state: StateContext):
-    await state.delete()
-    await sender.text("↩️ Bekor qilindi.", markup=agronomist_main_menu())
-
-
 @handler(is_agronomist=True, state=AgronomistStates.ENTER_TREATMENT_COUNT, is_digit=True)
 async def agro_enter_treatment_count(sender: Sender, state: StateContext):
     count = int(sender.msg.text.strip())
     if count < 1:
-        await sender.text("⚠️ Musbat son kiriting:")
+        await sender.text("⚠️ Musbat son kiriting:", markup=cancel_keyboard())
         return
     await state.add_data(treatment_count=count)
     await state.set(AgronomistStates.ENTER_ROOT_TREATMENT)
@@ -170,7 +170,7 @@ async def agro_enter_treatment_count(sender: Sender, state: StateContext):
 
 @handler(is_agronomist=True, state=AgronomistStates.ENTER_TREATMENT_COUNT, is_digit=False)
 async def agro_treatment_count_invalid(sender: Sender, state: StateContext):
-    await sender.text("⚠️ Faqat raqam kiriting:")
+    await sender.text("⚠️ Faqat raqam kiriting:", markup=cancel_keyboard())
 
 
 # ── Step 2: Root treatment ────────────────────────────────────────────────────
@@ -198,7 +198,7 @@ async def agro_enter_price(sender: Sender, state: StateContext):
         if price < 0:
             raise ValueError
     except ValueError:
-        await sender.text("⚠️ To'g'ri narx kiriting (masalan: 150000):")
+        await sender.text("⚠️ To'g'ri narx kiriting (masalan: 150000):", markup=cancel_keyboard())
         return
     await state.add_data(final_price=str(price))
     await state.set(AgronomistStates.SELECT_PAYMENT_TYPE)
@@ -228,7 +228,10 @@ async def agro_select_retreatment(sender: Sender, state: StateContext):
 
     if needed:
         await state.set(AgronomistStates.ENTER_RETREATMENT_DATE)
-        await sender.edit_text("📅 Qayta ishlov sanasini kiriting (KK.OO.YYYY):")
+        await sender.edit_text(
+            "📅 Qayta ishlov sanasini kiriting (KK.OO.YYYY):",
+            markup=cancel_keyboard(),
+        )
     else:
         await state.add_data(re_treatment_date=None)
         await state.set(AgronomistStates.UPLOAD_PROOF)
@@ -238,13 +241,13 @@ async def agro_select_retreatment(sender: Sender, state: StateContext):
 
 @handler(is_agronomist=True, state=AgronomistStates.ENTER_RETREATMENT_DATE)
 async def agro_enter_retreatment_date(sender: Sender, state: StateContext):
-    text = sender.msg.text.strip()
+    text = sender.msg.text.strip() if sender.msg.text else ''
     try:
-        date = datetime.strptime(text, '%d.%m.%Y').date()
+        d = datetime.strptime(text, '%d.%m.%Y').date()
     except ValueError:
-        await sender.text("⚠️ Format: KK.OO.YYYY (masalan: 25.01.2025)")
+        await sender.text("⚠️ Format: KK.OO.YYYY (masalan: 25.01.2025)", markup=cancel_keyboard())
         return
-    await state.add_data(re_treatment_date=str(date))
+    await state.add_data(re_treatment_date=str(d))
     await state.set(AgronomistStates.UPLOAD_PROOF)
     await sender.text("📸 Ish bajarilganini tasdiqlovchi foto yoki video yuboring:")
 
@@ -300,24 +303,18 @@ async def agro_upload_proof(sender: Sender, state: StateContext):
     await state.delete()
     await sender.text("✅ Xizmat bajarildi deb belgilandi!", markup=agronomist_main_menu())
 
-    # Fetch order for notifications
-    order = await Order.objects.select_related(
-        'client', 'sales_manager', 'agronomist'
-    ).aget(pk=order_id)
+    order = await Order.objects.select_related('client', 'sales_manager', 'agronomist').aget(pk=order_id)
     td = await TreatmentDetails.objects.aget(order_id=order_id)
 
-    # Notify client via client bot
     if order.client_id:
         await _notify_client_service_completed(order, td)
 
-    # Notify sales manager
     if order.sales_manager_id:
         await notify_user(
             bot, order.sales_manager.telegram_id,
             f"✅ Buyurtma #{order_id} bajarildi!\n\n{td.get_summary()}",
         )
 
-    # Notify admins
     await notify_admins(
         bot,
         f"✅ Buyurtma #{order_id} bajarildi.\n\nAgronom: {order.agronomist.full_name}\n\n{td.get_summary()}",
@@ -329,7 +326,6 @@ async def _notify_client_service_completed(order: Order, td: TreatmentDetails):
         from bots.client_bot.loader import bot as client_bot
         from bots.client_bot.keyboards.client import service_done_keyboard
         from core.i18n import t
-
         lang = order.client.language or 'uz'
         text = t('service_completed_msg', lang,
                  order_id=order.pk,
@@ -343,13 +339,13 @@ async def _notify_client_service_completed(order: Order, td: TreatmentDetails):
         logger.error("Failed to notify client about completion: %s", exc)
 
 
-# ── Text router for agronomist states ─────────────────────────────────────────
+# ── Cancel reason text entry ───────────────────────────────────────────────────
 
 @handler(is_agronomist=True, state=AgronomistStates.ENTER_CANCEL_REASON)
 async def agro_enter_cancel_reason(sender: Sender, state: StateContext):
-    reason = sender.msg.text.strip()
+    reason = sender.msg.text.strip() if sender.msg.text else ''
     if len(reason) < 3:
-        await sender.text("⚠️ Sababni to'liqroq yozing:")
+        await sender.text("⚠️ Sababni to'liqroq yozing:", markup=cancel_keyboard())
         return
 
     async with state.data() as data:

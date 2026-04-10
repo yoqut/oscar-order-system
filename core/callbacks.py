@@ -14,6 +14,7 @@ faq_factory = CallbackData("item_id", prefix="faq")
 # ── Main bot — Sales flow ─────────────────────────────────────────────────────
 agro_select_factory = CallbackData("agro_id", prefix="agro_sel")
 slot_factory = CallbackData("slot", prefix="slot")
+sales_date_factory = CallbackData("date", prefix="s_dt")
 order_confirm_factory = CallbackData("answer", prefix="order_cfm")
 
 # ── Main bot — Sales accepting client orders ─────────────────────────────────
