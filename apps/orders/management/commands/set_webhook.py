@@ -8,7 +8,7 @@ Usage:
     python manage.py set_webhook --bot client # Only client bot
 """
 import asyncio
-from core.environ import settings
+from django.conf import settings
 from django.core.management.base import BaseCommand
 from telebot.async_telebot import AsyncTeleBot
 
@@ -75,9 +75,7 @@ class Command(BaseCommand):
                     url = f"{base_url}/{config['path']}/{token}/"
 
                     await bot.set_webhook(
-                        url=url,
-                        max_connections=40,
-                        drop_pending_updates=True,
+                        url=url
                     )
 
                     info = await bot.get_webhook_info()

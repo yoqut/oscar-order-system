@@ -11,6 +11,7 @@ Accepting client-created orders:
 """
 import logging
 import re
+from django.db.models import Count
 from datetime import date, timedelta
 from telebot.states.asyncio.context import StateContext
 
@@ -424,33 +425,42 @@ async def sales_confirm_order(sender: Sender, state: StateContext):
 
 # ── Availability helpers ───────────────────────────────────────────────────────
 
+
 async def _build_date_availability() -> list:
     """Return list of (date_str, is_available) for next 30 days."""
+    from datetime import timedelta
     from django.utils import timezone
+
     today = timezone.now().date()
+
     total_agros = await TelegramUser.objects.filter(
         role=UserRole.AGRONOMIST, is_active=True
     ).acount()
+
     if total_agros == 0:
         return [(str(today + timedelta(days=i)), False) for i in range(1, 31)]
 
     start = today + timedelta(days=1)
-    end = today + timedelta(days=31)
+    end = today + timedelta(days=30)
 
-    busy: dict = {}
-    async for row in Order.objects.filter(
+    rows = Order.objects.filter(
         visit_date__gte=start,
-        visit_date__lt=end,
+        visit_date__lte=end,
         agronomist__isnull=False,
         status__in=[
-            OrderStatus.PENDING, OrderStatus.APPROVED,
-            OrderStatus.IN_PROGRESS, OrderStatus.AWAITING_CLIENT,
+            OrderStatus.PENDING,
+            OrderStatus.APPROVED,
+            OrderStatus.IN_PROGRESS,
+            OrderStatus.AWAITING_CLIENT,
         ],
-    ).values_list('visit_date', 'time_slot', 'agronomist_id').aiterator():
-        vd, slot, agro_id = row
-        busy.setdefault(vd, {}).setdefault(slot, set()).add(agro_id)
+    ).values_list("visit_date", "time_slot", "agronomist_id")
+
+    busy: dict = {}
+    async for visit_date_raw, slot, agro_id in rows:
+        busy.setdefault(visit_date_raw, {}).setdefault(slot, set()).add(agro_id)
 
     slots = [v for v, _ in TimeSlot.choices]
+
     result = []
     for i in range(1, 31):
         d = today + timedelta(days=i)
@@ -460,31 +470,45 @@ async def _build_date_availability() -> list:
             for slot in slots
         )
         result.append((str(d), available))
-    return result
 
+    return result
 
 async def _build_slot_availability(visit_date: date) -> list:
     """Return list of (value, label, is_available) for given date."""
+
     total_agros = await TelegramUser.objects.filter(
-        role=UserRole.AGRONOMIST, is_active=True
+        role=UserRole.AGRONOMIST,
+        is_active=True
     ).acount()
+
     if total_agros == 0:
         return [(v, l, False) for v, l in TimeSlot.choices]
 
-    busy: dict = {}
-    async for row in Order.objects.filter(
-        visit_date=visit_date,
-        agronomist__isnull=False,
-        status__in=[
-            OrderStatus.PENDING, OrderStatus.APPROVED,
-            OrderStatus.IN_PROGRESS, OrderStatus.AWAITING_CLIENT,
-        ],
-    ).values_list('time_slot', 'agronomist_id').aiterator():
-        slot, agro_id = row
-        busy.setdefault(slot, set()).add(agro_id)
+    # 🔥 DB LEVEL aggregation (eng muhim fix)
+    busy_qs = (
+        Order.objects.filter(
+            visit_date=visit_date,
+            agronomist__isnull=False,
+            status__in=[
+                OrderStatus.PENDING,
+                OrderStatus.APPROVED,
+                OrderStatus.IN_PROGRESS,
+                OrderStatus.AWAITING_CLIENT,
+            ],
+        )
+        .values('time_slot')
+        .annotate(
+            busy_count=Count('agronomist', distinct=True)  # 🔥 duplicate fix
+        )
+    )
+
+    busy_map = {
+        row["time_slot"]: row["busy_count"]
+        async for row in busy_qs
+    }
 
     return [
-        (v, l, len(busy.get(v, set())) < total_agros)
+        (v, l, busy_map.get(v, 0) < total_agros)
         for v, l in TimeSlot.choices
     ]
 

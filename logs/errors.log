@@ -6473,3 +6473,467 @@ Traceback (most recent call last):
   File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\http\request.py", line 205, in get_host
     raise DisallowedHost(msg)
 django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+[2026-04-10 20:14:43] ERROR core.helpers 80408 notify_user failed telegram_id=123: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: chat not found
+[2026-04-10 20:16:02] ERROR core.helpers 80408 notify_user failed telegram_id=123: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: chat not found
+[2026-04-10 20:17:23] ERROR bots.base.decorator 80408 [main_bot] Unhandled error in handler sales_enter_address
+Traceback (most recent call last):
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/base/decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/sales.py", line 234, in sales_enter_address
+    date_avail = await _build_date_availability()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/sales.py", line 441, in _build_date_availability
+    async for row in Order.objects.filter(
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 564, in aiterator
+    async for item in self._iterable_class(
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 58, in _async_generator
+    sync_generator = self.__iter__()
+                     ^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 246, in __iter__
+    return compiler.results_iter(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1513, in results_iter
+    results = self.execute_sql(
+              ^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1558, in execute_sql
+    cursor = self.connection.chunked_cursor()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/backends/base/base.py", line 684, in chunked_cursor
+    return self.cursor()
+           ^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/utils/asyncio.py", line 24, in inner
+    raise SynchronousOnlyOperation(message)
+django.core.exceptions.SynchronousOnlyOperation: You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-10 20:21:08] ERROR asyncio 80408 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x10f1af4d0>
+[2026-04-10 20:22:04] ERROR bots.base.decorator 83461 [main_bot] Unhandled error in handler sales_enter_address
+Traceback (most recent call last):
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/base/decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/sales.py", line 235, in sales_enter_address
+    date_avail = await _build_date_availability()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/sales.py", line 442, in _build_date_availability
+    async for row in Order.objects.filter(
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 564, in aiterator
+    async for item in self._iterable_class(
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 58, in _async_generator
+    sync_generator = self.__iter__()
+                     ^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 246, in __iter__
+    return compiler.results_iter(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1513, in results_iter
+    results = self.execute_sql(
+              ^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1558, in execute_sql
+    cursor = self.connection.chunked_cursor()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/backends/base/base.py", line 684, in chunked_cursor
+    return self.cursor()
+           ^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/utils/asyncio.py", line 24, in inner
+    raise SynchronousOnlyOperation(message)
+django.core.exceptions.SynchronousOnlyOperation: You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-10 20:24:09] ERROR asyncio 83461 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x10da14b30>
+[2026-04-10 20:24:17] ERROR django.request 84636 Internal Server Error: /bots/main/webhook/7840815117:AAEEteVzhfOcazUbKxyGVnLnByEhMx56xOg/
+Traceback (most recent call last):
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/views.py", line 37, in post
+    import bots.main_bot.handlers  # noqa — registers handlers
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/__init__.py", line 6, in <module>
+    from . import sales         # noqa
+    ^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/sales.py", line 430, in <module>
+    @sync_to_async
+     ^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 652, in sync_to_async
+    return SyncToAsync(
+           ^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 434, in __init__
+    raise TypeError("sync_to_async can only be applied to sync functions.")
+TypeError: sync_to_async can only be applied to sync functions.
+[2026-04-10 20:24:18] ERROR django.request 84636 Internal Server Error: /bots/main/webhook/7840815117:AAEEteVzhfOcazUbKxyGVnLnByEhMx56xOg/
+Traceback (most recent call last):
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/views.py", line 37, in post
+    import bots.main_bot.handlers  # noqa — registers handlers
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/__init__.py", line 6, in <module>
+    from . import sales         # noqa
+    ^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/sales.py", line 430, in <module>
+    @sync_to_async
+     ^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 652, in sync_to_async
+    return SyncToAsync(
+           ^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 434, in __init__
+    raise TypeError("sync_to_async can only be applied to sync functions.")
+TypeError: sync_to_async can only be applied to sync functions.
+[2026-04-10 20:24:21] ERROR django.request 84636 Internal Server Error: /bots/main/webhook/7840815117:AAEEteVzhfOcazUbKxyGVnLnByEhMx56xOg/
+Traceback (most recent call last):
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/views.py", line 37, in post
+    import bots.main_bot.handlers  # noqa — registers handlers
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/__init__.py", line 6, in <module>
+    from . import sales         # noqa
+    ^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/sales.py", line 430, in <module>
+    @sync_to_async
+     ^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 652, in sync_to_async
+    return SyncToAsync(
+           ^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 434, in __init__
+    raise TypeError("sync_to_async can only be applied to sync functions.")
+TypeError: sync_to_async can only be applied to sync functions.
+[2026-04-10 20:24:26] ERROR django.request 84636 Internal Server Error: /bots/main/webhook/7840815117:AAEEteVzhfOcazUbKxyGVnLnByEhMx56xOg/
+Traceback (most recent call last):
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/views.py", line 37, in post
+    import bots.main_bot.handlers  # noqa — registers handlers
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/__init__.py", line 6, in <module>
+    from . import sales         # noqa
+    ^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/sales.py", line 430, in <module>
+    @sync_to_async
+     ^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 652, in sync_to_async
+    return SyncToAsync(
+           ^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 434, in __init__
+    raise TypeError("sync_to_async can only be applied to sync functions.")
+TypeError: sync_to_async can only be applied to sync functions.
+[2026-04-10 20:24:34] ERROR django.request 84636 Internal Server Error: /bots/main/webhook/7840815117:AAEEteVzhfOcazUbKxyGVnLnByEhMx56xOg/
+Traceback (most recent call last):
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/views.py", line 37, in post
+    import bots.main_bot.handlers  # noqa — registers handlers
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/__init__.py", line 6, in <module>
+    from . import sales         # noqa
+    ^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/sales.py", line 430, in <module>
+    @sync_to_async
+     ^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 652, in sync_to_async
+    return SyncToAsync(
+           ^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 434, in __init__
+    raise TypeError("sync_to_async can only be applied to sync functions.")
+TypeError: sync_to_async can only be applied to sync functions.
+[2026-04-10 20:24:51] ERROR django.request 84636 Internal Server Error: /bots/main/webhook/7840815117:AAEEteVzhfOcazUbKxyGVnLnByEhMx56xOg/
+Traceback (most recent call last):
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/views.py", line 37, in post
+    import bots.main_bot.handlers  # noqa — registers handlers
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/__init__.py", line 6, in <module>
+    from . import sales         # noqa
+    ^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/sales.py", line 430, in <module>
+    @sync_to_async
+     ^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 652, in sync_to_async
+    return SyncToAsync(
+           ^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 434, in __init__
+    raise TypeError("sync_to_async can only be applied to sync functions.")
+TypeError: sync_to_async can only be applied to sync functions.
+[2026-04-10 20:25:24] ERROR django.request 84636 Internal Server Error: /bots/main/webhook/7840815117:AAEEteVzhfOcazUbKxyGVnLnByEhMx56xOg/
+Traceback (most recent call last):
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/views.py", line 37, in post
+    import bots.main_bot.handlers  # noqa — registers handlers
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/__init__.py", line 6, in <module>
+    from . import sales         # noqa
+    ^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/sales.py", line 430, in <module>
+    @sync_to_async
+     ^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 652, in sync_to_async
+    return SyncToAsync(
+           ^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 434, in __init__
+    raise TypeError("sync_to_async can only be applied to sync functions.")
+TypeError: sync_to_async can only be applied to sync functions.
+[2026-04-10 20:26:53] ERROR bots.base.decorator 85664 [main_bot] Unhandled error in handler sales_enter_address
+Traceback (most recent call last):
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/base/decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/sales.py", line 235, in sales_enter_address
+    date_avail = await _build_date_availability()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/sales.py", line 443, in _build_date_availability
+    orders = await Order.objects.filter(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object async_generator can't be used in 'await' expression
+[2026-04-10 20:27:57] ERROR asyncio 85664 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x1057ff440>
+[2026-04-10 20:28:26] ERROR bots.base.decorator 86349 [main_bot] Unhandled error in handler sales_enter_address
+Traceback (most recent call last):
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/base/decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/sales.py", line 235, in sales_enter_address
+    date_avail = await _build_date_availability()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/sales.py", line 453, in _build_date_availability
+    orders = [row async for row in orders.aiterator()]  # materialize to avoid multiple DB hits
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 564, in aiterator
+    async for item in self._iterable_class(
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 58, in _async_generator
+    sync_generator = self.__iter__()
+                     ^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 246, in __iter__
+    return compiler.results_iter(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1513, in results_iter
+    results = self.execute_sql(
+              ^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1558, in execute_sql
+    cursor = self.connection.chunked_cursor()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/backends/base/base.py", line 684, in chunked_cursor
+    return self.cursor()
+           ^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/utils/asyncio.py", line 24, in inner
+    raise SynchronousOnlyOperation(message)
+django.core.exceptions.SynchronousOnlyOperation: You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-10 20:29:41] ERROR asyncio 86349 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x108ff8320>
+[2026-04-10 20:30:11] ERROR bots.base.decorator 87085 [main_bot] Unhandled error in handler sales_enter_address
+Traceback (most recent call last):
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/base/decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/sales.py", line 235, in sales_enter_address
+    date_avail = await _build_date_availability()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/sales.py", line 446, in _build_date_availability
+    orders = Order.objects.filter(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1546, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1492, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1306, in build_lookup
+    lhs = self.try_transform(lhs, name)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1357, in try_transform
+    raise FieldError(
+django.core.exceptions.FieldError: Unsupported lookup 'date' for DateField or join on the field not permitted.
+[2026-04-10 20:32:03] ERROR asyncio 87085 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x10bd77c20>
+[2026-04-10 20:32:35] ERROR bots.base.decorator 88145 [main_bot] Unhandled error in handler sales_enter_address
+Traceback (most recent call last):
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/base/decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/sales.py", line 235, in sales_enter_address
+    date_avail = await _build_date_availability()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/sales.py", line 447, in _build_date_availability
+    async for visit_date_raw, slot, agro_id in Order.objects.filter(
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 564, in aiterator
+    async for item in self._iterable_class(
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 58, in _async_generator
+    sync_generator = self.__iter__()
+                     ^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 246, in __iter__
+    return compiler.results_iter(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1513, in results_iter
+    results = self.execute_sql(
+              ^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1558, in execute_sql
+    cursor = self.connection.chunked_cursor()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/backends/base/base.py", line 684, in chunked_cursor
+    return self.cursor()
+           ^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/utils/asyncio.py", line 24, in inner
+    raise SynchronousOnlyOperation(message)
+django.core.exceptions.SynchronousOnlyOperation: You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-10 20:33:18] ERROR asyncio 88145 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x110ae7140>
+[2026-04-10 20:33:51] ERROR bots.base.decorator 88695 [main_bot] Unhandled error in handler sales_enter_address
+Traceback (most recent call last):
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/base/decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/sales.py", line 235, in sales_enter_address
+    date_avail = await _build_date_availability()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/sales.py", line 447, in _build_date_availability
+    async for visit_date_raw, slot, agro_id in Order.objects.filter(
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 564, in aiterator
+    async for item in self._iterable_class(
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 58, in _async_generator
+    sync_generator = self.__iter__()
+                     ^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 246, in __iter__
+    return compiler.results_iter(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1513, in results_iter
+    results = self.execute_sql(
+              ^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1558, in execute_sql
+    cursor = self.connection.chunked_cursor()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/backends/base/base.py", line 684, in chunked_cursor
+    return self.cursor()
+           ^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/utils/asyncio.py", line 24, in inner
+    raise SynchronousOnlyOperation(message)
+django.core.exceptions.SynchronousOnlyOperation: You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-10 20:34:56] ERROR asyncio 88695 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x10b2669c0>
+[2026-04-10 20:35:23] ERROR bots.base.decorator 89372 [main_bot] Unhandled error in handler sales_enter_address
+Traceback (most recent call last):
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/base/decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/sales.py", line 235, in sales_enter_address
+    date_avail = await _build_date_availability()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/sales.py", line 456, in _build_date_availability
+    ).values_list("visit_date", "time_slot", "agronomist_id").alist()
+                                                              ^^^^^
+AttributeError: 'QuerySet' object has no attribute 'alist'. Did you mean: 'alast'?
+[2026-04-10 20:37:03] ERROR asyncio 89372 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x107b1dd30>
+[2026-04-10 20:37:52] ERROR bots.base.decorator 90287 [main_bot] Unhandled error in handler sales_enter_address
+Traceback (most recent call last):
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/base/decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/sales.py", line 235, in sales_enter_address
+    date_avail = await _build_date_availability()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/sales.py", line 446, in _build_date_availability
+    rows = await Order.objects.filter(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object async_generator can't be used in 'await' expression
+[2026-04-10 20:38:38] ERROR asyncio 90287 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x107483980>
+[2026-04-10 20:39:35] ERROR bots.base.decorator 91356 [main_bot] Unhandled error in handler sales_start
+Traceback (most recent call last):
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/base/decorator.py", line 80, in wrapper
+    await handler_func(sender, *args, **kwargs)
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/sales.py", line 49, in sales_start
+    date_avail = await _build_date_availability()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/sales.py", line 460, in _build_date_availability
+    async for visit_date_raw, slot, agro_id in rows:
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 564, in aiterator
+    async for item in self._iterable_class(
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 58, in _async_generator
+    sync_generator = self.__iter__()
+                     ^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 246, in __iter__
+    return compiler.results_iter(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1513, in results_iter
+    results = self.execute_sql(
+              ^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1558, in execute_sql
+    cursor = self.connection.chunked_cursor()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/db/backends/base/base.py", line 684, in chunked_cursor
+    return self.cursor()
+           ^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/utils/asyncio.py", line 24, in inner
+    raise SynchronousOnlyOperation(message)
+django.core.exceptions.SynchronousOnlyOperation: You cannot call this from an async context - use a thread or sync_to_async.
+[2026-04-10 20:40:11] ERROR asyncio 91505 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x11377ec00>
+[2026-04-10 20:40:11] ERROR asyncio 91505 Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x1140c4a70>, 253347.235)]']
+connector: <aiohttp.connector.TCPConnector object at 0x11403c6e0>
+[2026-04-10 20:40:26] ERROR asyncio 91689 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x10ef6aa50>
+[2026-04-10 20:40:26] ERROR asyncio 91689 Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x10fab0ad0>, 253367.781)]']
+connector: <aiohttp.connector.TCPConnector object at 0x10f482bd0>
+[2026-04-10 20:46:57] ERROR core.helpers 91811 notify_user failed telegram_id=123: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: chat not found
+[2026-04-10 20:47:45] ERROR core.helpers 91811 notify_user failed telegram_id=123: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: chat not found

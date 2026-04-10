@@ -5702,3 +5702,260 @@ django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. Y
 [2026-04-10 17:46:39] INFO django.utils.autoreload 36280 Watching for file changes with StatReloader
 [2026-04-10 17:47:08] INFO django.utils.autoreload 25540 Watching for file changes with StatReloader
 [2026-04-10 17:47:12] INFO django.utils.autoreload 45552 Watching for file changes with StatReloader
+[2026-04-10 18:18:28] WARNING django.request 53149 Not Found: /
+[2026-04-10 18:18:37] WARNING django.request 53149 Not Found: /telegram/webhook/
+[2026-04-10 18:19:44] WARNING django.request 53149 Not Found: /telegram/webhook/
+[2026-04-10 18:20:53] WARNING django.request 53149 Not Found: /telegram/webhook/
+[2026-04-10 18:22:50] WARNING django.request 53149 Not Found: /telegram/webhook/
+[2026-04-10 18:24:41] WARNING django.request 53149 Not Found: /telegram/webhook/
+[2026-04-10 18:25:46] WARNING django.request 53149 Not Found: /telegram/webhook/
+[2026-04-10 18:27:12] WARNING django.request 53149 Not Found: /telegram/webhook/
+[2026-04-10 18:28:25] WARNING django.request 53149 Not Found: /telegram/webhook/
+[2026-04-10 18:29:51] WARNING django.request 53149 Not Found: /telegram/webhook/
+[2026-04-10 19:02:11] WARNING django.request 53149 Not Found: /telegram/webhook/
+[2026-04-10 19:03:41] WARNING django.request 53149 Not Found: /telegram/webhook/
+[2026-04-10 19:04:59] WARNING django.request 53149 Not Found: /telegram/webhook/
+[2026-04-10 19:06:17] WARNING django.request 53149 Not Found: /telegram/webhook/
+[2026-04-10 19:07:52] WARNING django.request 53149 Not Found: /telegram/webhook/
+[2026-04-10 19:09:34] WARNING django.request 53149 Not Found: /telegram/webhook/
+[2026-04-10 19:46:46] WARNING django.request 53149 Not Found: /telegram/webhook/
+[2026-04-10 19:48:25] WARNING django.request 53149 Not Found: /telegram/webhook/
+[2026-04-10 19:50:17] WARNING django.request 53149 Not Found: /telegram/webhook/
+[2026-04-10 19:51:53] WARNING django.request 53149 Not Found: /telegram/webhook/
+[2026-04-10 19:53:01] WARNING django.request 53149 Not Found: /telegram/webhook/
+[2026-04-10 19:54:44] WARNING django.request 53149 Not Found: /telegram/webhook/
+[2026-04-10 19:56:09] WARNING django.request 53149 Not Found: /telegram/webhook/
+[2026-04-10 19:57:57] WARNING django.request 53149 Not Found: /telegram/webhook/
+[2026-04-10 19:59:41] WARNING django.request 53149 Not Found: /telegram/webhook/
+[2026-04-10 20:01:09] WARNING django.request 53149 Not Found: /telegram/webhook/
+[2026-04-10 20:02:41] WARNING django.request 53149 Not Found: /telegram/webhook/
+[2026-04-10 20:05:18] INFO django.utils.autoreload 74833 Watching for file changes with StatReloader
+[2026-04-10 20:05:29] WARNING django.request 74570 Not Found: /telegram/webhook/
+[2026-04-10 20:07:28] WARNING django.request 74570 Not Found: /telegram/webhook/
+[2026-04-10 20:09:29] WARNING django.request 76234 Not Found: /telegram/webhook/
+[2026-04-10 20:10:37] WARNING django.request 76234 Not Found: /telegram/webhook/
+[2026-04-10 20:15:06] WARNING django.request 80408 Not Found: /telegram/webhook/
+[2026-04-10 20:16:32] WARNING django.request 80408 Not Found: /telegram/webhook/
+[2026-04-10 20:17:43] WARNING django.request 80408 Not Found: /telegram/webhook/
+[2026-04-10 20:19:12] WARNING django.request 80408 Not Found: /telegram/webhook/
+[2026-04-10 20:20:40] WARNING django.request 80408 Not Found: /telegram/webhook/
+[2026-04-10 20:22:23] WARNING django.request 83461 Not Found: /telegram/webhook/
+[2026-04-10 20:24:07] WARNING django.request 83461 Not Found: /telegram/webhook/
+[2026-04-10 20:24:17] ERROR django.request 84636 Internal Server Error: /bots/main/webhook/7840815117:AAEEteVzhfOcazUbKxyGVnLnByEhMx56xOg/
+Traceback (most recent call last):
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/views.py", line 37, in post
+    import bots.main_bot.handlers  # noqa — registers handlers
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/__init__.py", line 6, in <module>
+    from . import sales         # noqa
+    ^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/sales.py", line 430, in <module>
+    @sync_to_async
+     ^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 652, in sync_to_async
+    return SyncToAsync(
+           ^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 434, in __init__
+    raise TypeError("sync_to_async can only be applied to sync functions.")
+TypeError: sync_to_async can only be applied to sync functions.
+[2026-04-10 20:24:18] ERROR django.request 84636 Internal Server Error: /bots/main/webhook/7840815117:AAEEteVzhfOcazUbKxyGVnLnByEhMx56xOg/
+Traceback (most recent call last):
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/views.py", line 37, in post
+    import bots.main_bot.handlers  # noqa — registers handlers
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/__init__.py", line 6, in <module>
+    from . import sales         # noqa
+    ^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/sales.py", line 430, in <module>
+    @sync_to_async
+     ^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 652, in sync_to_async
+    return SyncToAsync(
+           ^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 434, in __init__
+    raise TypeError("sync_to_async can only be applied to sync functions.")
+TypeError: sync_to_async can only be applied to sync functions.
+[2026-04-10 20:24:21] ERROR django.request 84636 Internal Server Error: /bots/main/webhook/7840815117:AAEEteVzhfOcazUbKxyGVnLnByEhMx56xOg/
+Traceback (most recent call last):
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/views.py", line 37, in post
+    import bots.main_bot.handlers  # noqa — registers handlers
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/__init__.py", line 6, in <module>
+    from . import sales         # noqa
+    ^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/sales.py", line 430, in <module>
+    @sync_to_async
+     ^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 652, in sync_to_async
+    return SyncToAsync(
+           ^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 434, in __init__
+    raise TypeError("sync_to_async can only be applied to sync functions.")
+TypeError: sync_to_async can only be applied to sync functions.
+[2026-04-10 20:24:26] ERROR django.request 84636 Internal Server Error: /bots/main/webhook/7840815117:AAEEteVzhfOcazUbKxyGVnLnByEhMx56xOg/
+Traceback (most recent call last):
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/views.py", line 37, in post
+    import bots.main_bot.handlers  # noqa — registers handlers
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/__init__.py", line 6, in <module>
+    from . import sales         # noqa
+    ^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/sales.py", line 430, in <module>
+    @sync_to_async
+     ^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 652, in sync_to_async
+    return SyncToAsync(
+           ^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 434, in __init__
+    raise TypeError("sync_to_async can only be applied to sync functions.")
+TypeError: sync_to_async can only be applied to sync functions.
+[2026-04-10 20:24:34] ERROR django.request 84636 Internal Server Error: /bots/main/webhook/7840815117:AAEEteVzhfOcazUbKxyGVnLnByEhMx56xOg/
+Traceback (most recent call last):
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/views.py", line 37, in post
+    import bots.main_bot.handlers  # noqa — registers handlers
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/__init__.py", line 6, in <module>
+    from . import sales         # noqa
+    ^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/sales.py", line 430, in <module>
+    @sync_to_async
+     ^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 652, in sync_to_async
+    return SyncToAsync(
+           ^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 434, in __init__
+    raise TypeError("sync_to_async can only be applied to sync functions.")
+TypeError: sync_to_async can only be applied to sync functions.
+[2026-04-10 20:24:51] ERROR django.request 84636 Internal Server Error: /bots/main/webhook/7840815117:AAEEteVzhfOcazUbKxyGVnLnByEhMx56xOg/
+Traceback (most recent call last):
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/views.py", line 37, in post
+    import bots.main_bot.handlers  # noqa — registers handlers
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/__init__.py", line 6, in <module>
+    from . import sales         # noqa
+    ^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/sales.py", line 430, in <module>
+    @sync_to_async
+     ^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 652, in sync_to_async
+    return SyncToAsync(
+           ^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 434, in __init__
+    raise TypeError("sync_to_async can only be applied to sync functions.")
+TypeError: sync_to_async can only be applied to sync functions.
+[2026-04-10 20:25:24] ERROR django.request 84636 Internal Server Error: /bots/main/webhook/7840815117:AAEEteVzhfOcazUbKxyGVnLnByEhMx56xOg/
+Traceback (most recent call last):
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/views.py", line 37, in post
+    import bots.main_bot.handlers  # noqa — registers handlers
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/__init__.py", line 6, in <module>
+    from . import sales         # noqa
+    ^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/bots/main_bot/handlers/sales.py", line 430, in <module>
+    @sync_to_async
+     ^^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 652, in sync_to_async
+    return SyncToAsync(
+           ^^^^^^^^^^^^
+  File "/Users/muhammadali/Desktop/Jobs/oscar-order-system/.venv/lib/python3.12/site-packages/asgiref/sync.py", line 434, in __init__
+    raise TypeError("sync_to_async can only be applied to sync functions.")
+TypeError: sync_to_async can only be applied to sync functions.
+[2026-04-10 20:25:57] WARNING django.request 84636 Not Found: /telegram/webhook/
+[2026-04-10 20:27:40] WARNING django.request 85664 Not Found: /telegram/webhook/
+[2026-04-10 20:29:01] WARNING django.request 86349 Not Found: /telegram/webhook/
+[2026-04-10 20:32:27] WARNING django.request 88145 Not Found: /telegram/webhook/
+[2026-04-10 20:34:08] WARNING django.request 88695 Not Found: /telegram/webhook/
+[2026-04-10 20:35:35] WARNING django.request 89372 Not Found: /telegram/webhook/
+[2026-04-10 20:37:16] WARNING django.request 90287 Not Found: /telegram/webhook/
+[2026-04-10 20:38:17] WARNING django.request 90287 Not Found: /telegram/webhook/
+[2026-04-10 20:40:07] WARNING django.request 91505 Not Found: /telegram/webhook/
+[2026-04-10 20:41:18] WARNING django.request 91811 Not Found: /telegram/webhook/
+[2026-04-10 20:42:30] WARNING django.request 91811 Not Found: /telegram/webhook/
+[2026-04-10 20:43:43] WARNING django.request 91811 Not Found: /telegram/webhook/
+[2026-04-10 20:45:13] WARNING django.request 91811 Not Found: /telegram/webhook/
+[2026-04-10 20:46:54] WARNING django.request 91811 Not Found: /telegram/webhook/
+[2026-04-10 20:48:01] WARNING django.request 91811 Not Found: /telegram/webhook/
+[2026-04-10 20:49:38] WARNING django.request 91811 Not Found: /telegram/webhook/
+[2026-04-10 20:50:48] WARNING django.request 91811 Not Found: /telegram/webhook/
+[2026-04-10 20:51:56] WARNING django.request 91811 Not Found: /telegram/webhook/
+[2026-04-10 20:53:07] WARNING django.request 91811 Not Found: /telegram/webhook/
+[2026-04-10 20:54:10] WARNING django.request 91811 Not Found: /telegram/webhook/
+[2026-04-10 20:55:23] WARNING django.request 91811 Not Found: /telegram/webhook/
+[2026-04-10 20:56:40] WARNING django.request 91811 Not Found: /telegram/webhook/
+[2026-04-10 20:58:18] WARNING django.request 91811 Not Found: /telegram/webhook/
+[2026-04-10 20:59:23] WARNING django.request 91811 Not Found: /telegram/webhook/
+[2026-04-10 21:01:19] WARNING django.request 91811 Not Found: /telegram/webhook/
+[2026-04-10 21:02:22] WARNING django.request 91811 Not Found: /telegram/webhook/
+[2026-04-10 21:04:11] WARNING django.request 91811 Not Found: /telegram/webhook/
+[2026-04-10 21:05:18] WARNING django.request 91811 Not Found: /telegram/webhook/
+[2026-04-10 21:06:22] WARNING django.request 91811 Not Found: /telegram/webhook/
