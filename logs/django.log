@@ -5959,3 +5959,5 @@ TypeError: sync_to_async can only be applied to sync functions.
 [2026-04-10 21:04:11] WARNING django.request 91811 Not Found: /telegram/webhook/
 [2026-04-10 21:05:18] WARNING django.request 91811 Not Found: /telegram/webhook/
 [2026-04-10 21:06:22] WARNING django.request 91811 Not Found: /telegram/webhook/
+[2026-04-10 21:08:20] WARNING django.request 91811 Not Found: /telegram/webhook/
+[2026-04-10 21:09:35] WARNING django.request 91811 Not Found: /telegram/webhook/
