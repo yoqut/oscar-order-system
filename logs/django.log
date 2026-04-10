@@ -5532,3 +5532,173 @@ RuntimeError: Event loop is closed
 [2026-04-10 17:27:10] INFO django.utils.autoreload 11636 Watching for file changes with StatReloader
 [2026-04-10 17:28:18] INFO django.utils.autoreload 50652 Watching for file changes with StatReloader
 [2026-04-10 17:30:12] INFO django.utils.autoreload 57832 Watching for file changes with StatReloader
+[2026-04-10 17:31:15] INFO django.utils.autoreload 57832 D:\projects\oscar-agro\config\settings.py changed, reloading.
+[2026-04-10 17:31:16] INFO django.utils.autoreload 27820 Watching for file changes with StatReloader
+[2026-04-10 17:33:54] INFO django.utils.autoreload 63028 Watching for file changes with StatReloader
+[2026-04-10 17:34:52] INFO django.utils.autoreload 58220 Watching for file changes with StatReloader
+[2026-04-10 17:35:02] INFO django.utils.autoreload 3208 Watching for file changes with StatReloader
+[2026-04-10 17:36:11] INFO django.utils.autoreload 3208 D:\projects\oscar-agro\config\urls.py changed, reloading.
+[2026-04-10 17:36:12] INFO django.utils.autoreload 13288 Watching for file changes with StatReloader
+[2026-04-10 17:36:28] INFO django.utils.autoreload 13288 D:\projects\oscar-agro\config\settings.py changed, reloading.
+[2026-04-10 17:36:29] INFO django.utils.autoreload 58136 Watching for file changes with StatReloader
+[2026-04-10 17:36:35] INFO django.utils.autoreload 58136 D:\projects\oscar-agro\config\urls.py changed, reloading.
+[2026-04-10 17:36:35] INFO django.utils.autoreload 4848 Watching for file changes with StatReloader
+[2026-04-10 17:38:21] INFO django.utils.autoreload 62324 Watching for file changes with StatReloader
+[2026-04-10 17:39:05] INFO django.utils.autoreload 62324 D:\projects\oscar-agro\config\settings.py changed, reloading.
+[2026-04-10 17:39:06] INFO django.utils.autoreload 57696 Watching for file changes with StatReloader
+[2026-04-10 17:44:42] ERROR django.security.DisallowedHost 38100 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\asgiref\sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\utils\deprecation.py", line 321, in __acall__
+    response = await sync_to_async(
+               ^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )(request)
+    ^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\asgiref\sync.py", line 506, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\asgiref\sync.py", line 561, in thread_handler
+    return func(*args, **kwargs)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\http\request.py", line 205, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+[2026-04-10 17:44:42] ERROR django.security.DisallowedHost 38100 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\asgiref\sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\utils\deprecation.py", line 321, in __acall__
+    response = await sync_to_async(
+               ^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )(request)
+    ^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\asgiref\sync.py", line 506, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\asgiref\sync.py", line 561, in thread_handler
+    return func(*args, **kwargs)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\http\request.py", line 205, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+[2026-04-10 17:45:41] ERROR django.security.DisallowedHost 9916 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\asgiref\sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\utils\deprecation.py", line 321, in __acall__
+    response = await sync_to_async(
+               ^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )(request)
+    ^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\asgiref\sync.py", line 506, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\asgiref\sync.py", line 561, in thread_handler
+    return func(*args, **kwargs)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\http\request.py", line 205, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+[2026-04-10 17:45:41] ERROR django.security.DisallowedHost 9916 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\asgiref\sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\utils\deprecation.py", line 321, in __acall__
+    response = await sync_to_async(
+               ^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )(request)
+    ^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\asgiref\sync.py", line 506, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\asgiref\sync.py", line 561, in thread_handler
+    return func(*args, **kwargs)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\http\request.py", line 205, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+[2026-04-10 17:46:27] INFO django.utils.autoreload 57696 D:\projects\oscar-agro\config\settings.py changed, reloading.
+[2026-04-10 17:46:28] INFO django.utils.autoreload 61976 Watching for file changes with StatReloader
+[2026-04-10 17:46:31] ERROR django.security.DisallowedHost 10548 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\asgiref\sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\utils\deprecation.py", line 321, in __acall__
+    response = await sync_to_async(
+               ^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )(request)
+    ^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\asgiref\sync.py", line 506, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\asgiref\sync.py", line 561, in thread_handler
+    return func(*args, **kwargs)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\http\request.py", line 205, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+[2026-04-10 17:46:31] ERROR django.security.DisallowedHost 10548 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\asgiref\sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\utils\deprecation.py", line 321, in __acall__
+    response = await sync_to_async(
+               ^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )(request)
+    ^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\asgiref\sync.py", line 506, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\asgiref\sync.py", line 561, in thread_handler
+    return func(*args, **kwargs)
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "D:\projects\oscar-agro\.venv\Lib\site-packages\django\http\request.py", line 205, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+[2026-04-10 17:46:38] INFO django.utils.autoreload 61976 D:\projects\oscar-agro\config\settings.py changed, reloading.
+[2026-04-10 17:46:39] INFO django.utils.autoreload 36280 Watching for file changes with StatReloader
+[2026-04-10 17:47:08] INFO django.utils.autoreload 25540 Watching for file changes with StatReloader
+[2026-04-10 17:47:12] INFO django.utils.autoreload 45552 Watching for file changes with StatReloader
